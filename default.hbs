@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="{{@site.locale}}" {{#match @custom.color_scheme "Dark"}}class="dark-mode"{{else match @custom.color_scheme "Auto"}}class="auto-color"{{/match}}>
+<head>
+    
+    {{! Document Settings }}
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    
+    {{! Page Meta }}
+    <title>{{meta_title}}</title>
+    <meta name="description" content="{{meta_description}}" />
+    
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    {{! Brand icon }}
+    <link rel="shortcut icon" href="{{@site.icon}}" type="image/png" />
+    
+    {{! Styles'n'Scripts }}
+    <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}" />
+    
+    {{! Ghost outputs structured data with JSON-LD }}
+    {{ghost_head}}
+    
+</head>
+<body class="{{body_class}}">
+<div class="viewport">
+
+    <header id="gh-head" class="gh-head">
+        <nav class="gh-head-inner inner">
+            <div class="gh-head-brand">
+                <a class="gh-head-logo no-image" href="{{@site.url}}">
+                    {{#if @site.logo}}
+                        <img src="{{@site.logo}}" alt="{{@site.title}}" />
+                    {{else}}
+                        {{@site.title}}
+                    {{/if}}
+                </a>
+            </div>
+            <div class="gh-head-menu">
+                {{navigation}}
+            </div>
+            <div class="gh-head-actions">
+                <div class="gh-head-actions-list">
+                    {{#if @site.members_enabled}}
+                        {{#unless @member}}
+                            <a class="gh-head-link" href="#/portal/signin">Sign in</a>
+                            <a class="gh-head-btn gh-btn gh-primary-btn" href="#/portal/signup">Subscribe</a>
+                        {{else}}
+                            <a class="gh-head-link" href="#/portal/account">Account</a>
+                        {{/unless}}
+                    {{/if}}
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="site-content">
+        {{! Everything else gets inserted here, index.hbs, post.hbs, etc }}
+        {{{body}}}
+    </main>
+
+    <footer class="site-footer outer">
+        <div class="inner">
+            <section class="copyright">
+                <a href="{{@site.url}}">{{@site.title}}</a> &copy; {{date format="YYYY"}}
+            </section>
+            <nav class="site-footer-nav">
+                {{navigation type="secondary"}}
+            </nav>
+            <div class="gh-powered-by">
+                <a href="https://ghost.org/" target="_blank" rel="noopener">Powered by Ghost</a>
+            </div>
+        </div>
+    </footer>
+
+</div>
+
+{{! Ghost outputs important scripts and data with this tag }}
+{{ghost_foot}}
+
+<script src="{{asset "built/main.min.js"}}"></script>
+
+</body>
+</html>

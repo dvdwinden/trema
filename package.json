@@ -1,0 +1,55 @@
+{
+  "name": "trema",
+  "description": "A custom Ghost theme",
+  "demo": "https://your-demo-site.com",
+  "version": "1.0.0",
+  "engines": {
+    "ghost": ">=5.0.0"
+  },
+  "license": "MIT",
+  "screenshots": {
+    "desktop": "assets/screenshot-desktop.jpg",
+    "mobile": "assets/screenshot-mobile.jpg"
+  },
+  "author": {
+    "name": "Your Name",
+    "email": "your.email@example.com",
+    "url": "https://your-website.com"
+  },
+  "gpm": {
+    "type": "theme",
+    "categories": [
+      "Minimal",
+      "Magazine"
+    ]
+  },
+  "keywords": [
+    "ghost",
+    "theme",
+    "responsive"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/trema.git"
+  },
+  "config": {
+    "posts_per_page": 5,
+    "image_sizes": {
+      "xs": {
+        "width": 150
+      },
+      "s": {
+        "width": 300
+      },
+      "m": {
+        "width": 600
+      },
+      "l": {
+        "width": 1000
+      },
+      "xl": {
+        "width": 2000
+      }
+    }
+  }
+}

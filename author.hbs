@@ -1,0 +1,91 @@
+{{!< default}}
+
+{{! The tag above means: insert everything in this file
+into the {{{body}}} of the default.hbs template }}
+
+<main id="site-main" class="site-main">
+<section class="author-header">
+    <div class="container">
+        {{#if profile_image}}
+            <img class="author-profile-image" src="{{img_url profile_image size="m"}}" alt="{{name}}" />
+        {{/if}}
+        <div class="author-header-content">
+            <h1 class="author-title">{{name}}</h1>
+            {{#if bio}}
+                <p class="author-bio">{{bio}}</p>
+            {{/if}}
+            <div class="author-meta">
+                {{#if location}}
+                    <div class="author-location">📍 {{location}}</div>
+                {{/if}}
+                {{#if website}}
+                    <div class="author-website">
+                        <a href="{{website}}" target="_blank" rel="noopener">🌐 Website</a>
+                    </div>
+                {{/if}}
+                {{#if twitter}}
+                    <div class="author-twitter">
+                        <a href="{{twitter_url}}" target="_blank" rel="noopener">🐦 Twitter</a>
+                    </div>
+                {{/if}}
+                {{#if facebook}}
+                    <div class="author-facebook">
+                        <a href="{{facebook_url}}" target="_blank" rel="noopener">📘 Facebook</a>
+                    </div>
+                {{/if}}
+            </div>
+            <div class="author-stats">
+                <div class="author-stats-item">
+                    <span class="author-stats-count">{{plural ../pagination.total empty='0 Posts' singular='% Post' plural='% Posts'}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="author-feed">
+    <div class="container">
+        
+        {{#foreach posts}}
+            <article class="post-card {{post_class}}">
+                
+                {{#if feature_image}}
+                    <a class="post-card-image-link" href="{{url}}">
+                        <img class="post-card-image" src="{{img_url feature_image size="m"}}" alt="{{title}}" />
+                    </a>
+                {{/if}}
+                
+                <div class="post-card-content">
+                    
+                    <header class="post-card-header">
+                        {{#if primary_tag}}
+                            <a class="post-card-primary-tag" href="{{primary_tag.url}}">{{primary_tag.name}}</a>
+                        {{/if}}
+                        <h2 class="post-card-title">
+                            <a href="{{url}}">{{title}}</a>
+                        </h2>
+                    </header>
+                    
+                    {{#if excerpt}}
+                        <div class="post-card-excerpt">
+                            <p>{{excerpt}}</p>
+                        </div>
+                    {{/if}}
+                    
+                    <footer class="post-card-meta">
+                        <span class="post-card-date">
+                            <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="MMM DD, YYYY"}}</time>
+                        </span>
+                        <span class="post-card-reading-time">{{reading_time}}</span>
+                    </footer>
+                    
+                </div>
+                
+            </article>
+        {{/foreach}}
+        
+        {{pagination}}
+        
+    </div>
+</section>
+</main>

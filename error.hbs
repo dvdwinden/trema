@@ -1,0 +1,110 @@
+{{!< default}}
+
+<main id="site-main" class="site-main">
+    <div class="container">
+        <section class="error-content">
+            <h1 class="error-code">{{statusCode}}</h1>
+            <p class="error-description">{{message}}</p>
+            
+            {{#if statusCode}}
+                {{#match statusCode "404"}}
+                    <p>It looks like nothing was found at this location. Maybe try a search?</p>
+                {{/match}}
+                
+                {{#match statusCode "500"}}
+                    <p>Internal server error. Please try again later.</p>
+                {{/match}}
+            {{/if}}
+            
+            <div class="error-actions">
+                <a href="{{@site.url}}" class="btn btn-primary">← Go Home</a>
+                {{#if @site.members_enabled}}
+                    <a href="#/portal/signin" class="btn btn-outline">Sign In</a>
+                {{/if}}
+            </div>
+        </section>
+    </div>
+</main>
+
+<style>
+.error-content {
+    text-align: center;
+    padding: 8rem 0;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.error-code {
+    font-size: 8rem;
+    font-weight: 800;
+    color: var(--color-primary);
+    margin-bottom: 2rem;
+    line-height: 1;
+}
+
+.error-description {
+    font-size: 2.4rem;
+    color: var(--color-text-light);
+    margin-bottom: 3rem;
+}
+
+.error-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 5px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.btn-primary {
+    background: var(--color-primary);
+    color: var(--color-bg);
+}
+
+.btn-primary:hover {
+    background: var(--color-base);
+    color: var(--color-bg);
+}
+
+.btn-outline {
+    border: 2px solid var(--color-border);
+    color: var(--color-text);
+}
+
+.btn-outline:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+}
+
+@media (max-width: 600px) {
+    .error-content {
+        padding: 4rem 0;
+    }
+    
+    .error-code {
+        font-size: 6rem;
+    }
+    
+    .error-description {
+        font-size: 1.8rem;
+    }
+    
+    .error-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn {
+        width: 200px;
+        text-align: center;
+    }
+}
+</style>
