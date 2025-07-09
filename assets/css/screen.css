@@ -549,6 +549,188 @@ blockquote p {
     font-size: 1.3rem;
 }
 
+/* Ghost Content Cards
+/* ---------------------------------------------------------- */
+
+/* Card width classes */
+.kg-width-wide {
+    position: relative;
+    width: 85vw;
+    min-width: 100%;
+    margin: auto calc(50% - 50vw);
+    transform: translateX(calc(50vw - 50%));
+}
+
+.kg-width-full {
+    position: relative;
+    width: 100vw;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}
+
+/* Card styles */
+.kg-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.kg-card + .kg-card {
+    margin-top: 4rem;
+}
+
+/* Image cards */
+.kg-image-card {
+    margin: 2rem 0;
+}
+
+.kg-image {
+    max-width: 100%;
+    height: auto;
+}
+
+.kg-image-card figcaption {
+    margin-top: 1rem;
+    color: var(--color-text-light);
+    font-size: 1.3rem;
+    text-align: center;
+    line-height: 1.4;
+}
+
+/* Gallery cards */
+.kg-gallery-card {
+    margin: 2rem 0;
+}
+
+.kg-gallery-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.kg-gallery-row {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.kg-gallery-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.kg-gallery-card figcaption {
+    margin-top: 1rem;
+    color: var(--color-text-light);
+    font-size: 1.3rem;
+    text-align: center;
+    line-height: 1.4;
+}
+
+/* Embed cards */
+.kg-embed-card {
+    margin: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.kg-embed-card iframe {
+    max-width: 100%;
+}
+
+/* Bookmark cards */
+.kg-bookmark-card {
+    margin: 2rem 0;
+    width: 100%;
+}
+
+.kg-bookmark-container {
+    display: flex;
+    text-decoration: none;
+    border: 1px solid var(--color-border);
+    border-radius: 3px;
+    overflow: hidden;
+    color: inherit;
+}
+
+.kg-bookmark-container:hover {
+    text-decoration: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.kg-bookmark-content {
+    flex: 1;
+    padding: 1.5rem;
+}
+
+.kg-bookmark-title {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: 0.5rem;
+}
+
+.kg-bookmark-description {
+    color: var(--color-text-light);
+    font-size: 1.4rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+.kg-bookmark-metadata {
+    display: flex;
+    align-items: center;
+    font-size: 1.3rem;
+    color: var(--color-text-light);
+}
+
+.kg-bookmark-icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 0.5rem;
+}
+
+.kg-bookmark-author {
+    margin-right: 1rem;
+}
+
+.kg-bookmark-publisher {
+    color: var(--color-primary);
+}
+
+.kg-bookmark-thumbnail {
+    flex-shrink: 0;
+    width: 180px;
+    height: 120px;
+    object-fit: cover;
+}
+
+/* Code blocks */
+.kg-code-card {
+    margin: 2rem 0;
+}
+
+.kg-code-card pre {
+    background: #f8f9fa;
+    border: 1px solid var(--color-border);
+    border-radius: 3px;
+    padding: 1.5rem;
+    overflow-x: auto;
+    font-size: 1.4rem;
+    line-height: 1.5;
+}
+
+.kg-code-card code {
+    background: transparent;
+    padding: 0;
+    font-family: var(--font-mono);
+}
+
 /* Responsive Design
 /* ---------------------------------------------------------- */
 @media (max-width: 800px) {
@@ -595,5 +777,25 @@ blockquote p {
     .site-footer .inner {
         flex-direction: column;
         text-align: center;
+    }
+    
+    /* Responsive card styles */
+    .kg-width-wide {
+        width: 100vw;
+        margin: auto calc(50% - 50vw);
+        transform: translateX(calc(50vw - 50%));
+    }
+    
+    .kg-bookmark-container {
+        flex-direction: column;
+    }
+    
+    .kg-bookmark-thumbnail {
+        width: 100%;
+        height: 160px;
+    }
+    
+    .kg-gallery-row {
+        flex-direction: column;
     }
 }
