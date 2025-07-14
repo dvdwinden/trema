@@ -412,12 +412,13 @@ blockquote p {
     margin: 0 auto;
 }
 
-.article-header h1, h2 {
+.article-header h1 {
     font-size: 5rem;
 }
 
 .article-header h2 {
     opacity: 0.5;
+    font-size: 4rem;
 }
 
 .article-tag {
