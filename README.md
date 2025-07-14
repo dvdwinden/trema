@@ -2,12 +2,9 @@
 
 A custom theme for Trema, a monthly newsletter about books worth reading. Fiction and non-fiction, for the casual and the voracious reader.
 
-## Features
-
-- **Responsive Design**: Looks great on all devices and screen sizes
 - **Typography**: Optimized for readability with beautiful typefaces (Degular and Blanco)
 - **Fast loading**: Minimal CSS and JavaScript for optimal performance
-- **SEO optimised**: Built with Ghost's SEO best practicesles
+- **SEO optimised**: Built with Ghost's SEO best practices
 - **Image Optimisation**: Lazy loading and responsive images
 - **Member support**: Full Ghost membership integration
 - **Accessibility**: ARIA labels and semantic HTML
@@ -51,12 +48,12 @@ The theme uses CSS custom properties for easy color customization. Edit the `:ro
 
 ```css
 :root {
-    --color-primary: #3eb0ef;    /* Primary accent color */
-    --color-base: #131313;       /* Dark text color */
-    --color-border: #ddd;        /* Border color */
-    --color-bg: #fff;            /* Background color */
-    --color-text: #333;          /* Main text color */
-    --color-text-light: #666;    /* Light text color */
+    --color-primary: blue;
+    --color-base: #131313;
+    --color-border: #ddd;
+    --color-bg: #fff;
+    --color-text: #333;
+    --color-text-light: #666;
 }
 ```
 
@@ -66,9 +63,9 @@ Modify the font variables in the CSS:
 
 ```css
 :root {
-    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", ...;
-    --font-serif: Georgia, Times, serif;
-    --font-mono: "Courier New", Courier, monospace;
+    --font-sans: 'Degular', 'Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif';
+    --font-serif: 'Blanco', 'Times New Roman', 'Times', 'Georgia', 'serif';
+    --font-mono: 'Courier New', Courier, monospace;
 }
 ```
 
