@@ -5,11 +5,6 @@
 <article class="article {{post_class}}">
 
     <header class="article-header">
-        <div class="article-tag">
-            {{#primary_tag}}
-                <a href="{{url}}">{{name}}</a>
-            {{/primary_tag}}
-        </div>
         <h1 class="article-title">{{title}}</h1>
         {{#if tags.[0]}}
             <h2 class="article-author">{{tags.[0].name}}</h2>
@@ -17,27 +12,6 @@
         {{#if excerpt}}
             <p class="article-excerpt">{{excerpt}}</p>
         {{/if}}
-        <div class="article-byline">
-            <section class="article-byline-content">
-                <div class="article-byline-meta">
-                    <h4 class="author-name">
-                        {{#foreach authors}}
-                            <a href="{{url}}">{{name}}</a>
-                            {{#unless @last}}, {{/unless}}
-                        {{/foreach}}
-                    </h4>
-                    <div class="byline-meta-content">
-                        <time class="byline-meta-date" datetime="{{date format="YYYY-MM-DD"}}">
-                            {{date format="MMM DD, YYYY"}}
-                        </time>
-                        <span class="byline-reading-time">
-                            <span class="bull">&bull;</span>
-                            {{reading_time}}
-                        </span>
-                    </div>
-                </div>
-            </section>
-        </div>
     </header>
 
     {{#if feature_image}}
@@ -51,6 +25,17 @@
 
     <section class="gh-content gh-canvas">
         {{content}}
+        <div class="byline-meta-content">
+            <time class="byline-meta-date" datetime="{{date format="YYYY-MM-DD"}}">
+                {{date format="MMM DD, YYYY"}}
+            </time>
+            <h4 class="author-name">
+                        {{#foreach authors}}
+                            <a href="{{url}}">{{name}}</a>
+                            {{#unless @last}}, {{/unless}}
+                        {{/foreach}}
+                    </h4>
+        </div>
     </section>
 
     {{#if tags.length}}
@@ -64,8 +49,6 @@
     {{/if}}
 
 </article>
-
-{{! If you want to embed comments, this is a good place to do it! }}
 
 </main>
 
