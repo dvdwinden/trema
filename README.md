@@ -109,7 +109,9 @@ Modify the font variables in the CSS:
 
 ## License
 
-MIT License - feel free to use this theme for personal and commercial projects.
+This theme is licensed under the Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0) License.  
+You are free to use, share, and adapt this theme for non-commercial purposes, with attribution.  
+For more information, see the [LICENSE](LICENSE) file or visit https://creativecommons.org/licenses/by-nc/4.0/
 
 ## Support
 
@@ -128,7 +130,3 @@ For issues and questions:
 - Reading progress indicator
 - Table of contents
 - Image enhancements
-
-## Credits
-
-Built with ❤️ for the Ghost community.
