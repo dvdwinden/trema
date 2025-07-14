@@ -130,7 +130,7 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0 0 0.3em 0;
     color: var(--color-base);
     font-family: var(--font-sans);
-    line-height: 1.15;
+    line-height: 1;
     font-weight: 500;
 }
 
@@ -401,9 +401,17 @@ blockquote p {
 
 .article-header {
     padding: 4rem 0;
-    text-align: center;
+    text-align: left;
     max-width: 800px;
     margin: 0 auto;
+}
+
+.article-header h1, h2 {
+    font-size: 5rem;
+}
+
+.article-header h2 {
+    opacity: 0.5;
 }
 
 .article-tag {
