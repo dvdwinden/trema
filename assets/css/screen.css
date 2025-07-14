@@ -440,8 +440,9 @@ blockquote p {
 .article-excerpt {
     font-size: 2rem;
     line-height: 1.4;
-    color: var(--color-text-light);
-    margin-bottom: 2rem;
+    color: var(--color-text);
+    margin-bottom: 3rem;
+    font-family: var(--font-sans);
 }
 
 .article-byline {
@@ -873,7 +874,8 @@ blockquote p {
     }
     
     .article-excerpt {
-        font-size: 1.8rem;
+        font-size: 2rem;
+        font-family: var(--font-sans);
     }
     
     .site-footer .inner {

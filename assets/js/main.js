@@ -44,57 +44,6 @@
         });
     }
 
-    // Add reading progress indicator
-    function initReadingProgress() {
-        const article = document.querySelector('.gh-content');
-        
-        if (!article) return;
-        
-        const progressBar = document.createElement('div');
-        progressBar.className = 'reading-progress';
-        progressBar.innerHTML = '<div class="reading-progress-fill"></div>';
-        
-        const progressFill = progressBar.querySelector('.reading-progress-fill');
-        
-        // Add CSS for progress bar
-        const style = document.createElement('style');
-        style.textContent = `
-            .reading-progress {
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 3px;
-                background: rgba(0,0,0,0.1);
-                z-index: 1000;
-            }
-            .reading-progress-fill {
-                height: 100%;
-                background: var(--color-primary, #3eb0ef);
-                width: 0%;
-                transition: width 0.1s ease;
-            }
-        `;
-        document.head.appendChild(style);
-        document.body.appendChild(progressBar);
-        
-        function updateProgress() {
-            const articleTop = article.offsetTop;
-            const articleHeight = article.offsetHeight;
-            const windowHeight = window.innerHeight;
-            const scrollTop = window.pageYOffset;
-            
-            const start = articleTop - windowHeight;
-            const end = articleTop + articleHeight;
-            const progress = Math.max(0, Math.min(1, (scrollTop - start) / (end - start)));
-            
-            progressFill.style.width = (progress * 100) + '%';
-        }
-        
-        window.addEventListener('scroll', updateProgress);
-        updateProgress();
-    }
-
     // Table of Contents generator
     function initTableOfContents() {
         const content = document.querySelector('.gh-content');
