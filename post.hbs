@@ -12,6 +12,19 @@
         {{#if excerpt}}
             <p class="article-excerpt">{{excerpt}}</p>
         {{/if}}
+        {{#if tags.length}}
+            <div class="article-tags">
+                {{#foreach tags}}
+                    {{#unless @first}}
+                        <a href="{{url}}" class="tag-link">{{name}}</a>
+                        {{#unless @last}}
+                            <span class="tag-separator"> / </span>
+                        {{/unless}}
+                    {{/unless}}
+                {{/foreach}}
+            </div>
+        {{/if}}
+
     </header>
 
     {{#if feature_image}}
@@ -37,17 +50,6 @@
                     </h4>
         </div>
     </section>
-
-    {{#if tags.length}}
-        <footer class="article-footer">
-            <div class="article-tags">
-                {{#foreach tags}}
-                    <a href="{{url}}" class="tag-link">{{name}}</a>
-                {{/foreach}}
-            </div>
-        </footer>
-    {{/if}}
-
 </article>
 
 </main>
