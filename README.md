@@ -88,7 +88,6 @@ Modify the font variables in the CSS:
 - ✅ Secondary navigation (footer)
 - ✅ Site logo and icon
 - ✅ Meta tags and descriptions
-- ✅ Reading time
 - ✅ Pagination
 - ✅ Search functionality
 
