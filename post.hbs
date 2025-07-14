@@ -11,6 +11,9 @@
             {{/primary_tag}}
         </div>
         <h1 class="article-title">{{title}}</h1>
+        {{#if tags.[0]}}
+            <h2 class="article-author">{{tags.[0].name}}</h2>
+        {{/if}}
         {{#if excerpt}}
             <p class="article-excerpt">{{excerpt}}</p>
         {{/if}}
