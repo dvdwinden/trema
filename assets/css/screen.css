@@ -444,7 +444,7 @@ blockquote p {
 .article-header {
     padding: 4rem 0;
     text-align: left;
-    max-width: 800px;
+    max-width: 1056px;
     margin: 0 auto;
 }
 
@@ -472,6 +472,11 @@ blockquote p {
 
 .article-title {
     margin-bottom: 0.5rem;
+}
+
+.article-title, .article-author {
+    max-width: 658px;
+    margin: auto;
 }
 
 .article-excerpt {
@@ -517,10 +522,12 @@ blockquote p {
 
 .article-image {
     margin: 2rem 0 4rem 0;
+    max-width: 16rem;
 }
 
 .article-image img {
     height: auto;
+    max-width: 16rem;
 }
 
 .article-image figcaption {
@@ -937,5 +944,45 @@ blockquote p {
     
     .kg-gallery-row {
         flex-direction: column;
+    }
+}
+
+.article-header-flex {
+    display: flex;
+    align-items: center;
+    gap: 10rem;
+    margin-top: 8rem;
+}
+
+.article-header-flex .article-image {
+    flex: 0 0 auto;
+    max-width: 16rem;
+    margin: 0;
+}
+
+.article-header-flex .article-excerpt {
+    flex: 1 1 0;
+    margin: 0;
+    font-size: 2rem;
+    line-height: 1.4;
+    font-family: var(--font-sans);
+}
+
+.article-header-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1 1 0;
+    gap: 1.5rem;
+}
+
+@media (max-width: 800px) {
+    .article-header-flex {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    .article-header-flex .article-image,
+    .article-header-flex .article-excerpt {
+        max-width: 100%;
     }
 }
