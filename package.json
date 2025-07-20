@@ -1,7 +1,7 @@
 {
   "name": "trema",
   "description": "A custom Ghost theme",
-  "demo": "https://your-demo-site.com",
+  "demo": "https://www.trema.website",
   "version": "1.0.0",
   "engines": {
     "ghost": ">>=5.0.0"
@@ -12,9 +12,9 @@
     "mobile": "assets/screenshot-mobile.jpg"
   },
   "author": {
-    "name": "Your Name",
-    "email": "your.email@example.com",
-    "url": "https://your-website.com"
+    "name": "Daniël van der Winden",
+    "email": "d.vanderwinden@gmail.com",
+    "url": "https://www.trema.website"
   },
   "gpm": {
     "type": "theme",
@@ -31,7 +31,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/trema.git"
+    "url": "https://github.com/dvdwinden/trema.git"
   },
   "config": {
     "posts_per_page": 5,
