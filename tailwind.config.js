@@ -17,7 +17,7 @@ module.exports = {
         'base': '#131313',
         'border': '#ddd',
         'bg': '#fff',
-        'text': '#333',
+        'text': '#333333',
         'text-light': '#666',
       },
       fontSize: {
