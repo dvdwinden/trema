@@ -11,11 +11,7 @@
     "desktop": "assets/screenshot-desktop.jpg",
     "mobile": "assets/screenshot-mobile.jpg"
   },
-  "author": {
-    "name": "Your Name",
-    "email": "your.email@example.com",
-    "url": "https://your-website.com"
-  },
+  "author": "Your Name <your.email@example.com> (https://your-website.com)",
   "gpm": {
     "type": "theme",
     "categories": [
@@ -31,7 +27,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/trema.git"
+    "url": "git+https://github.com/yourusername/trema.git"
   },
   "config": {
     "posts_per_page": 5,
@@ -53,5 +49,18 @@
         "width": 2000
       }
     }
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/trema/issues"
+  },
+  "homepage": "https://github.com/yourusername/trema#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.11"
   }
 }
