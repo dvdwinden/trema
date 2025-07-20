@@ -1,0 +1,289 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ==========================================================================
+   FONT DECLARATIONS
+   ========================================================================== */
+
+/* Font declarations for Blanco */
+@font-face {
+    font-family: 'Blanco';
+    src: url('../fonts/Blanco-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Blanco';
+    src: url('../fonts/Blanco-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Blanco';
+    src: url('../fonts/Blanco-Italic.woff2') format('woff2'),
+        url('../fonts/Blanco-Italic.woff') format('woff');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Blanco';
+    src: url('../fonts/Blanco-MediumItalic.woff2') format('woff2'),
+        url('../fonts/Blanco-MediumItalic.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Font declarations for Degular */
+@font-face {
+    font-family: 'Degular';
+    src: url('../fonts/Degular-Regular.woff2') format('woff2'),
+        url('../fonts/Degular-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Degular';
+    src: url('../fonts/Degular-Italic.woff2') format('woff2'),
+        url('../fonts/Degular-Italic.woff') format('woff');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Degular';
+    src: url('../fonts/Degular-Medium.woff2') format('woff2'),
+        url('../fonts/Degular-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Degular';
+    src: url('../fonts/Degular-MediumItalic.woff2') format('woff2'),
+        url('../fonts/Degular-MediumItalic.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* ==========================================================================
+   BASE LAYER CUSTOMIZATIONS
+   ========================================================================== */
+
+@layer base {
+    html {
+        @apply overflow-x-hidden overflow-y-scroll;
+        font-size: 100%;
+    }
+
+    body {
+        @apply overflow-x-hidden text-text font-serif bg-bg antialiased;
+        font-size: 1.375rem;
+        line-height: 1.6;
+        font-weight: 400;
+        font-style: normal;
+        letter-spacing: 0;
+        text-rendering: optimizeLegibility;
+        -moz-osx-font-smoothing: grayscale;
+        -moz-font-feature-settings: "liga" on;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        @apply mb-1 text-base font-sans font-medium leading-none;
+    }
+
+    h1 {
+        @apply text-5xl leading-tight;
+        letter-spacing: -1px;
+    }
+
+    h2 {
+        @apply text-4xl leading-tight;
+        letter-spacing: -1px;
+    }
+
+    h3 {
+        @apply text-3xl;
+    }
+
+    h4 {
+        @apply text-2xl;
+    }
+
+    h5 {
+        @apply text-xl;
+    }
+
+    h6 {
+        @apply text-lg;
+    }
+
+    a {
+        @apply text-primary no-underline;
+    }
+
+    a:hover {
+        @apply underline opacity-80;
+    }
+
+    p, ul, ol, dl {
+        @apply mb-6;
+    }
+
+    ol, ul {
+        @apply pl-5 pr-6;
+    }
+
+    li {
+        @apply my-2;
+    }
+
+    li li {
+        @apply my-1;
+    }
+
+    hr {
+        @apply block h-px border-0 border-t border-border my-10 p-0;
+    }
+
+    blockquote {
+        @apply my-6 px-6 border-l-4 border-primary;
+    }
+
+    blockquote p {
+        @apply my-3 text-sm font-light;
+    }
+}
+
+/* ==========================================================================
+   COMPONENT LAYER
+   ========================================================================== */
+
+@layer components {
+    .container {
+        @apply max-w-container mx-auto px-4;
+        padding-left: 4vw;
+        padding-right: 4vw;
+    }
+
+    .inner {
+        @apply max-w-inner mx-auto px-5;
+    }
+
+    /* Header Components */
+    .gh-head {
+        @apply w-full font-sans uppercase;
+        height: 200px;
+    }
+
+    .gh-head-inner {
+        @apply flex items-center justify-center gap-8;
+        padding-left: 200px;
+        padding-right: 200px;
+    }
+
+    .gh-head-brand {
+        @apply fixed top-8 left-8 z-50 flex-shrink-0;
+        padding: 8px 16px 8px 0;
+    }
+
+    .gh-head-logo {
+        @apply block font-bold text-xs leading-tight text-base font-sans uppercase;
+    }
+
+    .gh-head-logo img {
+        @apply max-h-10;
+    }
+
+    .gh-head-menu {
+        @apply fixed top-8 z-40 flex flex-col items-start;
+        left: calc(50% - 398px);
+        padding: 8px 16px 8px 0;
+    }
+
+    .nav {
+        @apply block list-none m-0 p-0;
+    }
+
+    .nav li {
+        @apply m-0;
+    }
+
+    .nav a {
+        @apply block text-text font-medium text-xs font-sans uppercase;
+    }
+
+    .nav a:hover {
+        @apply text-primary no-underline;
+    }
+
+    .gh-head-actions {
+        @apply fixed top-8 right-8 z-50 flex flex-col items-end gap-2 flex-shrink-0 bg-bg;
+        padding: 8px 0 8px 16px;
+    }
+
+    .gh-head-btn {
+        @apply inline-block px-4 py-2 text-bg bg-primary rounded font-medium text-xs;
+    }
+
+    .gh-head-btn:hover {
+        @apply text-bg no-underline opacity-90;
+    }
+
+    .gh-head-link {
+        @apply text-xs font-medium text-text uppercase no-underline;
+    }
+
+    .gh-head-actions-list {
+        @apply flex flex-col items-end;
+    }
+
+    .gh-head-link:hover {
+        @apply text-primary no-underline;
+    }
+
+    /* Main Content */
+    .site-main {
+        @apply py-16;
+    }
+
+    /* Post Card Components */
+    .post-card {
+        @apply relative flex flex-col bg-bg rounded-md mb-16 overflow-hidden;
+        box-shadow: 0 0 1px rgba(39, 44, 49, 0.10), 0 3px 16px rgba(39, 44, 49, 0.07);
+    }
+
+    .post-card-image-link {
+        @apply relative block overflow-hidden;
+    }
+
+    .post-card-image {
+        @apply w-full object-cover;
+        height: 200px;
+    }
+
+    .post-card-content {
+        @apply p-8;
+    }
+
+    .post-card-primary-tag {
+        @apply inline-block mb-2 text-primary font-medium uppercase tracking-wide;
+        font-size: 1.2rem;
+    }
+
+    .post-card-title {
+        @apply mb-3;
+    }
+}
