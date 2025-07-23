@@ -453,8 +453,8 @@ blockquote p {
 }
 
 .article-header h2 {
-    opacity: 0.5;
-    font-size: 4rem;
+    opacity: 0.3;
+    font-size: 5rem;
 }
 
 .article-tag {
@@ -624,8 +624,7 @@ blockquote p {
 /* Footer
 /* ---------------------------------------------------------- */
 .site-footer {
-    background: var(--color-base);
-    color: #fff;
+    color: var(--color-text-light);
     padding: 4rem 0 2rem;
     margin-top: 6rem;
 }
@@ -643,16 +642,18 @@ blockquote p {
 }
 
 .copyright a {
-    color: #fff;
+    color: var(--color-text-light);
 }
 
 .site-footer-nav {
     display: flex;
+    flex-direction: row;
+    align-items: center;
     gap: 2rem;
 }
 
 .site-footer-nav a {
-    color: #fff;
+    color: var(--color-text-light);
     font-size: 1.3rem;
 }
 
@@ -994,7 +995,7 @@ blockquote p {
 }
 
 .kg-button-card a.kg-btn.kg-btn-accent {
-    font-size: 1rem;;
+    font-size: 1.125rem;;
 }
 
 .kg-button-card a.kg-btn.kg-btn-accent:hover {
