@@ -442,7 +442,7 @@ blockquote p {
 }
 
 .article-header {
-    padding: 4rem 0;
+    padding: 4rem 0 8rem;
     text-align: left;
     max-width: 1056px;
     margin: 0 auto;
@@ -649,7 +649,15 @@ blockquote p {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 2rem;
+    gap: 4rem;
+}
+
+.site-footer-nav li {
+    display: inline-block;
+}
+
+.site-footer-nav li:last-child {
+    margin-left: 1rem;
 }
 
 .site-footer-nav a {
