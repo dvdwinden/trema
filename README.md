@@ -120,13 +120,4 @@ For issues and questions:
 2. Review the code comments in the theme files
 3. Test in a local Ghost development environment
 
-## Changelog
 
-### Version 1.0.0
-- Initial release
-- Responsive design
-- Ghost 5.0+ compatibility
-- Member support
-- Reading progress indicator
-- Table of contents
-- Image enhancements
