@@ -596,6 +596,15 @@ blockquote p {
     align-items: flex-start;
 }
 
+/* Random posts styling */
+.random-post-item {
+    display: none; /* Hidden by default, shown by JS */
+}
+
+.random-post-item:nth-child(-n+2) {
+    display: flex; /* Show first 2 if JS doesn't load */
+}
+
 /* Ghost content styles */
 .gh-content {
     max-width: 720px;
