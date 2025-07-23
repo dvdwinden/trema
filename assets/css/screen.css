@@ -537,6 +537,11 @@ blockquote p {
     text-align: center;
 }
 
+.kg-button-card.kg-align-left {
+    margin-left: 0;
+    align-items: flex-start;
+}
+
 /* Ghost content styles */
 .gh-content {
     max-width: 720px;
@@ -985,4 +990,12 @@ blockquote p {
     .article-header-flex .article-excerpt {
         max-width: 100%;
     }
+}
+
+.kg-button-card a.kg-btn.kg-btn-accent {
+    font-size: 1rem;;
+}
+
+.kg-button-card a.kg-btn.kg-btn-accent:hover {
+    background: var(--color-primary);
 }
