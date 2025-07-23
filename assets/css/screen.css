@@ -243,7 +243,7 @@ blockquote p {
 }
 
 .gh-head-brand {
-    position: fixed;
+    position: absolute;
     top: 32px;
     left: 32px;
     z-index: 1000;
@@ -266,9 +266,9 @@ blockquote p {
 }
 
 .gh-head-menu {
-    position: fixed;
-    top:32px;
-    left: calc(50% - 398px); 
+    position: absolute;
+    top: 32px;
+    left: calc(50% - 328px); 
     z-index: 999;
     display: flex;
     flex-direction: column;
@@ -302,7 +302,7 @@ blockquote p {
 }
 
 .gh-head-actions {
-    position: fixed;
+    position: absolute;
     top: 32px;
     right: 32px;
     z-index: 1000;
