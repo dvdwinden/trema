@@ -457,7 +457,7 @@ blockquote p {
 }
 
 .article-header {
-    padding: 4rem 0 8rem;
+    padding: 2rem 0 8rem;
     text-align: left;
     max-width: 1056px;
     margin: 0 auto;
@@ -530,6 +530,13 @@ blockquote p {
     align-items: center;
     color: var(--color-text-light);
     font-size: 1.3rem;
+    justify-content: space-between;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding-top: 2rem;
+    gap: 1rem;
+    margin-top: 2rem;
+    border-top: 1px solid var(--color-border);
 }
 
 .byline-reading-time {

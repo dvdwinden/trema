@@ -43,15 +43,16 @@
     <section class="gh-content gh-canvas">
         {{content}}
         <div class="byline-meta-content">
+            <img src="{{primary_author.profile_image}}" alt="{{primary_author.name}}" class="author-image">
+            <p class="author-name">
+                {{#foreach authors}}
+                    <a href="{{url}}">{{name}}</a>
+                    {{#unless @last}}, {{/unless}}
+                {{/foreach}}
+            </p>
             <time class="byline-meta-date" datetime="{{date format="YYYY-MM-DD"}}">
                 {{date format="MMM DD, YYYY"}}
             </time>
-            <h4 class="author-name">
-                        {{#foreach authors}}
-                            <a href="{{url}}">{{name}}</a>
-                            {{#unless @last}}, {{/unless}}
-                        {{/foreach}}
-                    </h4>
         </div>
     </section>
 </article>
