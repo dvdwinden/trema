@@ -485,6 +485,7 @@ blockquote p {
     color: var(--color-text);
     margin-bottom: 3rem;
     font-family: var(--font-sans);
+    text-wrap: pretty;
 }
 
 .article-byline {
