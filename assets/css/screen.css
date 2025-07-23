@@ -674,12 +674,89 @@ blockquote p {
     text-decoration: none;
 }
 
+/* Read More 
+/* ---------------------------------------------------------- */
+.read-more-wrap {
+    background: black;
+    padding: 2rem 0;
+    border-radius: 12px 12px 0 0;
+}
+
+.read-more {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    font-family: var(--font-sans);
+    max-width: 720px;
+}
+
+.read-more-item {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: start;
+    gap: 2rem;
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+    font-family: var(--font-sans);
+    width: 100%;
+    border-bottom: 1px solid transparent;
+    border-image: linear-gradient(to left, rgba(255,255,255,0.2), rgba(255,255,255,0.05));
+    border-image-slice: 1;
+    padding-bottom: 3rem;
+}
+
+.read-more-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.read-more-item img {
+    max-width: 164px;
+    height: auto;
+    rotate: -4deg;
+}
+
+h2.read-more-title {
+    font-size: 1rem;
+    font-family: var(--font-sans);
+    font-weight: 500;
+    text-transform: uppercase;
+    color: white;
+    letter-spacing: 0.2px;
+}
+
+.read-more h2.post-card-title, .read-more h2.post-card-title a {
+    font-size: 2rem;
+    font-weight: 500;
+    color: white;
+    margin-bottom: 0.3rem;
+}
+
+.read-more h3.article-author {
+    font-size: 1.25rem;
+    font-family: var(--font-sans);
+    font-weight: 400;
+    color: white;
+    opacity: 0.7;
+}
+
+.read-more-item-excerpt {
+    font-size: 1.25rem;
+    font-family: var(--font-sans);
+    font-weight: 400;
+    color: white;
+    opacity: 0.9;
+    line-height: 1.3;
+    margin-top: 2rem;
+}
+
+
 /* Footer
 /* ---------------------------------------------------------- */
 .site-footer {
     color: var(--color-text-light);
     padding: 4rem 0 2rem;
-    margin-top: 6rem;
+    background: black;
+    border-radius: 0 0 12px 12px;
 }
 
 .site-footer .inner {
