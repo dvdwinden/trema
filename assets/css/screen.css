@@ -702,7 +702,7 @@ blockquote p {
     display: inline-flex;
     flex-direction: row;
     align-items: start;
-    gap: 2rem;
+    gap: 4rem;
     margin-top: 4rem;
     margin-bottom: 2rem;
     font-family: var(--font-sans);
