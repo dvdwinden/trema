@@ -543,15 +543,17 @@ blockquote p {
     align-items: flex-start;
 }
 
-.article p:first-child:first-letter {
-    font-size: 6rem;
+article.article .gh-content p:first-child:first-letter {
+    font-size: 7rem;
     font-weight: 400;
     line-height: 0.8;
     color: var(--color-text); 
     padding: 0 .3rem;
-    margin: -0.6rem .3rem 0 0;
+    margin: -0.8rem .5rem 0 0;
     float: left;
     line-height: 1;
+    font-style: normal;
+    font-family: var(--font-serif);
 }   
 
 /* Ghost content styles */
