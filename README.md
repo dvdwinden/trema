@@ -89,7 +89,7 @@ Modify the font variables in the CSS:
 - ✅ Site logo and icon
 - ✅ Meta tags and descriptions
 - ✅ Pagination
-- ✅ Search functionality
+- ✅ Search functionality (not built in yet)
 
 ## Browser Support
 
@@ -99,13 +99,6 @@ Modify the font variables in the CSS:
 - Edge (latest)
 - iOS Safari
 - Chrome Mobile
-
-## Performance
-
-- Minimal CSS and JavaScript
-- Optimized images with lazy loading
-- Web fonts with proper loading strategies
-- Minimal external dependencies
 
 ## License
 
