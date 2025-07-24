@@ -194,12 +194,12 @@ hr {
     height: 1px;
     border: 0;
     border-top: 1px solid var(--color-border);
-    margin: 2.5em 0;
+    margin: 4em 0 2.5em 0!important;
     padding: 0;
 }
 
 blockquote {
-    margin: 1.5em 0;
+    margin: 2em 0;
     padding: 0 1.6em 0 1.6em;
     position: relative;
 }
@@ -613,7 +613,7 @@ blockquote p {
 }
 
 .gh-content > * + * {
-    margin-top: 4vw;
+    margin-top: 2vw;
     margin-bottom: 0;
 }
 
