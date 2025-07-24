@@ -84,6 +84,7 @@
     --color-primary: blue;
     --color-base: #131313;
     --color-border: #ddd;
+    --color-highlight: #fff9a8;
     --color-bg: #fff;
     --color-text: #333;
     --color-text-light: #666;
@@ -127,6 +128,10 @@ body {
 
 /* Base styles
 /* ---------------------------------------------------------- */
+::selection {
+    background: var(--color-highlight);
+}
+
 h1, h2, h3, h4, h5, h6 {
     margin: 0 0 0.3em 0;
     color: var(--color-base);
