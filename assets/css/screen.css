@@ -751,7 +751,7 @@ h2.read-more-title {
 }
 
 .read-more h2.post-card-title, .read-more h2.post-card-title a {
-    font-size: 2rem;
+    font-size: 2.25rem;
     font-weight: 500;
     color: white;
     margin-bottom: 0.3rem;
@@ -766,7 +766,7 @@ h2.read-more-title {
 }
 
 .read-more-item-excerpt {
-    font-size: 1.25rem;
+    font-size: 1.35rem;
     font-family: var(--font-sans);
     font-weight: 400;
     color: white;
