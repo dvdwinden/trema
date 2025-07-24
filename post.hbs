@@ -60,7 +60,7 @@
 </main>
 
 {{! Links to Random posts }}
-{{#get "posts" limit="6" filter="id:-{{id}}" include="tags" as |all_posts|}}
+{{#get "posts" limit="32" filter="id:-{{id}}" include="tags" as |all_posts|}}
     {{#if all_posts}}
         <aside class="read-more-wrap">
             <div class="read-more inner">
