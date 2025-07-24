@@ -712,7 +712,7 @@ blockquote p {
 .read-more-item {
     display: inline-flex;
     flex-direction: row;
-    align-items: start;
+    align-items: center;
     gap: 4rem;
     margin-top: 4rem;
     margin-bottom: 2rem;
