@@ -757,6 +757,14 @@ h2.read-more-title {
     margin-bottom: 0.3rem;
 }
 
+.read-more h2.post-card-title a:hover {
+    text-decoration: underline;
+    text-decoration-color: rgba(255,255,255,0.5);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+    opacity: .9;
+}
+
 .read-more h3.article-author {
     font-size: 1.25rem;
     font-family: var(--font-sans);
