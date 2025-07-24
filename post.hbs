@@ -6,8 +6,8 @@
 
     <header class="article-header">
         <h1 class="article-title">{{title}}</h1>
-        {{#if tags.[0]}}
-            <h2 class="article-author">by {{tags.[0].name}}</h2>
+        {{#if primary_tag}}
+            <h2 class="article-author">by {{primary_tag.name}}</h2>
         {{/if}}
 
         <div class="article-header-flex">
@@ -60,7 +60,7 @@
 </main>
 
 {{! Links to Random posts }}
-{{#get "posts" limit="6" filter="id:-{{id}}" as |all_posts|}}
+{{#get "posts" limit="6" filter="id:-{{id}}" include="tags" as |all_posts|}}
     {{#if all_posts}}
         <aside class="read-more-wrap">
             <div class="read-more inner">
@@ -71,8 +71,8 @@
                             <img src="{{img_url feature_image size="l"}}" alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}" />
                             <div class="read-more-item-content">
                                 <h2 class="post-card-title"><a href="{{url}}">{{title}}</a></h2>
-                                {{#if tags.[0]}}
-                                    <h3 class="article-author">by {{tags.[0].name}}</h3>
+                                {{#if primary_tag}}
+                                    <h3 class="article-author">by {{primary_tag.name}}</h3>
                                 {{/if}}
                                 <p class="read-more-item-excerpt">{{excerpt}}</p>
                             </div>
