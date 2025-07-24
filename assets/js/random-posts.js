@@ -26,14 +26,15 @@
         // Shuffle posts and show only first 2
         const shuffledPosts = shuffleArray(posts);
         
-        // Hide all posts first
+        // Remove all posts from the container
         posts.forEach(post => {
-            post.style.display = 'none';
+            post.remove();
         });
-        
-        // Show only first 2 shuffled posts
+
+        // Append only the first 2 shuffled posts
         shuffledPosts.slice(0, 2).forEach(post => {
             post.style.display = 'flex';
+            container.appendChild(post);
         });
     }
 })();
