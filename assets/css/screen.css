@@ -87,6 +87,7 @@
     --color-bg: #fff;
     --color-text: #333;
     --color-text-light: #666;
+    --color-text-lighter: #999;
     --font-sans: 'Degular', 'Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif';
     --font-serif: 'Blanco', 'Times New Roman', 'Times', 'Georgia', 'serif';
     --font-mono: 'Courier New', Courier, monospace;
@@ -319,6 +320,13 @@ blockquote p {
 
 .nav li {
     margin: 0;
+}
+
+.nav li.nav-current a {
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+    text-decoration-thickness: 1px;
+    text-decoration-color: var(--color-text-lighter);
 }
 
 .nav a {
