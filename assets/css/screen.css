@@ -835,10 +835,11 @@ h2.read-more-title {
 
 .site-footer-nav li {
     display: inline-block;
+    margin-left: 1rem;
 }
 
-.site-footer-nav li:last-child {
-    margin-left: 1rem;
+.site-footer-nav li:first-child {
+    margin-left: 0;
 }
 
 
