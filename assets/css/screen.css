@@ -440,7 +440,7 @@ blockquote p {
 }
 
 .latest-post-title {
-    margin: 1rem auto;
+    margin: 1rem auto 0.5rem;
     font-size: 5rem;
     line-height: 1;
     text-wrap: balance;
