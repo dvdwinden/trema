@@ -411,16 +411,16 @@ blockquote p {
 /* ---------------------------------------------------------- */
 .latest-post-featured {
     text-align: center;
-    margin-bottom: 6rem;
+    margin-bottom: 12rem;
 }
 
 .latest-post-image {
-    margin-bottom: 2rem;
+    margin-bottom: -3rem;
 }
 
 .latest-post-image img {
     width: 100%;
-    max-width: 600px;
+    max-width: 28rem;
     height: auto;
     border-radius: 8px;
 }
@@ -440,10 +440,11 @@ blockquote p {
 }
 
 .latest-post-title {
-    margin: 1rem 0;
-    font-size: 3.5rem;
-    line-height: 1.1;
+    margin: 1rem auto;
+    font-size: 5rem;
+    line-height: 1;
     text-wrap: balance;
+    max-width: 600px;
 }
 
 .latest-post-title a {
@@ -460,8 +461,18 @@ blockquote p {
     line-height: 1.5;
     color: var(--color-text-light);
     max-width: 600px;
-    margin: 0 auto;
+    margin: 2rem auto 1.5rem;
     text-wrap: pretty;
+}
+
+.latest-post-author {
+    color: var(--color-text-lighter);
+    margin: 0;
+}
+
+.latest-post-content .article-tags {
+    margin: 1rem auto;
+    justify-content: center;
 }
 
 /* Section Headings
