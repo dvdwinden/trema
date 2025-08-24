@@ -812,6 +812,16 @@ blockquote p {
     padding: 0 20px;
 }
 
+/* Gallery image extraction styles */
+.gh-content .kg-gallery-card.extracted,
+.gh-content .kg-image-card.extracted {
+    display: none !important;
+}
+
+.article-image img {
+    transition: opacity 0.3s ease;
+}
+
 .gh-content > * + * {
     margin-top: 2vw;
     margin-bottom: 0;
