@@ -1,61 +1,131 @@
 {{!< default}}
 
 {{! The main content area }}
-<main>
-    <div>
+<main class="site-main">
+    <div class="container">
         
-        {{! Loop through all posts }}
-        {{#foreach posts}}
-            <article>
-                
-                {{! Post feature image }}
-                {{#if feature_image}}
-                    <a href="{{url}}">
-                        <img src="{{img_url feature_image size="m"}}" alt="{{title}}" />
-                    </a>
-                {{/if}}
-                
-                <div>
-                    
-                    {{! Post header }}
-                    <header>
-                        {{#if primary_tag}}
-                            <a href="{{primary_tag.url}}">{{primary_tag.name}}</a>
-                        {{/if}}
-                        <h2>
-                            <a href="{{url}}">{{title}}</a>
-                        </h2>
-                    </header>
-                    
-                    {{! Post excerpt }}
-                    {{#if excerpt}}
-                        <div>
-                            <p>{{excerpt}}</p>
+        {{! Latest Post Featured Section }}
+        {{#get "posts" limit="1"}}
+            {{#foreach posts}}
+                <section class="latest-post-featured">
+                    {{#if feature_image}}
+                        <div class="latest-post-image">
+                            <a href="{{url}}">
+                                <img src="{{img_url feature_image size="l"}}" alt="{{title}}" />
+                            </a>
                         </div>
                     {{/if}}
                     
-                    {{! Post footer }}
-                    <footer>
-                        <div>
-                            <span>
-                                {{#foreach authors}}
-                                    <a href="{{url}}">{{name}}</a>
-                                    {{#unless @last}}, {{/unless}}
-                                {{/foreach}}
-                            </span>
-                            <span>
-                                <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="MMM DD, YYYY"}}</time>
-                            </span>
-                        </div>
-                    </footer>
-                    
-                </div>
-                
-            </article>
-        {{/foreach}}
+                    <div class="latest-post-content">
+                        {{#if primary_tag}}
+                            <div class="latest-post-tag">
+                                <a href="{{primary_tag.url}}">{{primary_tag.name}}</a>
+                            </div>
+                        {{/if}}
+                        <h1 class="latest-post-title">
+                            <a href="{{url}}">{{title}}</a>
+                        </h1>
+                        {{#if custom_excerpt}}
+                            <p class="latest-post-excerpt">{{custom_excerpt}}</p>
+                        {{else if excerpt}}
+                            <p class="latest-post-excerpt">{{excerpt}}</p>
+                        {{/if}}
+                    </div>
+                </section>
+            {{/foreach}}
+        {{/get}}
         
-        {{! Pagination }}
-        {{pagination}}
+        {{! Latest in Fiction Section }}
+        <section class="section-fiction">
+            <h2 class="section-heading">Latest in Fiction</h2>
+            
+            {{#get "posts" filter="tag:fiction" limit="4"}}
+                <div class="posts-grid">
+                    {{#foreach posts}}
+                        <article class="post-item">
+                            {{#if feature_image}}
+                                <div class="post-image">
+                                    <a href="{{url}}">
+                                        <img src="{{img_url feature_image size="m"}}" alt="{{title}}" />
+                                    </a>
+                                </div>
+                            {{/if}}
+                            
+                            <div class="post-content">
+                                {{#if primary_tag}}
+                                    <div class="post-tag">
+                                        <a href="{{primary_tag.url}}">{{primary_tag.name}}</a>
+                                    </div>
+                                {{/if}}
+                                <h3 class="post-title">
+                                    <a href="{{url}}">{{title}}</a>
+                                </h3>
+                                {{#if excerpt}}
+                                    <p class="post-excerpt">{{excerpt}}</p>
+                                {{/if}}
+                            </div>
+                        </article>
+                    {{/foreach}}
+                </div>
+            {{/get}}
+        </section>
+        
+        {{! Newsletter Signup Section }}
+        <section class="newsletter-signup">
+            <div class="newsletter-content">
+                <h2>Subscribe for free to receive a monthly book recommendation</h2>
+                <div class="newsletter-form">
+                    {{! Ghost members signup form }}
+                    <form data-members-form="subscribe">
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Your email address" required />
+                            <button type="submit">Subscribe</button>
+                        </div>
+                        <div class="message-success">
+                            <strong>Great!</strong> Check your inbox and confirm your subscription.
+                        </div>
+                        <div class="message-error">
+                            Please enter a valid email address.
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+        
+        {{! Latest in Non-Fiction Section }}
+        <section class="section-nonfiction">
+            <h2 class="section-heading">Latest in Non-fiction</h2>
+            
+            {{#get "posts" filter="tag:non-fiction" limit="4"}}
+                <div class="posts-grid">
+                    {{#foreach posts}}
+                        <article class="post-item">
+                            {{#if feature_image}}
+                                <div class="post-image">
+                                    <a href="{{url}}">
+                                        <img src="{{img_url feature_image size="m"}}" alt="{{title}}" />
+                                    </a>
+                                </div>
+                            {{/if}}
+                            
+                            <div class="post-content">
+                                {{#if primary_tag}}
+                                    <div class="post-tag">
+                                        <a href="{{primary_tag.url}}">{{primary_tag.name}}</a>
+                                    </div>
+                                {{/if}}
+                                <h3 class="post-title">
+                                    <a href="{{url}}">{{title}}</a>
+                                </h3>
+                                {{#if excerpt}}
+                                    <p class="post-excerpt">{{excerpt}}</p>
+                                {{/if}}
+                            </div>
+                        </article>
+                    {{/foreach}}
+                </div>
+            {{/get}}
+        </section>
         
     </div>
 </main>
