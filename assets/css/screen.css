@@ -459,7 +459,7 @@ blockquote p {
 .latest-post-excerpt {
     font-size: 1.5rem;
     line-height: 1.5;
-    color: var(--color-text-light);
+    color: var(--color-text);
     max-width: 600px;
     margin: 2rem auto 1.5rem;
     text-wrap: pretty;
