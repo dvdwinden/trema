@@ -485,19 +485,28 @@ blockquote p {
 
 .post-item {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1.5rem;
     text-align: left;
 }
 
 .post-image {
-    margin-bottom: 1.5rem;
+    flex: 0 0 120px;
+    margin-bottom: 0;
 }
 
 .post-image img {
-    width: 100%;
-    height: 250px;
+    width: 120px;
+    height: 120px;
     object-fit: cover;
     border-radius: 5px;
+}
+
+.post-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .post-tag a {
@@ -1223,6 +1232,20 @@ h2.read-more-title {
     .posts-grid {
         grid-template-columns: 1fr;
         gap: 2rem;
+    }
+    
+    .post-item {
+        flex-direction: column;
+    }
+    
+    .post-image {
+        flex: none;
+        margin-bottom: 1rem;
+    }
+    
+    .post-image img {
+        width: 100%;
+        height: 200px;
     }
     
     .post-title {
