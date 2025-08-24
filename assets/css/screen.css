@@ -528,7 +528,7 @@ blockquote p {
 }
 
 .post-title {
-    margin: 0.5rem 0 1rem 0;
+    margin: 0.5rem 0 0 0;
     font-size: 1.8rem;
     line-height: 1.3;
     font-weight: 500;
@@ -546,19 +546,19 @@ blockquote p {
 .post-excerpt {
     font-size: 1.2rem;
     line-height: 1.5;
-    color: var(--color-text-light);
     margin: 0;
     text-wrap: pretty;
 }
 
 /* Book author in posts grid */
 .posts-grid .article-author {
-    font-size: 1.4rem;
+    font-size: 1.125rem;
     font-weight: 400;
     color: var(--color-text);
-    margin: 0.25rem 0 0.75rem 0;
+    margin: 0 0 0.75rem 0;
     line-height: 1.3;
     padding: 0;
+    text-transform: uppercase;
 }
 
 /* Newsletter Signup
