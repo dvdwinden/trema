@@ -489,18 +489,22 @@ blockquote p {
     align-items: flex-start;
     gap: 1.5rem;
     text-align: left;
+    min-height: 120px;
 }
 
 .post-image {
-    flex: 0 0 120px;
+    flex: 0 0 auto;
     margin-bottom: 0;
+    height: 100%;
+    align-self: stretch;
 }
 
 .post-image img {
-    width: 120px;
-    height: 120px;
+    height: 14rem;
+    width: auto;
     object-fit: cover;
     border-radius: 5px;
+    min-height: 120px;
 }
 
 .post-content {
