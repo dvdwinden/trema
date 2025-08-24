@@ -46,7 +46,10 @@
         
         {{! Latest in fiction}}
         <section class="section-fiction">
-            <h2 class="section-heading">Latest in Fiction</h2>
+            <div class="section-header">
+                <h2 class="section-heading">Latest in Fiction</h2>
+                <a href="/tag/fiction/" class="section-see-all">See All</a>
+            </div>
             
             {{#get "posts" filter="tag:fiction" limit="4" include="tags"}}
                 <div class="posts-grid">
@@ -101,7 +104,10 @@
         
         {{! Latest in non-fiction}}
         <section class="section-nonfiction">
-            <h2 class="section-heading">Latest in Non-fiction</h2>
+            <div class="section-header">
+                <h2 class="section-heading">Latest in Non-fiction</h2>
+                <a href="/tag/non-fiction/" class="section-see-all">See All</a>
+            </div>
             
             {{#get "posts" filter="tag:non-fiction" limit="4" include="tags"}}
                 <div class="posts-grid">
