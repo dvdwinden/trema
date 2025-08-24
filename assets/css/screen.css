@@ -783,8 +783,9 @@ blockquote p {
     display: none; /* Hidden by default, shown by JS */
 }
 
+/* Fallback: show first 2 if JS doesn't load */
 .random-post-item:nth-child(-n+2) {
-    display: flex; /* Show first 2 if JS doesn't load */
+    display: flex;
 }
 
 /* Ghost content styles */
