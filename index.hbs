@@ -1,49 +1,49 @@
 {{!< default}}
 
 {{! The main content area }}
-<main id="site-main" class="site-main">
-    <div class="container">
+<main>
+    <div>
         
         {{! Loop through all posts }}
         {{#foreach posts}}
-            <article class="post-card {{post_class}}">
+            <article>
                 
                 {{! Post feature image }}
                 {{#if feature_image}}
-                    <a class="post-card-image-link" href="{{url}}">
-                        <img class="post-card-image" src="{{img_url feature_image size="m"}}" alt="{{title}}" />
+                    <a href="{{url}}">
+                        <img src="{{img_url feature_image size="m"}}" alt="{{title}}" />
                     </a>
                 {{/if}}
                 
-                <div class="post-card-content">
+                <div>
                     
                     {{! Post header }}
-                    <header class="post-card-header">
+                    <header>
                         {{#if primary_tag}}
-                            <a class="post-card-primary-tag" href="{{primary_tag.url}}">{{primary_tag.name}}</a>
+                            <a href="{{primary_tag.url}}">{{primary_tag.name}}</a>
                         {{/if}}
-                        <h2 class="post-card-title">
+                        <h2>
                             <a href="{{url}}">{{title}}</a>
                         </h2>
                     </header>
                     
                     {{! Post excerpt }}
                     {{#if excerpt}}
-                        <div class="post-card-excerpt">
+                        <div>
                             <p>{{excerpt}}</p>
                         </div>
                     {{/if}}
                     
                     {{! Post footer }}
-                    <footer class="post-card-meta">
-                        <div class="post-card-byline">
-                            <span class="post-card-author">
+                    <footer>
+                        <div>
+                            <span>
                                 {{#foreach authors}}
                                     <a href="{{url}}">{{name}}</a>
                                     {{#unless @last}}, {{/unless}}
                                 {{/foreach}}
                             </span>
-                            <span class="post-card-date">
+                            <span>
                                 <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="MMM DD, YYYY"}}</time>
                             </span>
                         </div>

@@ -257,9 +257,7 @@ blockquote p {
 /* Layout
 /* ---------------------------------------------------------- */
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 4vw;
+    /* No styling - plain container */
 }
 
 .inner {
@@ -404,86 +402,7 @@ blockquote p {
 /* Main Content
 /* ---------------------------------------------------------- */
 .site-main {
-    padding: 4rem 0;
-}
-
-/* Post Cards
-/* ---------------------------------------------------------- */
-.post-card {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    background: var(--color-bg);
-    border-radius: 5px;
-    box-shadow: 0 0 1px rgba(39, 44, 49, 0.10), 0 3px 16px rgba(39, 44, 49, 0.07);
-    margin-bottom: 4rem;
-    overflow: hidden;
-}
-
-.post-card-image-link {
-    position: relative;
-    display: block;
-    overflow: hidden;
-}
-
-.post-card-image {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
-
-.post-card-content {
-    padding: 2rem;
-}
-
-.post-card-primary-tag {
-    display: inline-block;
-    margin-bottom: 0.5rem;
-    color: var(--color-primary);
-    font-size: 1.2rem;
-    font-weight: 500;
-    letter-spacing: 0.2px;
-    text-transform: uppercase;
-}
-
-.post-card-title {
-    margin-bottom: 0.8rem;
-}
-
-.post-card-title a {
-    color: var(--color-base);
-}
-
-.post-card-excerpt {
-    color: var(--color-text-light);
-}
-
-.post-card-meta {
-    display: flex;
-    align-items: center;
-    margin-top: 1rem;
-    color: var(--color-text-light);
-    font-size: 1.3rem;
-}
-
-.post-card-byline {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.post-card-author a {
-    color: var(--color-text-light);
-    font-weight: 500;
-}
-
-.post-card-date {
-    font-size: 1.3rem;
-}
-
-.post-card-reading-time::before {
-    content: "•";
-    margin: 0 0.5rem;
+    /* No styling - plain content */
 }
 
 /* Article (Single Post)
@@ -846,39 +765,7 @@ h2.read-more-title {
 
 /* Pagination
 /* ---------------------------------------------------------- */
-.pagination {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 4rem 0 2rem;
-}
-
-.pagination a {
-    display: flex;
-    align-items: center;
-    padding: 10px 15px;
-    background: var(--color-bg);
-    color: var(--color-text);
-    border: 1px solid var(--color-border);
-    border-radius: 3px;
-    font-weight: 500;
-}
-
-.pagination a:hover {
-    background: var(--color-primary);
-    color: var(--color-bg);
-    text-decoration: none;
-}
-
-.page-number {
-    display: inline-block;
-    padding: 2px 0;
-    min-width: 100px;
-    text-align: center;
-    color: var(--color-text-light);
-    font-size: 1.3rem;
-}
+/* No styling - plain pagination */
 
 /* Ghost Content Cards
 /* ---------------------------------------------------------- */
@@ -1111,13 +998,7 @@ h2.read-more-title {
         font-size: 2.6rem;
     }
     
-    .post-card {
-        margin-bottom: 3rem;
-    }
-    
-    .post-card-content {
-        padding: 1.5rem;
-    }
+    /* Removed post-card responsive styles */
     
     .article-header {
         padding: 2rem 0;
