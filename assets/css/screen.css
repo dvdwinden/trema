@@ -978,10 +978,16 @@ h2.read-more-title {
 /* ---------------------------------------------------------- */
 .site-footer {
     color: var(--color-text-ligher);
-    padding: 4rem 0 2rem;
+    padding: 2rem 0 2rem;
     background: black;
-    border-radius: 0 0 16px 16px;
+    border-radius: 16px;
 }
+
+.post-template .site-footer {
+    border-radius: 0 0 16px 16px;
+    padding: 4rem 0 2rem;
+}
+
 
 .site-footer .footer-content {
     display: flex;
