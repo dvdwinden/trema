@@ -16,29 +16,19 @@
                     {{/if}}
                     
                     <div class="latest-post-content">
+                        {{#if primary_tag}}
+                            <div class="latest-post-tag">
+                                <a href="{{primary_tag.url}}">{{primary_tag.name}}</a>
+                            </div>
+                        {{/if}}
                         <h1 class="latest-post-title">
                             <a href="{{url}}">{{title}}</a>
                         </h1>
-                        {{#if primary_tag}}
-                            <h2 class="latest-post-author">by {{primary_tag.name}}</h2>
-                        {{/if}}
                         {{#if custom_excerpt}}
                             <p class="latest-post-excerpt">{{custom_excerpt}}</p>
                         {{else if excerpt}}
                             <p class="latest-post-excerpt">{{excerpt}}</p>
                         {{/if}}
-                            {{#if tags.length}}
-                    <div class="article-tags">
-                        {{#foreach tags}}
-                            {{#unless @first}}
-                                <a href="{{url}}" class="tag-link">{{name}}</a>
-                                {{#unless @last}}
-                                    <span class="tag-separator"> / </span>
-                                {{/unless}}
-                            {{/unless}}
-                        {{/foreach}}
-                    </div>
-                {{/if}}
                     </div>
                 </section>
             {{/foreach}}
