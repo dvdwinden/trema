@@ -482,6 +482,8 @@ blockquote p {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 3rem;
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 1.5rem;
 }
 
 .section-heading {
