@@ -19,45 +19,53 @@
     <div class="container">
         
         {{#foreach posts}}
-            <article class="post-card {{post_class}}">
-                
-                {{#if feature_image}}
-                    <a class="post-card-image-link" href="{{url}}">
-                        <img class="post-card-image" src="{{img_url feature_image size="m"}}" alt="{{title}}" />
-                    </a>
-                {{/if}}
-                
-                <div class="post-card-content">
+            <article class="tag-post-item">
+                <a href="{{url}}" class="tag-post-link">
                     
-                    <header class="post-card-header">
-                        <h2 class="post-card-title">
-                            <a href="{{url}}">{{title}}</a>
-                        </h2>
-                    </header>
+                    <div class="tag-post-date">
+                        <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="MMM. DD, YYYY"}}</time>
+                    </div>
                     
-                    {{#if excerpt}}
-                        <div class="post-card-excerpt">
-                            <p>{{excerpt}}</p>
+                    <div class="tag-post-content">
+                        <h2 class="tag-post-title">{{title}}</h2>
+                        
+                        {{#if excerpt}}
+                            <p class="tag-post-excerpt">{{excerpt}}</p>
+                        {{/if}}
+                        
+                        {{#if primary_tag}}
+                            <p class="tag-post-author">By {{primary_tag.name}}</p>
+                        {{/if}}
+                        
+                        {{#if tags.length}}
+                            <div class="tag-post-tags">
+                                {{#foreach tags}}
+                                    {{#unless @first}}
+                                        <span class="tag-link">{{name}}</span>
+                                        {{#unless @last}}
+                                            <span class="tag-separator"> / </span>
+                                        {{/unless}}
+                                    {{/unless}}
+                                {{/foreach}}
+                            </div>
+                        {{/if}}
+                    </div>
+                    
+                    {{#if twitter_image}}
+                        <div class="tag-post-image">
+                            <img src="{{img_url twitter_image size="m"}}" alt="{{title}}" />
+                        </div>
+                    {{else if og_image}}
+                        <div class="tag-post-image">
+                            <img src="{{img_url og_image size="m"}}" alt="{{title}}" />
+                        </div>
+                    {{else if feature_image}}
+                        <div class="tag-post-image">
+                            <img src="{{img_url feature_image size="m"}}" alt="{{title}}" />
                         </div>
                     {{/if}}
                     
-                    <footer class="post-card-meta">
-                        <div class="post-card-byline">
-                            <span class="post-card-author">
-                                {{#foreach authors}}
-                                    <a href="{{url}}">{{name}}</a>
-                                    {{#unless @last}}, {{/unless}}
-                                {{/foreach}}
-                            </span>
-                            <span class="post-card-date">
-                                <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="MMM DD, YYYY"}}</time>
-                            </span>
-                            <span class="post-card-reading-time">{{reading_time}}</span>
-                        </div>
-                    </footer>
-                    
-                </div>
-                
+                </a>
             </article>
         {{/foreach}}
         
