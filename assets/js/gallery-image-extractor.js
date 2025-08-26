@@ -8,24 +8,44 @@ document.addEventListener('DOMContentLoaded', function() {
     const articleImageContainer = document.querySelector('.article-image');
     
     if (articleImageContainer) {
-        // Look for the first gallery image in the post content
-        const firstGalleryImage = document.querySelector('.gh-content .kg-gallery-image, .gh-content .kg-image');
+        // Look for various types of images in the post content
+        const selectors = [
+            '.gh-content .kg-gallery-image',
+            '.gh-content .kg-image',
+            '.gh-content .kg-image-card img',
+            '.gh-content .kg-gallery-card img',
+            '.gh-content img'
+        ];
+        
+        let firstGalleryImage = null;
+        
+        // Try each selector until we find an image
+        for (const selector of selectors) {
+            firstGalleryImage = document.querySelector(selector);
+            if (firstGalleryImage) {
+                break;
+            }
+        }
         
         if (firstGalleryImage) {
             // Get the image source
             const imageSrc = firstGalleryImage.src;
-            const imageAlt = firstGalleryImage.alt || document.title;
+            const imageAlt = firstGalleryImage.alt || firstGalleryImage.getAttribute('alt') || document.title;
             
-            // Replace the article header image
-            const headerImg = articleImageContainer.querySelector('img');
-            if (headerImg) {
-                headerImg.src = imageSrc;
-                headerImg.alt = imageAlt;
+            // Validate that we have a proper image source
+            if (imageSrc && imageSrc !== 'undefined' && imageSrc.length > 0) {
+                // Replace the article header image
+                const headerImg = articleImageContainer.querySelector('img');
                 
-                // Hide the original gallery image to avoid duplication
-                const originalGalleryContainer = firstGalleryImage.closest('.kg-gallery-card, .kg-image-card');
-                if (originalGalleryContainer) {
-                    originalGalleryContainer.style.display = 'none';
+                if (headerImg) {
+                    headerImg.src = imageSrc;
+                    headerImg.alt = imageAlt;
+                    
+                    // Hide the original gallery image to avoid duplication
+                    const originalGalleryContainer = firstGalleryImage.closest('.kg-gallery-card, .kg-image-card');
+                    if (originalGalleryContainer) {
+                        originalGalleryContainer.style.display = 'none';
+                    }
                 }
             }
         }
