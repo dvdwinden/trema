@@ -11,17 +11,14 @@
         {{/if}}
 
         <div class="article-header-flex">
-            <figure class="article-image">
-                {{#if feature_image}}
+            {{#if feature_image}}
+                <figure class="article-image">
                     <img src="{{img_url feature_image size="l"}}" alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}" />
                     {{#if feature_image_caption}}
                         <figcaption>{{feature_image_caption}}</figcaption>
                     {{/if}}
-                {{else}}
-                    <!-- Placeholder for JavaScript to populate -->
-                    <img src="" alt="{{title}}" style="display: none;" />
-                {{/if}}
-            </figure>
+                </figure>
+            {{/if}}
             <div class="article-header-content">
                 {{#if excerpt}}
                     <p class="article-excerpt">{{excerpt}}</p>
@@ -87,7 +84,5 @@
         <script src="{{asset "js/random-posts.js"}}"></script>
     {{/if}}
 {{/get}}
-
-<script src="{{asset "js/gallery-image-extractor.js"}}"></script>
 
 {{/post}}

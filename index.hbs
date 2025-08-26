@@ -43,7 +43,19 @@
                 <div class="posts-grid">
                     {{#foreach posts}}
                         <article class="post-item">
-                            {{#if feature_image}}
+                            {{#if twitter_image}}
+                                <div class="post-image">
+                                    <a href="{{url}}">
+                                        <img src="{{img_url twitter_image size="m"}}" alt="{{title}}" />
+                                    </a>
+                                </div>
+                            {{else if og_image}}
+                                <div class="post-image">
+                                    <a href="{{url}}">
+                                        <img src="{{img_url og_image size="m"}}" alt="{{title}}" />
+                                    </a>
+                                </div>
+                            {{else if feature_image}}
                                 <div class="post-image">
                                     <a href="{{url}}">
                                         <img src="{{img_url feature_image size="m"}}" alt="{{title}}" />
@@ -101,7 +113,19 @@
                 <div class="posts-grid">
                     {{#foreach posts}}
                         <article class="post-item">
-                            {{#if feature_image}}
+                            {{#if twitter_image}}
+                                <div class="post-image">
+                                    <a href="{{url}}">
+                                        <img src="{{img_url twitter_image size="m"}}" alt="{{title}}" />
+                                    </a>
+                                </div>
+                            {{else if og_image}}
+                                <div class="post-image">
+                                    <a href="{{url}}">
+                                        <img src="{{img_url og_image size="m"}}" alt="{{title}}" />
+                                    </a>
+                                </div>
+                            {{else if feature_image}}
                                 <div class="post-image">
                                     <a href="{{url}}">
                                         <img src="{{img_url feature_image size="m"}}" alt="{{title}}" />
