@@ -43,37 +43,33 @@
                 <div class="posts-grid">
                     {{#foreach posts}}
                         <article class="post-item">
-                            {{#if twitter_image}}
-                                <div class="post-image">
-                                    <a href="{{url}}">
+                            <a href="{{url}}" class="post-item-link">
+                                {{#if twitter_image}}
+                                    <div class="post-image">
                                         <img src="{{img_url twitter_image size="m"}}" alt="{{title}}" />
-                                    </a>
-                                </div>
-                            {{else if og_image}}
-                                <div class="post-image">
-                                    <a href="{{url}}">
+                                    </div>
+                                {{else if og_image}}
+                                    <div class="post-image">
                                         <img src="{{img_url og_image size="m"}}" alt="{{title}}" />
-                                    </a>
-                                </div>
-                            {{else if feature_image}}
-                                <div class="post-image">
-                                    <a href="{{url}}">
+                                    </div>
+                                {{else if feature_image}}
+                                    <div class="post-image">
                                         <img src="{{img_url feature_image size="m"}}" alt="{{title}}" />
-                                    </a>
+                                    </div>
+                                {{/if}}
+                                
+                                <div class="post-content">
+                                    <h3 class="post-title">
+                                        {{title}}
+                                    </h3>
+                                    {{#if primary_tag}}
+                                        <h4 class="article-author">{{primary_tag.name}}</h4>
+                                    {{/if}}
+                                    {{#if excerpt}}
+                                        <p class="post-excerpt">{{excerpt}}</p>
+                                    {{/if}}
                                 </div>
-                            {{/if}}
-                            
-                            <div class="post-content">
-                                <h3 class="post-title">
-                                    <a href="{{url}}">{{title}}</a>
-                                </h3>
-                                {{#if primary_tag}}
-                                    <h4 class="article-author">{{primary_tag.name}}</h4>
-                                {{/if}}
-                                {{#if excerpt}}
-                                    <p class="post-excerpt">{{excerpt}}</p>
-                                {{/if}}
-                            </div>
+                            </a>
                         </article>
                     {{/foreach}}
                 </div>
@@ -113,37 +109,33 @@
                 <div class="posts-grid">
                     {{#foreach posts}}
                         <article class="post-item">
-                            {{#if twitter_image}}
-                                <div class="post-image">
-                                    <a href="{{url}}">
+                            <a href="{{url}}" class="post-item-link">
+                                {{#if twitter_image}}
+                                    <div class="post-image">
                                         <img src="{{img_url twitter_image size="m"}}" alt="{{title}}" />
-                                    </a>
-                                </div>
-                            {{else if og_image}}
-                                <div class="post-image">
-                                    <a href="{{url}}">
+                                    </div>
+                                {{else if og_image}}
+                                    <div class="post-image">
                                         <img src="{{img_url og_image size="m"}}" alt="{{title}}" />
-                                    </a>
-                                </div>
-                            {{else if feature_image}}
-                                <div class="post-image">
-                                    <a href="{{url}}">
+                                    </div>
+                                {{else if feature_image}}
+                                    <div class="post-image">
                                         <img src="{{img_url feature_image size="m"}}" alt="{{title}}" />
-                                    </a>
+                                    </div>
+                                {{/if}}
+                                
+                                <div class="post-content">
+                                    <h3 class="post-title">
+                                        {{title}}
+                                    </h3>
+                                    {{#if primary_tag}}
+                                        <h4 class="article-author">{{primary_tag.name}}</h4>
+                                    {{/if}}
+                                    {{#if excerpt}}
+                                        <p class="post-excerpt">{{excerpt}}</p>
+                                    {{/if}}
                                 </div>
-                            {{/if}}
-                            
-                            <div class="post-content">
-                                <h3 class="post-title">
-                                    <a href="{{url}}">{{title}}</a>
-                                </h3>
-                                {{#if primary_tag}}
-                                    <h4 class="article-author">{{primary_tag.name}}</h4>
-                                {{/if}}
-                                {{#if excerpt}}
-                                    <p class="post-excerpt">{{excerpt}}</p>
-                                {{/if}}
-                            </div>
+                            </a>
                         </article>
                     {{/foreach}}
                 </div>
