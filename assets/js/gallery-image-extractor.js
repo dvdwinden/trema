@@ -41,6 +41,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     headerImg.src = imageSrc;
                     headerImg.alt = imageAlt;
                     
+                    // Show the image if it was hidden as a placeholder
+                    headerImg.style.display = '';
+                    
                     // Hide the original gallery image to avoid duplication
                     const originalGalleryContainer = firstGalleryImage.closest('.kg-gallery-card, .kg-image-card');
                     if (originalGalleryContainer) {
