@@ -28,13 +28,13 @@
                     
                     <div class="tag-post-content">
                         <h2 class="tag-post-title">{{title}}</h2>
+
+                        {{#if primary_tag}}
+                            <p class="tag-post-author">By {{primary_tag.name}}</p>
+                        {{/if}}
                         
                         {{#if excerpt}}
                             <p class="tag-post-excerpt">{{excerpt}}</p>
-                        {{/if}}
-                        
-                        {{#if primary_tag}}
-                            <p class="tag-post-author">By {{primary_tag.name}}</p>
                         {{/if}}
                         
                         {{#if tags.length}}
