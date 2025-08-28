@@ -1474,6 +1474,14 @@ nav.pagination {
     margin-top: 2rem;
 }
 
+.tag-feature-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    max-width: 100px;
+    margin-bottom: 2rem;
+}
+
 .tag-post-item {
     border-bottom: 1px solid var(--color-border);
     padding: 2rem 0;

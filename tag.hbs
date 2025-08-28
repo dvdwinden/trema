@@ -3,8 +3,8 @@
 <main id="site-main" class="site-main">
 <section class="tag-header">
     <div class="container">
-        {{#if feature_image}}
-            <img class="tag-feature-image" src="{{img_url feature_image size="l"}}" alt="{{name}}" />
+        {{#if tag.feature_image}}
+            <img class="tag-feature-image" src="{{img_url tag.feature_image size="l"}}" alt="{{tag.name}}" />
         {{/if}}
         <div class="tag-header-content">
                 <h1 class="tag-title">{{tag.name}}</h1>
