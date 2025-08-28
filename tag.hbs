@@ -7,17 +7,16 @@
             <img class="tag-feature-image" src="{{img_url feature_image size="l"}}" alt="{{name}}" />
         {{/if}}
         <div class="tag-header-content">
-            <h1 class="tag-title">{{name}}</h1>
-            {{#if description}}
-                <p class="tag-description">{{description}}</p>
-            {{/if}}
+                <h1 class="tag-title">{{tag.name}}</h1>
+                {{#if tag.description}}
+                    <p class="tag-description">{{tag.description}}</p>
+                {{/if}}
         </div>
     </div>
 </section>
 
 <section class="tag-feed">
     <div class="container">
-        
         {{#foreach posts}}
             <article class="tag-post-item">
                 <a href="{{url}}" class="tag-post-link">

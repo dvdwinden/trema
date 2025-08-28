@@ -1443,6 +1443,14 @@ h2.read-more-title {
     background: var(--color-primary);
 }
 
+.tag-header {
+    margin-bottom: 12rem;
+}
+
+.tag-title {
+    margin: 0;
+}
+
 .tag-post-item {
     border-bottom: 1px solid var(--color-border);
     padding: 2rem 0;
