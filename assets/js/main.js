@@ -220,7 +220,6 @@
         
         // Only run these on article pages
         if (document.querySelector('.gh-content')) {
-            initReadingProgress();
             initTableOfContents();
             initImageEnhancements();
         }
