@@ -1453,12 +1453,25 @@ nav.pagination {
     background: var(--color-primary);
 }
 
+/* Tag pages */
+/* ---------------------------------------------------------- */
+
 .tag-header {
-    margin-bottom: 12rem;
+    margin-bottom: 10rem;
 }
 
 .tag-title {
     margin: 0;
+}
+
+.tag-description {
+    font-size: 1.5rem;
+    line-height: 1.4;
+    color: var(--color-text);
+    font-family: var(--font-sans);
+    text-wrap: pretty;
+    max-width: 36rem;
+    margin-top: 2rem;
 }
 
 .tag-post-item {
