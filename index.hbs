@@ -9,15 +9,13 @@
                 <section class="latest-post-featured">
                     {{#if feature_image}}
                         <div class="latest-post-image">
-                            <a href="{{url}}">
-                                <img src="{{img_url feature_image size="l"}}" alt="{{title}}" />
-                            </a>
+                            <img src="{{img_url feature_image size="l"}}" alt="{{title}}" />
                         </div>
                     {{/if}}
                     
                     <div class="latest-post-content">
                         <h1 class="latest-post-title">
-                            <a href="{{url}}" title=""{{title}}>{{title}}</a>
+                            {{title}}
                         </h1>
                         {{#if primary_tag}}
                             <h2 class="latest-post-author">by {{primary_tag.name}}</h4>
