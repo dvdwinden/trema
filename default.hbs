@@ -11,7 +11,11 @@
         {{#post}}
             {{title}}{{#if primary_tag}} by {{primary_tag.name}}{{/if}} • {{@site.title}}
         {{else}}
-            {{meta_title}}
+            {{#tag}}
+                {{name}} • {{@site.title}}
+            {{else}}
+                {{meta_title}}
+            {{/tag}}
         {{/post}}
     </title>
     
