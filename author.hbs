@@ -3,31 +3,31 @@
 <main id="site-main" class="site-main">
 <section class="author-header">
     <div class="container">
-        {{#if profile_image}}
-            <img class="author-profile-image" src="{{img_url profile_image size="m"}}" alt="{{name}}" />
+        {{#if author.profile_image}}
+            <img class="author-profile-image" src="{{img_url author.profile_image size="l"}}" alt="{{author.name}}" />
         {{/if}}
         <div class="author-header-content">
-            <h1 class="author-title">{{name}}</h1>
-            {{#if bio}}
-                <p class="author-bio">{{bio}}</p>
+            <h1 class="author-title">{{author.name}}</h1>
+            {{#if author.bio}}
+                <p class="author-bio">{{author.bio}}</p>
             {{/if}}
             <div class="author-meta">
-                {{#if location}}
-                    <div class="author-location">📍 {{location}}</div>
+                {{#if author.location}}
+                    <div class="author-location">📍 {{author.location}}</div>
                 {{/if}}
-                {{#if website}}
+                {{#if author.website}}
                     <div class="author-website">
-                        <a href="{{website}}" target="_blank" rel="noopener">🌐 Website</a>
+                        <a href="{{author.website}}" target="_blank" rel="noopener">🌐 Website</a>
                     </div>
                 {{/if}}
-                {{#if twitter}}
+                {{#if author.twitter}}
                     <div class="author-twitter">
-                        <a href="{{twitter_url}}" target="_blank" rel="noopener">🐦 Twitter</a>
+                        <a href="{{author.twitter_url}}" target="_blank" rel="noopener">🐦 Twitter</a>
                     </div>
                 {{/if}}
-                {{#if facebook}}
+                {{#if author.facebook}}
                     <div class="author-facebook">
-                        <a href="{{facebook_url}}" target="_blank" rel="noopener">📘 Facebook</a>
+                        <a href="{{author.facebook_url}}" target="_blank" rel="noopener">📘 Facebook</a>
                     </div>
                 {{/if}}
             </div>
@@ -42,42 +42,50 @@
 
 <section class="author-feed">
     <div class="container">
-        
         {{#foreach posts}}
-            <article class="post-card {{post_class}}">
-                
-                {{#if feature_image}}
-                    <a class="post-card-image-link" href="{{url}}">
-                        <img class="post-card-image" src="{{img_url feature_image size="m"}}" alt="{{title}}" />
-                    </a>
-                {{/if}}
-                
-                <div class="post-card-content">
+            <article class="author-post-item">
+                <a href="{{url}}" class="author-post-link">
                     
-                    <header class="post-card-header">
-                        {{#if primary_tag}}
-                            <a class="post-card-primary-tag" href="{{primary_tag.url}}">{{primary_tag.name}}</a>
+                    <div class="author-post-date">
+                        <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="MMM DD, YYYY"}}</time>
+                    </div>
+                    
+                    <div class="author-post-content">
+                        <h2 class="author-post-title">{{title}}</h2>
+                        
+                        {{#if excerpt}}
+                            <p class="author-post-excerpt">{{excerpt}}</p>
                         {{/if}}
-                        <h2 class="post-card-title">
-                            <a href="{{url}}">{{title}}</a>
-                        </h2>
-                    </header>
+                        
+                        {{#if tags.length}}
+                            <div class="author-post-tags">
+                                {{#foreach tags}}
+                                    {{#unless @first}}
+                                        <span class="tag-link">{{name}}</span>
+                                        {{#unless @last}}
+                                            <span class="tag-separator"> / </span>
+                                        {{/unless}}
+                                    {{/unless}}
+                                {{/foreach}}
+                            </div>
+                        {{/if}}
+                    </div>
                     
-                    {{#if excerpt}}
-                        <div class="post-card-excerpt">
-                            <p>{{excerpt}}</p>
+                    {{#if twitter_image}}
+                        <div class="author-post-image">
+                            <img src="{{img_url twitter_image size="m"}}" alt="{{title}}" />
+                        </div>
+                    {{else if og_image}}
+                        <div class="author-post-image">
+                            <img src="{{img_url og_image size="m"}}" alt="{{title}}" />
+                        </div>
+                    {{else if feature_image}}
+                        <div class="author-post-image">
+                            <img src="{{img_url feature_image size="m"}}" alt="{{title}}" />
                         </div>
                     {{/if}}
                     
-                    <footer class="post-card-meta">
-                        <span class="post-card-date">
-                            <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="MMM DD, YYYY"}}</time>
-                        </span>
-                        <span class="post-card-reading-time">{{reading_time}}</span>
-                    </footer>
-                    
-                </div>
-                
+                </a>
             </article>
         {{/foreach}}
         
