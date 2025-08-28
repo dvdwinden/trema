@@ -398,7 +398,7 @@ blockquote p {
 .gh-head-btn:hover {
     color: var(--color-bg);
     text-decoration: none;
-    opacity: 0.9;
+    opacity: 0.8;
 }
 
 .gh-head-link {
@@ -668,7 +668,7 @@ blockquote p {
 }
 
 .form-group button:hover {
-    opacity: 0.9;
+    opacity: 0.8;
 }
 
 .message-success,
