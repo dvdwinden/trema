@@ -49,10 +49,10 @@
                 <div class="gh-head-actions-list">
                     {{#if @site.members_enabled}}
                         {{#unless @member}}
-                            <a class="gh-head-link" href="#/portal/signin">Sign in</a>
-                            <a class="gh-head-link" href="#/portal/signup">Subscribe</a>
+                            <a class="gh-head-link" href="#/portal/signin" title="Sign in">Sign in</a>
+                            <a class="gh-head-link" href="#/portal/signup" title="Subscribe">Subscribe</a>
                         {{else}}
-                            <a class="gh-head-link" href="#/portal/account">Account</a>
+                            <a class="gh-head-link" href="#/portal/account" title="Account">Account</a>
                         {{/unless}}
                     {{/if}}
                 </div>
@@ -74,7 +74,7 @@
                 {{navigation type="secondary"}}
             </nav>
             <div class="gh-powered-by">
-                <a href="https://ghost.org/" target="_blank" rel="noopener">Running on Ghost</a>
+                <a href="https://ghost.org/" target="_blank" rel="noopener" title="Ghost: publishing software">Running on Ghost</a>
             </div>
         </div>
     </footer>
