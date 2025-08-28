@@ -145,14 +145,55 @@
         });
     }
 
+    // Prevent portal and special links from getting current styling
+    function initExternalLinkFix() {
+        const fixLinks = () => {
+            const navLinks = document.querySelectorAll('.nav a');
+            const footerLinks = document.querySelectorAll('.site-footer-nav a');
+            const allNavLinks = [...navLinks, ...footerLinks];
+            
+            allNavLinks.forEach(link => {
+                const href = link.getAttribute('href');
+                
+                // Remove current styling from Ghost portal links and external links
+                const isPortalLink = href && href.includes('#/portal');
+                const isExternalLink = href && href.includes('://') && !href.includes(window.location.hostname);
+                
+                if (isPortalLink || isExternalLink) {
+                    const parent = link.parentElement;
+                    parent.classList.remove('nav-current');
+                    
+                    // Prevent it from being re-added
+                    const observer = new MutationObserver((mutations) => {
+                        mutations.forEach((mutation) => {
+                            if (mutation.type === 'attributes' && 
+                                mutation.attributeName === 'class' &&
+                                parent.classList.contains('nav-current')) {
+                                parent.classList.remove('nav-current');
+                            }
+                        });
+                    });
+                    
+                    observer.observe(parent, { attributes: true });
+                }
+            });
+        };
+        
+        // Run immediately
+        fixLinks();
+        
+        // Also run after a short delay to catch any post-load changes
+        setTimeout(fixLinks, 500);
+    }
+
     // Initialize all functionality when DOM is ready
     function init() {
         initMobileMenu();
         initSmoothScrolling();
+        initExternalLinkFix();
         
         // Only run these on article pages
         if (document.querySelector('.gh-content')) {
-            initReadingProgress();
             initTableOfContents();
             initImageEnhancements();
         }
