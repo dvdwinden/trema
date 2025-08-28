@@ -17,7 +17,7 @@
                     
                     <div class="latest-post-content">
                         <h1 class="latest-post-title">
-                            <a href="{{url}}">{{title}}</a>
+                            <a href="{{url}}" title=""{{title}}>{{title}}</a>
                         </h1>
                         {{#if primary_tag}}
                             <h2 class="latest-post-author">by {{primary_tag.name}}</h4>
@@ -27,6 +27,7 @@
                         {{else if excerpt}}
                             <p class="latest-post-excerpt">{{excerpt}}</p>
                         {{/if}}
+                        <a href="{{url}}" title="Read {{title}}" class="button">Continue reading &nbsp;&rarr;</a>
                     </div>
                 </section>
             {{/foreach}}
