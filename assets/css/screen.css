@@ -350,7 +350,7 @@ blockquote p {
     margin: 0;
 }
 
-.nav li.nav-current a {
+.nav li.nav-current a, .nav li.nav-current-parent a {
     text-decoration: underline;
     text-underline-offset: 0.2em;
     text-decoration-thickness: 1px;
