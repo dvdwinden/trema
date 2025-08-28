@@ -1073,7 +1073,17 @@ h2.read-more-title {
 
 /* Pagination
 /* ---------------------------------------------------------- */
-/* No styling - plain pagination */
+nav.pagination {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-between;
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    margin: 2rem 0 0 0;
+}
+
+
 
 /* Ghost Content Cards
 /* ---------------------------------------------------------- */
