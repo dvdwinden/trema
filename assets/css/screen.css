@@ -355,11 +355,12 @@ blockquote p {
     text-underline-offset: 0.2em;
     text-decoration-thickness: 1px;
     text-decoration-color: var(--color-text-lighter);
+    color: var(--color-text);
 }
 
 .nav a {
     display: block;
-    color: var(--color-text);
+    color: var(--color-text-light);
     font-weight: 500;
     font-size: 1.125rem;
     font-family: var(--font-sans);
