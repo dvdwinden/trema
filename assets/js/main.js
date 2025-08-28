@@ -145,78 +145,10 @@
         });
     }
 
-    // Enhanced navigation highlighting for tag pages and pagination
-    function initNavigationHighlighting() {
-        const currentPath = window.location.pathname;
-        const navLinks = document.querySelectorAll('.nav a');
-        const footerLinks = document.querySelectorAll('.site-footer-nav a');
-        
-        // Function to check if a path matches a tag section
-        function isTagSection(linkHref, currentPath) {
-            // Extract tag from link href (e.g., /tag/fiction/ from full URL)
-            const linkMatch = linkHref.match(/\/tag\/([^/]+)\/?/);
-            if (!linkMatch) return false;
-            
-            const tagSlug = linkMatch[1];
-            
-            // Check if current path is this tag or its pagination
-            const tagPattern = new RegExp(`^\/tag\/${tagSlug}(?:\/page\/\d+)?\/?$`);
-            return tagPattern.test(currentPath);
-        }
-        
-        // Function to update nav highlighting
-        function updateNavHighlighting(links, className = 'nav-current') {
-            // First, remove all current classes
-            links.forEach(link => {
-                link.parentElement.classList.remove(className);
-            });
-            
-            // Then check each link
-            links.forEach(link => {
-                const href = link.getAttribute('href');
-                if (!href) return;
-                
-                // Handle exact matches first
-                if (href === currentPath || href === currentPath + '/') {
-                    link.parentElement.classList.add(className);
-                    return;
-                }
-                
-                // Handle tag section matches (for pagination)
-                if (isTagSection(href, currentPath)) {
-                    link.parentElement.classList.add(className);
-                    return;
-                }
-                
-                // Handle home page
-                if ((href === '/' || href === window.location.origin + '/') && 
-                    (currentPath === '/' || currentPath === '')) {
-                    link.parentElement.classList.add(className);
-                    return;
-                }
-            });
-        }
-        
-        // Update both header and footer navigation
-        updateNavHighlighting(navLinks);
-        updateNavHighlighting(footerLinks);
-        
-        // Prevent external/donation links from being marked as current
-        const allNavLinks = [...navLinks, ...footerLinks];
-        allNavLinks.forEach(link => {
-            const href = link.getAttribute('href');
-            if (href && (href.startsWith('http') && !href.startsWith(window.location.origin))) {
-                // This is an external link, remove any current styling
-                link.parentElement.classList.remove('nav-current');
-            }
-        });
-    }
-
     // Initialize all functionality when DOM is ready
     function init() {
         initMobileMenu();
         initSmoothScrolling();
-        initNavigationHighlighting();
         
         // Only run these on article pages
         if (document.querySelector('.gh-content')) {
