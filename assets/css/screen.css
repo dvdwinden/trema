@@ -1552,9 +1552,9 @@ h2.read-more-title {
 
 .tag-post-image img {
     width: 100%;
-    height: auto;
+    height: 200px;
     object-fit: cover;
-    border-radius: 8px;
+    border-radius: 3px;
 }
 
 /* Responsive adjustments for tag page */
