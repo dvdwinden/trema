@@ -552,6 +552,7 @@ blockquote p {
 }
 
 .post-image {
+    position: relative;
     margin-bottom: 1rem;
 }
 
@@ -560,6 +561,17 @@ blockquote p {
     height: 200px;
     object-fit: cover;
     border-radius: 3px;
+}
+
+.post-image-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+.post-item a:hover .post-image-hover {
+    opacity: 1;
 }
 
 .post-content {
