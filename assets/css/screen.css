@@ -723,7 +723,7 @@ blockquote p {
 .article-title, .article-author {
     max-width: 720px;
     margin: auto;
-    padding: 0 20px;
+    padding: 0;
 }
 
 .article-excerpt {
