@@ -135,8 +135,8 @@
                 img.parentNode.insertBefore(figure, img);
                 figure.appendChild(img);
                 
-                // Add caption if alt text exists
-                if (img.alt) {
+                // Add caption if alt text exists, but exclude author images
+                if (img.alt && !img.classList.contains('author-image')) {
                     const caption = document.createElement('figcaption');
                     caption.textContent = img.alt;
                     figure.appendChild(caption);
