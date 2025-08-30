@@ -1617,6 +1617,7 @@ nav.pagination {
 }
 
 .tag-post-image {
+    position: relative;
     flex-shrink: 0;
     width: 280px;
     height: auto;
@@ -1627,6 +1628,10 @@ nav.pagination {
     height: 200px;
     object-fit: cover;
     border-radius: 3px;
+}
+
+.tag-post-link:hover .post-image-hover {
+    opacity: 1;
 }
 
 /* Responsive adjustments for tag page */
@@ -1817,6 +1822,7 @@ nav.pagination {
 }
 
 .author-post-image {
+    position: relative;
     flex-shrink: 0;
     width: 280px;
     height: auto;
@@ -1827,6 +1833,10 @@ nav.pagination {
     height: 200px;
     object-fit: cover;
     border-radius: 3px;
+}
+
+.author-post-link:hover .post-image-hover {
+    opacity: 1;
 }
 
 /* Responsive adjustments for author page */
