@@ -298,7 +298,7 @@ blockquote p {
 
 .gh-head nav {
     display: flex;
-    align-items: center;
+    align-items: start;
     justify-content: space-between;
     padding-top: 32px;
     width: 100%;
