@@ -81,7 +81,7 @@
 /* Variables
 /* ---------------------------------------------------------- */
 :root {
-    --color-primary: blue;
+    --color-primary: #222B21;
     --color-base: #131313;
     --color-border: #ededed;
     --color-highlight: #fff9a8;
@@ -120,7 +120,9 @@ body {
     font-style: normal;
     letter-spacing: 0;
     text-rendering: optimizeLegibility;
+    /* background: linear-gradient(to bottom, #EEFFEE 0%, var(--color-bg) 25vh); */
     background: var(--color-bg);
+    min-height: 50vh;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     -moz-font-feature-settings: "liga" on;
@@ -181,7 +183,7 @@ a:hover {
 }
 
 a.button {
-    padding: 12px 24px;
+    padding: 6px 12px;
     background: var(--color-primary);
     color: var(--color-bg);
     border: none;
@@ -196,7 +198,8 @@ a.button {
 
 a.button:hover {
     text-decoration: none;
-    opacity: 0.8;
+    background: #c9c9c9;
+    color: var(--color-primary);
 }
 
 p, ul, ol, dl {
@@ -627,7 +630,7 @@ blockquote p {
 .form-group input[type="email"] {
     flex: 1;
     min-width: 280px;
-    padding: 12px 16px 12px 0;
+    padding: 6px 12px 6px 0;
     font-size: 1.25rem;
     font-family: var(--font-sans);
     border-bottom: 1px solid var(--color-border);
@@ -642,7 +645,7 @@ blockquote p {
 }
 
 .form-group button {
-    padding: 12px 24px;
+    padding: 6px 12px;
     background: var(--color-primary);
     color: var(--color-bg);
     border: none;
@@ -656,7 +659,8 @@ blockquote p {
 }
 
 .form-group button:hover {
-    opacity: 0.8;
+    background: #c9c9c9;
+    color: var(--color-primary);
 }
 
 .message-success,
@@ -826,7 +830,7 @@ blockquote p {
 .gh-content {
     max-width: 720px;
     margin: 0 auto;
-    padding: 0;
+    padding: 0 40px 0 0;
 }
 
 /* Gallery image extraction styles */
