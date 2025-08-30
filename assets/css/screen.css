@@ -298,20 +298,16 @@ blockquote p {
 
 .gh-head-inner {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: start;
+    justify-content: flex-start;
     gap: 2rem;
-    padding-left: 200px; /* Account for fixed brand */
-    padding-right: 200px; /* Account for fixed actions */
 }
 
 .gh-head-brand {
     position: absolute;
     top: 32px;
-    left: 32px;
     z-index: 1000;
     flex-shrink: 0;
-    padding: 8px 16px 8px 0;
 }
 
 .gh-head-logo {
@@ -336,7 +332,6 @@ blockquote p {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 8px 16px 8px 0;
 }
 
 .nav {
@@ -375,15 +370,7 @@ blockquote p {
 .gh-head-actions {
     position: absolute;
     top: 32px;
-    right: 32px;
-    z-index: 1000;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 0.5rem;
-    flex-shrink: 0;
     background: var(--color-bg);
-    padding: 8px 0 8px 16px;
 }
 
 .gh-head-btn {

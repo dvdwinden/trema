@@ -34,9 +34,9 @@
 </head>
 <body class="{{body_class}}">
 <div class="viewport">
-
+<div class="container">
     <header id="gh-head" class="gh-head">
-        <nav class="gh-head-inner inner">
+        <nav class="gh-head">
             <div class="gh-head-brand">
                 <a class="gh-head-logo no-image" href="{{@site.url}}">
                     {{#if @site.logo}}
@@ -63,6 +63,7 @@
             </div>
         </nav>
     </header>
+</div>
 
     <main class="site-content">
         {{! Everything else gets inserted here, index.hbs, post.hbs, etc }}
