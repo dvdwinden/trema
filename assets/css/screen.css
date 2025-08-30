@@ -363,9 +363,7 @@ blockquote p {
 }
 
 .gh-head-actions {
-    position: absolute;
-    top: 32px;
-    background: var(--color-bg);
+    flex-shrink: 0;
 }
 
 .gh-head-btn {
@@ -396,6 +394,7 @@ blockquote p {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    gap: 0.5rem;
 }
 
 .gh-head-link:hover {
