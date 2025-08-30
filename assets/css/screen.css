@@ -1281,12 +1281,17 @@ nav.pagination {
 /* Responsive Design
 /* ---------------------------------------------------------- */
 @media (max-width: 800px) {
-    .gh-head-inner {
+    .gh-head nav {
         padding: 0 3vw;
+        padding-top: 32px;
     }
     
     .gh-head-menu {
         display: none;
+    }
+    
+    .gh-head-actions {
+        margin-left: auto;
     }
     
     .container {
