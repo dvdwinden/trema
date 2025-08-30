@@ -13,21 +13,56 @@
             {{/if}}
             <div class="author-meta">
                 {{#if author.location}}
-                    <div class="author-location">📍 {{author.location}}</div>
+                    <div class="author-location">{{author.location}}</div>
                 {{/if}}
                 {{#if author.website}}
                     <div class="author-website">
-                        <a href="{{author.website}}" target="_blank" rel="noopener">🌐 Website</a>
+                        <a href="{{author.website}}" target="_blank" rel="noopener">Website</a>
                     </div>
                 {{/if}}
                 {{#if author.twitter}}
                     <div class="author-twitter">
-                        <a href="{{author.twitter_url}}" target="_blank" rel="noopener">🐦 Twitter</a>
+                        <a href="{{social_url type="twitter"}}" target="_blank" rel="noopener">Twitter</a>
                     </div>
                 {{/if}}
                 {{#if author.facebook}}
                     <div class="author-facebook">
-                        <a href="{{author.facebook_url}}" target="_blank" rel="noopener">📘 Facebook</a>
+                        <a href="{{social_url type="facebook"}}" target="_blank" rel="noopener">Facebook</a>
+                    </div>
+                {{/if}}
+                {{#if (social_url type="bluesky")}}
+                    <div class="author-bluesky">
+                        <a href="{{social_url type="bluesky"}}" target="_blank" rel="noopener">Bluesky</a>
+                    </div>
+                {{/if}}
+                {{#if (social_url type="threads")}}
+                    <div class="author-threads">
+                        <a href="{{social_url type="threads"}}" target="_blank" rel="noopener">Threads</a>
+                    </div>
+                {{/if}}
+                {{#if (social_url type="mastodon")}}
+                    <div class="author-mastodon">
+                        <a href="{{social_url type="mastodon"}}" target="_blank" rel="noopener">Mastodon</a>
+                    </div>
+                {{/if}}
+                {{#if (social_url type="linkedin")}}
+                    <div class="author-linkedin">
+                        <a href="{{social_url type="linkedin"}}" target="_blank" rel="noopener">LinkedIn</a>
+                    </div>
+                {{/if}}
+                {{#if (social_url type="instagram")}}
+                    <div class="author-instagram">
+                        <a href="{{social_url type="instagram"}}" target="_blank" rel="noopener">Instagram</a>
+                    </div>
+                {{/if}}
+                {{#if (social_url type="youtube")}}
+                    <div class="author-youtube">
+                        <a href="{{social_url type="youtube"}}" target="_blank" rel="noopener">YouTube</a>
+                    </div>
+                {{/if}}
+                {{#if (social_url type="tiktok")}}
+                    <div class="author-tiktok">
+                        <a href="{{social_url type="tiktok"}}" target="_blank" rel="noopener">TikTok</a>
                     </div>
                 {{/if}}
             </div>

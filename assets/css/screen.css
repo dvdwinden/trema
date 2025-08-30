@@ -1692,6 +1692,10 @@ nav.pagination {
     color: var(--color-primary);
 }
 
+.author-bluesky {
+    display: inline-block;
+}
+
 .author-stats {
     margin-top: 2rem;
 }
