@@ -325,8 +325,12 @@ blockquote p {
 .gh-head-menu {
     flex: 1;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     margin: 0 2rem;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
 }
 
 .nav {
@@ -394,7 +398,10 @@ blockquote p {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    gap: 0.5rem;
+}
+
+.gh-head-actions-list a {
+    color: var(--color-text-light);
 }
 
 .gh-head-link:hover {
