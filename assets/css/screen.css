@@ -182,13 +182,13 @@ a:hover {
     opacity: 0.8;
 }
 
-a.button {
+a.button, .kg-btn, .kg-btn-accent {
     padding: 6px 12px;
     background: var(--color-primary);
     color: var(--color-bg);
     border: none;
     border-radius: 3px;
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 500;
     cursor: pointer;
     font-family: var(--font-sans);
@@ -196,7 +196,7 @@ a.button {
     letter-spacing: 0.2px;
 }
 
-a.button:hover {
+a.button:hover, .kg-btn:hover, .kg-btn-accent:hover {
     text-decoration: none;
     background: #c9c9c9;
     color: var(--color-primary);
@@ -1447,11 +1447,25 @@ nav.pagination {
 }
 
 .kg-button-card a.kg-btn.kg-btn-accent {
-    font-size: 1rem;;
+    padding: 6px 12px;
+    background: var(--color-primary);
+    color: var(--color-bg);
+    border: none;
+    border-radius: 3px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: var(--font-sans);
+    text-transform: uppercase;
+    letter-spacing: 0.2px;
+    height: auto;
 }
 
 .kg-button-card a.kg-btn.kg-btn-accent:hover {
-    background: var(--color-primary);
+    text-decoration: none;
+    background: #c9c9c9;
+    color: var(--color-primary);
+    opacity: 1;
 }
 
 /* Tag pages */
