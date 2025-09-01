@@ -8,7 +8,7 @@
         {{/if}}
         <div class="tag-header-content">
                 <h1 class="tag-title">{{tag.name}}</h1>
-                <p class="tag-post-count">{{pagination.total}} books</p>
+                <p class="tag-post-count">{{pagination.total}} {{plural pagination.total empty='books' singular='book' plural='books'}}</p>
                 {{#if tag.description}}
                     <p class="tag-description">{{tag.description}}</p>
                 {{/if}}
