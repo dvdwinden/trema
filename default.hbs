@@ -9,10 +9,10 @@
     {{! Page Meta }}
     <title>
         {{#post}}
-            {{title}}{{#if primary_tag}} by {{primary_tag.name}}{{/if}} • {{@site.title}}
+            {{title}}{{#if primary_tag}} by {{primary_tag.name}}{{/if}} · {{@site.title}}
         {{else}}
             {{#tag}}
-                {{name}} • {{@site.title}}
+                {{name}} · {{@site.title}}
             {{else}}
                 {{meta_title}}
             {{/tag}}
