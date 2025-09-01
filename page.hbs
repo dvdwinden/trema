@@ -9,29 +9,6 @@
         {{#if excerpt}}
             <p class="article-excerpt">{{excerpt}}</p>
         {{/if}}
-        <div class="article-byline">
-            <section class="article-byline-content">
-                <div class="article-byline-meta">
-                    <h4 class="author-name">
-                        {{#foreach authors}}
-                            <a href="{{url}}">{{name}}</a>
-                            {{#unless @last}}, {{/unless}}
-                        {{/foreach}}
-                    </h4>
-                    <div class="byline-meta-content">
-                        <time class="byline-meta-date" datetime="{{date format="YYYY-MM-DD"}}">
-                            {{date format="MMM DD, YYYY"}}
-                        </time>
-                        {{#if reading_time}}
-                            <span class="byline-reading-time">
-                                <span class="bull">&bull;</span>
-                                {{reading_time}}
-                            </span>
-                        {{/if}}
-                    </div>
-                </div>
-            </section>
-        </div>
     </header>
 
     {{#if feature_image}}
@@ -46,16 +23,6 @@
     <section class="gh-content gh-canvas">
         {{{content}}}
     </section>
-
-    {{#if tags.length}}
-        <footer class="article-footer">
-            <div class="article-tags">
-                {{#foreach tags}}
-                    <a href="{{url}}" class="tag-link">{{name}}</a>
-                {{/foreach}}
-            </div>
-        </footer>
-    {{/if}}
 
 </article>
 </main>
