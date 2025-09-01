@@ -1492,6 +1492,16 @@ nav.pagination {
     margin: 0;
 }
 
+.tag-post-count {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--color-text-light);
+    margin: 0.5rem 0 0 0;
+    font-family: var(--font-sans);
+    text-transform: uppercase;
+    letter-spacing: 0.2px;
+}
+
 .tag-description {
     font-size: 1.5rem;
     line-height: 1.4;
