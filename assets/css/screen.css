@@ -1905,16 +1905,15 @@ nav.pagination {
 }
 
 .author-group {
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
 }
 
 .author-letter {
-    font-size: 1.5rem;
-    font-weight: bold;
     margin-bottom: 1rem;
-    color: #666;
-    border-bottom: 2px solid #eee;
+    border-bottom: 1px solid var(--color-border);
     padding-bottom: 0.5rem;
+    font-size: 1rem!important;
+    color: var(--color-text-light)!important;
 }
 
 .author-names {
@@ -1930,13 +1929,16 @@ nav.pagination {
 
 .author-link {
     text-decoration: none;
-    color: #333;
-    transition: color 0.2s ease;
+    color: var(--color-text);
+    font-weight: 400;
 }
 
 .author-link:hover {
-    color: #666;
+    color: var(--color-text-light);
     text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 1px;
+    text-decoration-color: var(--color-text-lighter);
 }
 
 @media (max-width: 768px) {
