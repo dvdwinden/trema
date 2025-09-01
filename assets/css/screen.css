@@ -1050,6 +1050,7 @@ h2.read-more-title {
 
 .site-footer .footer-content a {
     color: var(--color-text-lighter);
+    font-size: 1rem;
 }
 
 .site-footer .footer-content a:hover {
