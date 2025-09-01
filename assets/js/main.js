@@ -192,8 +192,8 @@
         initSmoothScrolling();
         initExternalLinkFix();
         
-        // Only run these on article pages
-        if (document.querySelector('.gh-content')) {
+        // Only run these on article pages, but not on authors page
+        if (document.querySelector('.gh-content') && !document.querySelector('.authors-list')) {
             initTableOfContents();
             initImageEnhancements();
         }

@@ -1,0 +1,83 @@
+{{!< default}}
+
+{{#post}}
+<main id="site-main" class="site-main">
+<article class="article {{post_class}}">
+
+    <header class="article-header">
+        <h1 class="article-title">{{title}}</h1>
+        {{#if excerpt}}
+            <p class="article-excerpt">{{excerpt}}</p>
+        {{/if}}
+    </header>
+
+    <section class="gh-content gh-canvas">
+        {{{content}}}
+        
+        <div class="authors-list">
+            {{#get "posts" limit="all" include="tags"}}
+                {{#if posts}}        
+                    <div class="authors-container">
+                        {{#foreach posts}}
+                            {{#if primary_tag}}
+                                <div class="author-item" data-author="{{primary_tag.name}}" data-letter="{{primary_tag.name.[0]}}">
+                                    <a href="{{primary_tag.url}}" class="author-link">{{primary_tag.name}}</a>
+                                </div>
+                            {{/if}}
+                        {{/foreach}}
+                    </div>
+                    
+                    <script>
+                        // Group authors by letter after page loads
+                        document.addEventListener('DOMContentLoaded', function() {
+                            const authorItems = document.querySelectorAll('.author-item');
+                            const authorsMap = new Map();
+                            
+                            // Collect unique authors
+                            authorItems.forEach(item => {
+                                const authorName = item.dataset.author;
+                                const firstLetter = authorName.charAt(0).toUpperCase();
+                                
+                                if (!authorsMap.has(firstLetter)) {
+                                    authorsMap.set(firstLetter, new Set());
+                                }
+                                authorsMap.set(firstLetter, authorsMap.get(firstLetter).add(authorName));
+                            });
+                            
+                            // Build grouped HTML
+                            let html = '';
+                            const sortedLetters = Array.from(authorsMap.keys()).sort();
+                            
+                            sortedLetters.forEach(letter => {
+                                const authors = Array.from(authorsMap.get(letter)).sort();
+                                html += `<div class="author-group">`;
+                                html += `<h2 class="author-letter">${letter}</h2>`;
+                                html += `<div class="author-names">`;
+                                
+                                authors.forEach(authorName => {
+                                    const authorItem = Array.from(authorItems).find(item => item.dataset.author === authorName);
+                                    if (authorItem) {
+                                        const link = authorItem.querySelector('a');
+                                        html += `<div class="author-name">`;
+                                        html += `<a href="${link.href}" class="author-link">${authorName}</a>`;
+                                        html += `</div>`;
+                                    }
+                                });
+                                
+                                html += `</div></div>`;
+                            });
+                            
+                            document.querySelector('.authors-container').innerHTML = html;
+                        });
+                    </script>
+                {{else}}
+                    <p>No posts found.</p>
+                {{/if}}
+            {{/get}}
+        </div>
+    </section>
+
+</article>
+</main>
+{{/post}}
+
