@@ -366,8 +366,12 @@ blockquote p {
 }
 
 .nav a:hover {
-    color: var(--color-primary);
-    text-decoration: none;
+    color: var(--color-base);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 1px;
+    text-decoration-color: var(--color-text-lightest);
+    opacity: 1;
 }
 
 .gh-head-actions {
@@ -386,8 +390,11 @@ blockquote p {
 
 .gh-head-btn:hover {
     color: var(--color-bg);
-    text-decoration: none;
-    opacity: 0.8;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 1px;
+    text-decoration-color: var(--color-text-lightest);
+    opacity: 1;
 }
 
 .gh-head-link {
@@ -410,7 +417,11 @@ blockquote p {
 
 .gh-head-link:hover {
     color: var(--color-primary);
-    text-decoration: none;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 1px;
+    text-decoration-color: var(--color-text-lightest);
+    opacity: 1;
 }
 
 /* Mobile Menu Toggle Button */
@@ -798,6 +809,7 @@ blockquote p {
 
 .author-name a {
     color: var(--color-base);
+    text-decoration: none!important;
 }
 
 .author-name a:hover {
@@ -1144,6 +1156,14 @@ nav.pagination {
     font-family: var(--font-sans);
     font-size: 1rem;
     margin: 2rem 0 0 0;
+}
+
+nav.pagination a:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 1px;
+    text-decoration-color: var(--color-text-lightest);
+    opacity: 1;
 }
 
 
