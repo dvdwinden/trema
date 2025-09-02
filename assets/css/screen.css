@@ -2196,7 +2196,6 @@ nav.pagination a:hover {
     max-width: 40rem;
 }
 
-/* Book author in tag posts */
 .tag-post-author {
     font-size: 1rem;
     font-weight: 500;
@@ -2326,7 +2325,7 @@ nav.pagination a:hover {
     .tag-post-title {
         font-size: 2rem;
         order: 1;
-        margin: 0;
+        margin: 0 0 0.25rem 0;;
     }
     
     .tag-post-author {
@@ -2589,7 +2588,6 @@ nav.pagination a:hover {
         display: none;
     }
     
-    /* Image comes first and spans full width */
     .author-post-image {
         order: -1;
         width: 100%;
@@ -2607,19 +2605,24 @@ nav.pagination a:hover {
         transition: none;
     }
     
-    /* Content area adjustments */
-    .author-post-content {
-        gap: 0.75rem;
-    }
-    
-    /* Title comes after image */
     .author-post-title {
         font-size: 2rem;
-        margin: 0;
+        margin: 0 0 0.25rem 0;
         order: 1;
     }
+
+    .author-post-author {
+        font-size: 1rem;
+        font-weight: 500;
+        color: var(--color-text-light);
+        margin: 0 0 0.75rem 0;
+        line-height: 1.3;
+        order: 2;
+        padding: 0;
+        text-transform: uppercase;
+        font-family: var(--font-sans);
+    }
     
-    /* Excerpt comes after title */
     .author-post-excerpt {
         font-size: 1.25rem;
         margin: 0 0 1.5rem 0;
