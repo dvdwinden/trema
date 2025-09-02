@@ -1516,16 +1516,25 @@ nav.pagination {
     }
     
     .article-header {
-        padding: 2rem 0;
+        padding: 1.5rem 0 3rem;
     }
     
     .article-title {
-        font-size: 3.2rem;
+        font-size: 2.5rem;
+        line-height: 1.1;
+        margin-bottom: 1rem;
+    }
+    
+    .article-author {
+        font-size: 1.25rem;
+        margin-bottom: 2rem;
     }
     
     .article-excerpt {
-        font-size: 2rem;
+        font-size: 1.25rem;
+        line-height: 1.5;
         font-family: var(--font-sans);
+        margin-bottom: 2rem;
     }
     
     /* Footer responsive styles */
