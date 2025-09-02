@@ -975,14 +975,13 @@ blockquote p {
     flex-direction: row;
     align-items: center;
     gap: 4rem;
-    margin-top: 4rem;
-    margin-bottom: 2rem;
+    margin: 2rem 0 2.5rem 0;
+    padding-bottom: 1.5rem;
     font-family: var(--font-sans);
     width: 100%;
     border-bottom: 1px solid transparent;
     border-image: linear-gradient(to left, rgba(255,255,255,0.25), rgba(255,255,255,0.15));
     border-image-slice: 1;
-    padding-bottom: 3rem;
 }
 
 .read-more-item:last-child {
