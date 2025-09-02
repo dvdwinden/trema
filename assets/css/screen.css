@@ -553,9 +553,13 @@ blockquote p {
 }
 
 .section-see-all:hover {
-    color: var(--color-primary);
-    text-decoration: none;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 1px;
+    text-decoration-color: var(--color-text-lightest);
+    color: var(--color-text);
 }
+
 
 /* Posts Grid
 /* ---------------------------------------------------------- */
@@ -1680,7 +1684,7 @@ nav.pagination a:hover {
     .section-see-all {
         font-size: 1rem;
     }
-    
+
     .newsletter-signup {
         padding: 2rem 0;
         margin: 6rem 0;
