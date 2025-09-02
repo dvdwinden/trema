@@ -7,7 +7,7 @@
     <header class="article-header">
         <h1 class="article-title">{{title}}</h1>
         {{#if primary_tag}}
-            <h2 class="article-author">by {{primary_tag.name}}</h2>
+            <h2 class="article-author">by <a href="{{@site.url}}/tag/{{primary_tag.slug}}" title="View all books by {{primary_tag.name}}">{{primary_tag.name}}</a></h2>
         {{/if}}
 
         <div class="article-header-flex">

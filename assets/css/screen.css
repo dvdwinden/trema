@@ -781,6 +781,15 @@ blockquote p {
     padding: 0;
 }
 
+.article-author a:hover {
+    text-decoration: underline;
+    text-underline-offset: 6px;
+    text-decoration-thickness: 3px;
+    text-decoration-color: var(--color-text-light);
+    color: var(--color-text);
+    opacity: 1;
+}
+
 .article-excerpt {
     font-size: 2rem;
     line-height: 1.4;
