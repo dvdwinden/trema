@@ -1808,7 +1808,7 @@ nav.pagination {
     }
     
     .byline-meta-date {
-        font-size: 0.9rem;
+        font-size: 1rem;
         margin-top: 0;
     }
 }
@@ -1818,7 +1818,7 @@ nav.pagination {
     .site-footer .footer-content {
         padding: 0 1rem;
         gap: 1rem;
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
     
     .site-footer-nav {
@@ -1826,11 +1826,11 @@ nav.pagination {
     }
     
     .site-footer-nav a {
-        font-size: 0.9rem;
+            font-size: 1rem;
     }
     
     .gh-powered-by {
-        font-size: 0.85rem;
+        font-size: 1rem;
         opacity: 0.8;
     }
 }
@@ -2124,7 +2124,7 @@ nav.pagination {
     }
     
     .tag-post-count {
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
     
     .tag-post-link {
@@ -2162,12 +2162,12 @@ nav.pagination {
     .tag-post-author {
         order: 2;
         margin: 0 0 1rem 0;
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
     
     /* Excerpt comes after primary tag */
     .tag-post-excerpt {
-        font-size: 1.1rem;
+        font-size: 1.25rem;
         margin: 0 0 1.5rem 0;
         order: 3;
     }
@@ -2176,15 +2176,15 @@ nav.pagination {
     .tag-post-tags {
         order: 4;
         margin-top: 0;
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
     
     .tag-post-tags .tag-link {
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
     
     .tag-post-tags .tag-separator {
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
 }
 
@@ -2449,7 +2449,7 @@ nav.pagination {
     
     /* Excerpt comes after title */
     .author-post-excerpt {
-        font-size: 1.1rem;
+        font-size: 1.25rem;
         margin: 0 0 1.5rem 0;
         order: 2;
     }
@@ -2458,15 +2458,15 @@ nav.pagination {
     .author-post-tags {
         order: 3;
         margin-top: 0;
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
     
     .author-post-tags .tag-link {
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
     
     .author-post-tags .tag-separator {
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
 }
 
