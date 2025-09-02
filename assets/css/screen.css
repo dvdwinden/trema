@@ -1453,13 +1453,23 @@ nav.pagination {
     }
     
     .site-footer-nav {
-        gap: 2rem;
-        flex-wrap: wrap;
-        justify-content: center;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
     }
     
     .site-footer-nav li {
         margin-left: 0;
+        padding: 0.5rem 0;
+    }
+    
+    .site-footer-nav a {
+        padding: 0.5rem 1rem;
+        display: block;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     
     .copyright {
