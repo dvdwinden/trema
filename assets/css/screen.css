@@ -1323,6 +1323,16 @@ nav.pagination {
     .posts-grid {
         grid-template-columns: repeat(3, 1fr);
     }
+    
+    /* Footer medium screen adjustments */
+    .site-footer .footer-content {
+        gap: 1.25rem;
+        padding: 0 2rem;
+    }
+    
+    .site-footer-nav {
+        gap: 3rem;
+    }
 }
 
 /* Small screens - mobile phones */
@@ -1482,6 +1492,28 @@ nav.pagination {
     
     .kg-gallery-row {
         flex-direction: column;
+    }
+}
+
+/* Extra small screens - very small mobile phones */
+@media (max-width: 480px) {
+    .site-footer .footer-content {
+        padding: 0 1rem;
+        gap: 1rem;
+        font-size: 0.9rem;
+    }
+    
+    .site-footer-nav {
+        gap: 1.5rem;
+    }
+    
+    .site-footer-nav a {
+        font-size: 0.9rem;
+    }
+    
+    .gh-powered-by {
+        font-size: 0.85rem;
+        opacity: 0.8;
     }
 }
 
