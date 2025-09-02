@@ -1388,12 +1388,16 @@ nav.pagination {
         justify-content: center;
         align-items: center;
         opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
         z-index: 9999;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
     }
     
     .gh-head-menu.is-open {
-        transform: translateX(0);
         opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
     }
     
     .gh-head-menu .nav {
@@ -2393,7 +2397,7 @@ nav.pagination {
     }
     
     .author-meta {
-        flex-direction: column;
+        flex-direction: row;
         gap: 1rem;
         margin-top: 1.5rem;
     }
