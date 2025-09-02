@@ -1744,9 +1744,6 @@ nav.pagination {
     color: var(--color-primary);
 }
 
-.tag-post-link:hover .tag-post-image {
-    opacity: .95;
-}
 
 .tag-post-date {
     flex-shrink: 0;
@@ -1835,14 +1832,28 @@ nav.pagination {
     position: relative;
     flex-shrink: 0;
     width: 280px;
-    height: auto;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 3px;
 }
 
 .tag-post-image img {
     width: 100%;
-    height: 200px;
+    height: 100%;
     object-fit: cover;
     border-radius: 3px;
+    transition: none;
+}
+
+.post-image-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
 .tag-post-link:hover .post-image-hover {
@@ -1874,45 +1885,38 @@ nav.pagination {
         font-size: 0.9rem;
     }
     
-    /* Post items mobile layout */
     .tag-post-link {
         flex-direction: column;
         gap: 0;
     }
-    
-    /* Hide date on mobile */
+
     .tag-post-date {
         display: none;
     }
-    
-    /* Image comes first and spans full width */
+
     .tag-post-image {
         order: -1;
         width: 100%;
+        height: auto;
         max-width: none;
         margin-bottom: 1.5rem;
+        aspect-ratio: 16/9;
     }
     
     .tag-post-image img {
         width: 100%;
-        height: 200px;
+        height: 100%;
         object-fit: cover;
         border-radius: 3px;
+        transition: none;
     }
     
-    /* Content area adjustments */
-    .tag-post-content {
-        gap: 0.75rem;
-    }
-    
-    /* Title comes after image */
     .tag-post-title {
-        font-size: 1.5rem;
-        margin: 0 0 0.5rem 0;
+        font-size: 2rem;
         order: 1;
+        margin: 0;
     }
     
-    /* Primary tag (author) comes after title */
     .tag-post-author {
         order: 2;
         margin: 0 0 1rem 0;
@@ -2036,9 +2040,6 @@ nav.pagination {
     color: var(--color-primary);
 }
 
-.author-post-link:hover .author-post-image {
-    opacity: .95;
-}
 
 .author-post-date {
     flex-shrink: 0;
@@ -2115,14 +2116,17 @@ nav.pagination {
     position: relative;
     flex-shrink: 0;
     width: 280px;
-    height: auto;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 3px;
 }
 
 .author-post-image img {
     width: 100%;
-    height: 200px;
+    height: 100%;
     object-fit: cover;
     border-radius: 3px;
+    transition: none;
 }
 
 .author-post-link:hover .post-image-hover {
@@ -2175,15 +2179,18 @@ nav.pagination {
     .author-post-image {
         order: -1;
         width: 100%;
+        height: auto;
         max-width: none;
         margin-bottom: 1.5rem;
+        aspect-ratio: 16/9;
     }
     
     .author-post-image img {
         width: 100%;
-        height: 200px;
+        height: 100%;
         object-fit: cover;
         border-radius: 3px;
+        transition: none;
     }
     
     /* Content area adjustments */
@@ -2193,8 +2200,8 @@ nav.pagination {
     
     /* Title comes after image */
     .author-post-title {
-        font-size: 1.5rem;
-        margin: 0 0 0.5rem 0;
+        font-size: 2rem;
+        margin: 0;
         order: 1;
     }
     
