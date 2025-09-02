@@ -52,9 +52,19 @@
             </div>
             <div class="gh-head-menu">
                 {{navigation}}
+                <div class="mobile-menu-actions">
+                    {{#if @site.members_enabled}}
+                        {{#unless @member}}
+                            <a class="gh-head-link" href="#/portal/signin" title="Sign in">Sign in</a>
+                            <a class="gh-head-link" href="#/portal/signup" title="Subscribe">Subscribe</a>
+                        {{else}}
+                            <a class="gh-head-link" href="#/portal/account" title="Account">Account</a>
+                        {{/unless}}
+                    {{/if}}
+                </div>
             </div>
             <div class="gh-head-actions">
-                <button class="menu-toggle" aria-label="Toggle Menu">
+                <button class="menu-toggle" aria-label="Toggle Menu" data-menu-text="Menu" data-close-text="Close">
                     Menu
                 </button>
                 <div class="gh-head-actions-list">

@@ -1329,6 +1329,13 @@ nav.pagination {
 
 /* Responsive Design
 /* ---------------------------------------------------------- */
+/* Hide mobile menu actions on desktop */
+@media (min-width: 801px) {
+    .mobile-menu-actions {
+        display: none !important;
+    }
+}
+
 /* Medium screens - tablets and large phones */
 @media (max-width: 1024px) and (min-width: 801px) {
     .newsletter-content h3 {
@@ -1405,6 +1412,37 @@ nav.pagination {
     .gh-head-menu .nav a:hover,
     .gh-head-menu .nav li.nav-current a,
     .gh-head-menu .nav li.nav-current-parent a {
+        text-decoration: underline;
+        text-underline-offset: 0.2em;
+        text-decoration-thickness: 1px;
+        text-decoration-color: var(--color-text-lighter);
+        color: var(--color-text-lighter);
+    }
+    
+    .mobile-menu-actions {
+        display: none;
+    }
+    
+    .gh-head-menu .mobile-menu-actions {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        margin-top: 2rem;
+        padding-top: 2rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .gh-head-menu .mobile-menu-actions a {
+        font-size: 1.5rem;
+        color: white;
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: 500;
+        letter-spacing: 0.2px;
+    }
+    
+    .gh-head-menu .mobile-menu-actions a:hover {
         text-decoration: underline;
         text-underline-offset: 0.2em;
         text-decoration-thickness: 1px;
