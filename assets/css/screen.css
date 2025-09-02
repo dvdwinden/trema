@@ -598,6 +598,8 @@ blockquote p {
     height: 200px;
     object-fit: cover;
     border-radius: 3px;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
 }
 
 .post-image-hover {
@@ -860,6 +862,8 @@ blockquote p {
 .article-image img {
     height: auto;
     width: 100%;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
 }
 
 .article-image figcaption {
