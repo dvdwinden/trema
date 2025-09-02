@@ -17,7 +17,11 @@
                 {{#tag}}
                     {{name}} · {{@site.title}}
                 {{else}}
-                    {{meta_title}}
+                    {{#author}}
+                        {{name}} · {{@site.title}}
+                    {{else}}
+                        {{meta_title}}
+                    {{/author}}
                 {{/tag}}
             {{/page}}
         {{/post}}
