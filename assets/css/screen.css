@@ -1305,6 +1305,27 @@ nav.pagination {
 
 /* Responsive Design
 /* ---------------------------------------------------------- */
+/* Medium screens - tablets and large phones */
+@media (max-width: 1024px) and (min-width: 801px) {
+    .newsletter-content h3 {
+        font-size: 2.8rem;
+    }
+    
+    .newsletter-content h4 {
+        font-size: 1.6rem;
+        margin-bottom: 3rem;
+    }
+    
+    .form-group {
+        gap: 2.5rem;
+    }
+    
+    .posts-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Small screens - mobile phones */
 @media (max-width: 800px) {
     .gh-head nav {
         padding: 0 3vw;
@@ -1384,7 +1405,13 @@ nav.pagination {
     
     .form-group input[type="email"] {
         min-width: auto;
-        margin-bottom: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .form-group button {
+        padding: 8px 16px;
+        font-size: 1rem;
+        min-width: 120px;
     }
     
     .article-header {
