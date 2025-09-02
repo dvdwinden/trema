@@ -1656,11 +1656,33 @@ nav.pagination {
 @media (max-width: 800px) {
     .article-header-flex {
         flex-direction: column;
-        gap: 1.5rem;
+        gap: 2rem;
+        margin-top: 2rem;
     }
-    .article-header-flex .article-image,
+    
+    .article-header-flex .article-image {
+        max-width: 100%;
+        order: -1;
+    }
+    
+    .article-header-flex .article-image img {
+        border-radius: 6px;
+    }
+    
     .article-header-flex .article-excerpt {
         max-width: 100%;
+        font-size: 1.25rem;
+        line-height: 1.5;
+    }
+    
+    .article-header-content {
+        gap: 1.5rem;
+    }
+    
+    .article-tags {
+        gap: 0.75rem;
+        font-size: 1rem;
+        margin-top: 1rem;
     }
 }
 
