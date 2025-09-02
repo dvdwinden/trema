@@ -1,31 +1,32 @@
 {{!< default}}
 
 <main id="site-main" class="site-main">
+{{#author}}
 <section class="author-header">
     <div class="container">
-        {{#if author.profile_image}}
-            <img class="author-profile-image" src="{{img_url author.profile_image size="l"}}" alt="{{author.name}}" />
+        {{#if profile_image}}
+            <img class="author-profile-image" src="{{img_url profile_image size="l"}}" alt="{{name}}" />
         {{/if}}
         <div class="author-header-content">
-            <h1 class="author-title">{{author.name}}</h1>
-            {{#if author.bio}}
-                <p class="author-bio">{{author.bio}}</p>
+            <h1 class="author-title">{{name}}</h1>
+            {{#if bio}}
+                <p class="author-bio">{{bio}}</p>
             {{/if}}
             <div class="author-meta">
-                {{#if author.location}}
-                    <div class="author-location">{{author.location}}</div>
+                {{#if location}}
+                    <div class="author-location">{{location}}</div>
                 {{/if}}
-                {{#if author.website}}
+                {{#if website}}
                     <div class="author-website">
-                        <a href="{{author.website}}" target="_blank" rel="noopener">Website</a>
+                        <a href="{{website}}" target="_blank" rel="noopener">Website</a>
                     </div>
                 {{/if}}
-                {{#if author.twitter}}
+                {{#if twitter}}
                     <div class="author-twitter">
                         <a href="{{social_url type="twitter"}}" target="_blank" rel="noopener">Twitter</a>
                     </div>
                 {{/if}}
-                {{#if author.facebook}}
+                {{#if facebook}}
                     <div class="author-facebook">
                         <a href="{{social_url type="facebook"}}" target="_blank" rel="noopener">Facebook</a>
                     </div>
@@ -66,14 +67,10 @@
                     </div>
                 {{/if}}
             </div>
-            <div class="author-stats">
-                <div class="author-stats-item">
-                    <span class="author-stats-count">{{plural ../pagination.total empty='0 Posts' singular='% Post' plural='% Posts'}}</span>
-                </div>
-            </div>
         </div>
     </div>
 </section>
+{{/author}}
 
 <section class="author-feed">
     <div class="container">
@@ -131,4 +128,5 @@
         
     </div>
 </section>
+
 </main>
