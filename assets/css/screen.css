@@ -1853,25 +1853,57 @@ nav.pagination {
 @media (max-width: 800px) {
     .tag-post-link {
         flex-direction: column;
-        gap: 1.5rem;
+        gap: 0;
     }
     
     .tag-post-date {
-        width: auto;
-        order: -1;
+        display: none;
     }
     
     .tag-post-image {
+        order: -1;
         width: 100%;
-        max-width: 280px;
+        max-width: none;
+        margin-bottom: 1rem;
+    }
+    
+    .tag-post-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 3px;
     }
     
     .tag-post-title {
         font-size: 1.5rem;
+        margin: 0;
+        order: 1;
+    }
+    
+    .tag-post-author {
+        order: 2;
+        margin: 0 0 1rem 0;
+        font-size: 0.9rem;
     }
     
     .tag-post-excerpt {
         font-size: 1.1rem;
+        margin: 0 0 1.5rem 0;
+        order: 3;
+    }
+    
+    .tag-post-tags {
+        order: 4;
+        margin-top: 0;
+        font-size: 0.9rem;
+    }
+    
+    .tag-post-tags .tag-link {
+        font-size: 0.9rem;
+    }
+    
+    .tag-post-tags .tag-separator {
+        font-size: 0.9rem;
     }
 }
 
