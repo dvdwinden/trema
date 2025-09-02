@@ -1851,47 +1851,82 @@ nav.pagination {
 
 /* Responsive adjustments for tag page */
 @media (max-width: 800px) {
+    /* Header responsive styles */
+    .tag-header {
+        margin-bottom: 6rem;
+    }
+    
+    .tag-title {
+        font-size: 2.5rem;
+    }
+    
+    .tag-description {
+        font-size: 1.3rem;
+        margin-top: 1.5rem;
+    }
+    
+    .tag-feature-image {
+        max-width: 80px;
+        margin-bottom: 1.5rem;
+    }
+    
+    .tag-post-count {
+        font-size: 0.9rem;
+    }
+    
+    /* Post items mobile layout */
     .tag-post-link {
         flex-direction: column;
         gap: 0;
     }
     
+    /* Hide date on mobile */
     .tag-post-date {
         display: none;
     }
     
+    /* Image comes first and spans full width */
     .tag-post-image {
         order: -1;
         width: 100%;
         max-width: none;
-        margin-bottom: 1rem;
+        margin-bottom: 1.5rem;
     }
     
     .tag-post-image img {
         width: 100%;
-        height: 100%;
+        height: 200px;
         object-fit: cover;
         border-radius: 3px;
     }
     
+    /* Content area adjustments */
+    .tag-post-content {
+        gap: 0.75rem;
+    }
+    
+    /* Title comes after image */
     .tag-post-title {
         font-size: 1.5rem;
-        margin: 0;
+        margin: 0 0 0.5rem 0;
         order: 1;
     }
     
+    /* Primary tag (author) comes after title */
     .tag-post-author {
         order: 2;
         margin: 0 0 1rem 0;
         font-size: 0.9rem;
     }
     
+    /* Excerpt comes after primary tag */
     .tag-post-excerpt {
         font-size: 1.1rem;
         margin: 0 0 1.5rem 0;
         order: 3;
     }
     
+    /* Other tags come last */
     .tag-post-tags {
         order: 4;
         margin-top: 0;
@@ -2096,32 +2131,93 @@ nav.pagination {
 
 /* Responsive adjustments for author page */
 @media (max-width: 800px) {
-    .author-post-link {
-        flex-direction: column;
-        gap: 1.5rem;
+    /* Header responsive styles */
+    .author-header {
+        margin-bottom: 6rem;
     }
     
-    .author-post-date {
-        width: auto;
-        order: -1;
+    .author-title {
+        font-size: 2.5rem;
     }
     
-    .author-post-image {
-        width: 100%;
-        max-width: 280px;
+    .author-bio {
+        font-size: 1.3rem;
+        margin-top: 1.5rem;
     }
     
-    .author-post-title {
-        font-size: 1.5rem;
+    .author-profile-image {
+        max-width: 80px;
+        margin-bottom: 1.5rem;
     }
     
-    .author-post-excerpt {
-        font-size: 1.1rem;
-    }
-    
-.author-meta {
+    .author-meta {
         flex-direction: column;
         gap: 1rem;
+        margin-top: 1.5rem;
+    }
+    
+    .author-stats {
+        margin-top: 1.5rem;
+    }
+    
+    /* Post items mobile layout - same as tag page */
+    .author-post-link {
+        flex-direction: column;
+        gap: 0;
+    }
+    
+    /* Hide date on mobile */
+    .author-post-date {
+        display: none;
+    }
+    
+    /* Image comes first and spans full width */
+    .author-post-image {
+        order: -1;
+        width: 100%;
+        max-width: none;
+        margin-bottom: 1.5rem;
+    }
+    
+    .author-post-image img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 3px;
+    }
+    
+    /* Content area adjustments */
+    .author-post-content {
+        gap: 0.75rem;
+    }
+    
+    /* Title comes after image */
+    .author-post-title {
+        font-size: 1.5rem;
+        margin: 0 0 0.5rem 0;
+        order: 1;
+    }
+    
+    /* Excerpt comes after title */
+    .author-post-excerpt {
+        font-size: 1.1rem;
+        margin: 0 0 1.5rem 0;
+        order: 2;
+    }
+    
+    /* Tags come last */
+    .author-post-tags {
+        order: 3;
+        margin-top: 0;
+        font-size: 0.9rem;
+    }
+    
+    .author-post-tags .tag-link {
+        font-size: 0.9rem;
+    }
+    
+    .author-post-tags .tag-separator {
+        font-size: 0.9rem;
     }
 }
 
