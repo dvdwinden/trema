@@ -413,6 +413,42 @@ blockquote p {
     text-decoration: none;
 }
 
+/* Mobile Menu Toggle Button */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 24px;
+    height: 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 10;
+}
+
+.hamburger {
+    width: 24px;
+    height: 2px;
+    background: var(--color-base);
+    border-radius: 1px;
+    transition: all 0.3s ease;
+    transform-origin: 1px;
+}
+
+.menu-toggle.is-open .hamburger:nth-child(1) {
+    transform: rotate(45deg);
+}
+
+.menu-toggle.is-open .hamburger:nth-child(2) {
+    opacity: 0;
+    transform: translateX(20px);
+}
+
+.menu-toggle.is-open .hamburger:nth-child(3) {
+    transform: rotate(-45deg);
+}
+
 /* Main Content
 /* ---------------------------------------------------------- */
 .site-main {
@@ -1342,12 +1378,65 @@ nav.pagination {
         padding-top: 32px;
     }
     
+    /* Show mobile menu toggle and reorganize header */
+    .menu-toggle {
+        display: flex;
+    }
+    
     .gh-head-menu {
-        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.95);
+        backdrop-filter: blur(10px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transform: translateX(-100%);
+        opacity: 0;
+        transition: all 0.3s ease;
+        z-index: 9999;
+    }
+    
+    .gh-head-menu.is-open {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    
+    .gh-head-menu .nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+    
+    .gh-head-menu .nav a {
+        font-size: 1.5rem;
+        color: white;
+        text-align: center;
+        padding: 1rem;
+        border-bottom: 2px solid transparent;
+        transition: all 0.3s ease;
+    }
+    
+    .gh-head-menu .nav a:hover,
+    .gh-head-menu .nav li.nav-current a,
+    .gh-head-menu .nav li.nav-current-parent a {
+        color: var(--color-highlight);
+        border-bottom-color: var(--color-highlight);
+        text-decoration: none;
     }
     
     .gh-head-actions {
-        margin-left: auto;
+        position: relative;
+        z-index: 10000;
+    }
+    
+    .gh-head-actions-list {
+        display: none;
     }
     
     .container {
