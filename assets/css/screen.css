@@ -930,6 +930,23 @@ blockquote p {
     font-size: 1.8rem;
 }
 
+.gh-content a {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 1px;
+    text-decoration-color: var(--color-text-lightest);
+}
+
+.gh-content a:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 1px;
+    text-decoration-color: var(--color-text);
+    color: var(--color-text);
+    opacity: 1;
+}
+
+
     .article-footer {
         max-width: 720px;
         margin: 4rem auto 0;
