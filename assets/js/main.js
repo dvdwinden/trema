@@ -12,8 +12,17 @@
         
         if (menuToggle && menu) {
             menuToggle.addEventListener('click', function() {
-                menu.classList.toggle('is-open');
+                const isOpen = menu.classList.toggle('is-open');
                 menuToggle.classList.toggle('is-open');
+                
+                // Change button text based on menu state
+                if (isOpen) {
+                    menuToggle.textContent = menuToggle.dataset.closeText;
+                    menuToggle.setAttribute('aria-label', 'Close Menu');
+                } else {
+                    menuToggle.textContent = menuToggle.dataset.menuText;
+                    menuToggle.setAttribute('aria-label', 'Toggle Menu');
+                }
             });
         }
     }
