@@ -878,7 +878,7 @@ blockquote p {
 }
 
 .article-image img {
-    transition: opacity 0.3s ease;
+    transition: opacity 0.2s ease;
 }
 
 .gh-content > * + * {
@@ -1395,7 +1395,7 @@ nav.pagination {
         visibility: hidden;
         pointer-events: none;
         z-index: 9999;
-        transition: opacity 0.3s ease, visibility 0.3s ease;
+        transition: opacity 0.2s ease, visibility 0.2s ease;
     }
     
     .gh-head-menu.is-open {
@@ -1565,7 +1565,7 @@ nav.pagination {
         height: 100%;
         object-fit: cover;
         opacity: 0;
-        transition: opacity 0.3s ease;
+        transition: opacity 0.2s ease;
     }
     
     .post-item a:hover .post-image-hover {
@@ -1661,10 +1661,11 @@ nav.pagination {
     .article-header {
         padding: 1.5rem 4vw 3rem;
         text-align: center;
+        max-width: 100%;
     }
     
     .article-title {
-        font-size: 3.2rem;
+        font-size: 3rem;
         line-height: 1!important;
         margin-bottom: 0.5rem!important;
     }
@@ -1683,9 +1684,10 @@ nav.pagination {
     
     /* Mobile styles for article header elements */
     .article-header h1 {
-        font-size: 3.2rem;
+        font-size: 3rem;
         line-height: 1.1;
         margin-bottom: 1rem;
+        max-width: 100%;
     }
     
     .article-header h2 {
@@ -2094,7 +2096,6 @@ nav.pagination {
     gap: 3rem;
     text-decoration: none;
     color: inherit;
-    transition: opacity 0.2s ease;
 }
 
 .tag-post-link:hover {
@@ -2219,7 +2220,7 @@ nav.pagination {
     height: 100%;
     object-fit: cover;
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.2s ease;
 }
 
 .tag-post-link:hover .post-image-hover {
@@ -2354,7 +2355,6 @@ nav.pagination {
 .author-meta a {
     color: var(--color-text-light);
     text-decoration: none;
-    transition: color 0.2s ease;
 }
 
 .author-meta a:hover {
@@ -2394,7 +2394,6 @@ nav.pagination {
     gap: 3rem;
     text-decoration: none;
     color: inherit;
-    transition: opacity 0.2s ease;
 }
 
 .author-post-link:hover {
