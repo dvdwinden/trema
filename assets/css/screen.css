@@ -800,6 +800,14 @@ blockquote p {
     color: var(--color-base);
 }
 
+.author-name a:hover {
+    color: var(--color-base);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 1px;
+    text-decoration-color: var(--color-text-lightest);
+}
+
 .byline-meta-content {
     display: flex;
     align-items: center;
