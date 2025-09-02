@@ -15,7 +15,7 @@
         {{{content}}}
         
         <div class="authors-list">
-            {{#get "posts" limit="all" include="tags"}}
+            {{#get "posts" limit="100" include="tags"}}
                 {{#if posts}}        
                     <div class="authors-container">
                         {{#foreach posts}}
