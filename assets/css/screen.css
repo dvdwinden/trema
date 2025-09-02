@@ -1670,7 +1670,7 @@ nav.pagination {
     .gh-content blockquote {
         margin: 2rem 0;
         padding: 0 1rem;
-        font-size: 1.125rem;
+        font-size: 1.3rem;
     }
     
     .gh-content ul,
@@ -1717,36 +1717,45 @@ nav.pagination {
     }
     
     .read-more-item {
-        flex-direction: column;
+        flex-direction: row;
         align-items: flex-start;
         gap: 1.5rem;
         margin-top: 2.5rem;
         margin-bottom: 1.5rem;
-        padding-bottom: 2rem;
+        padding-bottom: 1rem;
     }
     
     .read-more-item img {
-        max-width: 120px;
+        max-width: 100px;
+        flex-shrink: 0;
         rotate: 0deg;
         margin-top: 0;
-        align-self: flex-start;
         border-radius: 6px;
     }
     
+    .read-more-item-content {
+        flex: 1;
+        min-width: 0;
+    }
+    
     h2.read-more-title {
-        font-size: 0.9rem;
+        font-size: 1rem;
         margin-bottom: 2rem;
     }
     
     .read-more h2.post-card-title {
-        font-size: 1.5rem;
-        line-height: 1.2;
-        margin-bottom: 0.5rem;
+        font-size: 1.75rem;
+        line-height: 1;
+        margin-bottom: 0.25rem;
+    }
+
+    .read-more h2.post-card-title a { 
+        font-size: 1.75rem;
     }
     
     .read-more h3.article-author {
-        font-size: 1rem;
-        margin-bottom: 0.75rem;
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
     }
     
     .read-more-item-excerpt {
