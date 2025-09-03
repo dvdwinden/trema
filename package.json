@@ -2,7 +2,7 @@
   "name": "trema",
   "description": "A custom Ghost theme",
   "demo": "https://www.trema.website",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "engines": {
     "ghost": ">>=5.0.0"
   },
