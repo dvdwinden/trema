@@ -1334,6 +1334,7 @@ nav.pagination a:hover {
     border-radius: 3px;
     overflow: hidden;
     color: inherit;
+    min-height: 120px;
 }
 
 .kg-bookmark-container:hover {
@@ -1343,6 +1344,8 @@ nav.pagination a:hover {
 .kg-bookmark-content {
     flex: 1;
     padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
 }
 
 .kg-bookmark-title {
@@ -1350,13 +1353,15 @@ nav.pagination a:hover {
     font-weight: 600;
     color: var(--color-text);
     margin-bottom: 0.5rem;
+    line-height: 1.3;
 }
 
 .kg-bookmark-description {
     color: var(--color-text-light);
     font-size: 1.4rem;
-    line-height: 1.5;
+    line-height: 1.4;
     margin-bottom: 1rem;
+    flex: 1;
 }
 
 .kg-bookmark-metadata {
@@ -1364,12 +1369,22 @@ nav.pagination a:hover {
     align-items: center;
     font-size: 1.3rem;
     color: var(--color-text-light);
+    margin-top: 16px!important;
+    gap: 8px;
+}
+
+.kg-bookmark-metadata figure {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
 .kg-bookmark-icon {
     width: 16px;
     height: 16px;
     margin-right: 0.5rem;
+    flex-shrink: 0;
 }
 
 .kg-bookmark-author {
@@ -1383,25 +1398,19 @@ nav.pagination a:hover {
 .kg-bookmark-thumbnail {
     flex-shrink: 0;
     width: 180px;
-    height: 120px;
+    align-self: stretch;
     overflow: hidden;
-    display: flex;
-    align-items: stretch;
-    justify-content: center;
     background: #f5f5f5;
-    position: relative;
+    display: flex;
+    align-items: center;
 }
 
 .kg-bookmark-card .kg-bookmark-thumbnail img {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;
-    display: block !important;
-    position: absolute !important;
-    top: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    bottom: 0 !important;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    min-height: 120px;
 }
 
 /* Code blocks */
