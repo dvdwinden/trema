@@ -2006,6 +2006,10 @@ nav.pagination a:hover {
         line-height: 1.4;
         margin-top: 0.75rem;
     }
+
+    .read-more-item-link {
+        gap: 2rem;
+    }
     
     /* Mobile byline and author info improvements */
     .byline-meta-content {
