@@ -4,6 +4,7 @@
 <main id="site-main" class="site-main">
 <article class="article {{post_class}}">
 
+    {{#if @page.show_title_and_feature_image}}
     <header class="article-header">
         <h1 class="article-title">{{title}}</h1>
         {{#if excerpt}}
@@ -18,6 +19,7 @@
                 <figcaption>{{feature_image_caption}}</figcaption>
             {{/if}}
         </figure>
+    {{/if}}
     {{/if}}
 
     <section class="gh-content gh-canvas">

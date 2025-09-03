@@ -1646,14 +1646,13 @@ nav.pagination a:hover {
     @media (max-width: 600px) {
         .post-item a {
             flex-direction: column;
-            gap: 1.5rem;
+            gap: 0;
         }
         
         .post-image {
             width: 100%;
             height: auto;
             aspect-ratio: 16/9;
-            margin-bottom: 1rem;
         }
     }
     
