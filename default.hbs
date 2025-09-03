@@ -42,6 +42,19 @@
     {{! Styles'n'Scripts }}
     <link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" />
     
+    {{! Custom meta tags to prioritize Twitter image over Facebook image }}
+    {{#post}}
+        {{#if twitter_image}}
+            <meta property="og:image" content="{{twitter_image}}" />
+            <meta property="og:image:width" content="1200" />
+            <meta property="og:image:height" content="630" />
+            <meta name="twitter:image" content="{{twitter_image}}" />
+        {{else if feature_image}}
+            <meta property="og:image" content="{{img_url feature_image size="l"}}" />
+            <meta name="twitter:image" content="{{img_url feature_image size="l"}}" />
+        {{/if}}
+    {{/post}}
+    
     {{! Ghost outputs structured data with JSON-LD }}
     {{ghost_head}}
     

@@ -803,6 +803,11 @@ blockquote p {
     text-wrap: balance;
 }
 
+.page-template .article-excerpt {
+    max-width: 720px;
+    margin: .5em auto;
+}
+
 .article-byline {
     display: flex;
     justify-content: center;
@@ -1322,7 +1327,7 @@ nav.pagination a:hover {
 
 /* Bookmark cards */
 .kg-bookmark-card {
-    margin: 2rem 0;
+    margin: 1rem 0;
     width: 100%;
     border-radius: 3px;
 }
@@ -2075,6 +2080,12 @@ nav.pagination a:hover {
     font-size: 2rem;
     line-height: 1.4;
     font-family: var(--font-sans);
+}
+
+/* Center excerpt when no feature image is present */
+.article-header-flex:not(:has(.article-image)) .article-excerpt {
+    max-width: 720px;
+    margin: 0 auto;
 }
 
 .article-header-content {
