@@ -1378,6 +1378,7 @@ nav.pagination a:hover {
     display: flex;
     align-items: center;
     gap: 8px;
+    width: 20px;
 }
 
 .kg-bookmark-icon {
@@ -1385,10 +1386,6 @@ nav.pagination a:hover {
     height: 16px;
     margin-right: 0.5rem;
     flex-shrink: 0;
-}
-
-.kg-bookmark-author {
-    margin-right: 1rem;
 }
 
 .kg-bookmark-publisher {
