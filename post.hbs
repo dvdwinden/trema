@@ -68,14 +68,16 @@
                 <div class="random-posts-container">
                     {{#foreach all_posts}}
                         <article class="read-more-item random-post-item" data-post-index="{{@index}}">
-                            <img src="{{img_url feature_image size="l"}}" alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}" />
-                            <div class="read-more-item-content">
-                                <h2 class="post-card-title"><a href="{{url}}">{{title}}</a></h2>
-                                {{#if primary_tag}}
-                                    <h3 class="article-author">by {{primary_tag.name}}</h3>
-                                {{/if}}
-                                <p class="read-more-item-excerpt">{{excerpt}}</p>
-                            </div>
+                            <a href="{{url}}" class="read-more-item-link">
+                                <img src="{{img_url feature_image size="l"}}" alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}" />
+                                <div class="read-more-item-content">
+                                    <h2 class="post-card-title">{{title}}</h2>
+                                    {{#if primary_tag}}
+                                        <h3 class="article-author">by {{primary_tag.name}}</h3>
+                                    {{/if}}
+                                    <p class="read-more-item-excerpt">{{excerpt}}</p>
+                                </div>
+                            </a>
                         </article>
                     {{/foreach}}
                 </div>

@@ -1038,6 +1038,33 @@ blockquote p {
     border-image-slice: 1;
 }
 
+.read-more-item-link {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4rem;
+    width: 100%;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.read-more-item-link:hover {
+    text-decoration: none;
+    opacity: 1;
+}
+
+.read-more-item-link:hover img {
+    opacity: .9;
+}
+
+.read-more-item:hover .post-card-title {
+    text-decoration: underline;
+    text-decoration-color: var(--color-text-lightest);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+    opacity: 1;
+}
+
 .read-more-item:last-child {
     border-bottom: none;
     padding-bottom: 0;
@@ -1070,14 +1097,6 @@ h2.read-more-title {
     margin-bottom: 0.3rem;
 }
 
-.read-more h2.post-card-title a:hover {
-    text-decoration: underline;
-    text-decoration-color: rgba(255,255,255,0.5);
-    text-decoration-thickness: 1px;
-    text-underline-offset: 4px;
-    text-decoration-color: var(--color-text-lightest);
-    opacity: .9;
-}
 
 .read-more h3.article-author {
     font-size: 1.25rem;
