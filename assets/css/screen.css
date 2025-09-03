@@ -2469,6 +2469,11 @@ nav.pagination a:hover {
 
 .author-meta a:hover {
     color: var(--color-primary);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 1px;
+    text-decoration-color: var(--color-text-lightest);
+    opacity: 1;
 }
 
 .author-bluesky {
