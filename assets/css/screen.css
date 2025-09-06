@@ -455,25 +455,25 @@ blockquote p {
     padding: 4rem 0;
 }
 
-/* Latest Post Featured Section
+/* Featured Post Section
 /* ---------------------------------------------------------- */
-.latest-post-featured {
+.featured-post {
     text-align: center;
     margin: 0 0 12rem 0;
 }
 
-.latest-post-image {
+.featured-post-image {
     margin-bottom: -3rem;
 }
 
-.latest-post-image img {
+.featured-post-image img {
     width: 100%;
     max-width: 28rem;
     height: auto;
     border-radius: 8px;
 }
 
-.latest-post-tag a {
+.featured-post-tag a {
     color: var(--color-primary);
     font-size: 1.125rem;
     font-family: var(--font-sans);
@@ -483,11 +483,11 @@ blockquote p {
     text-decoration: none;
 }
 
-.latest-post-tag a:hover {
+.featured-post-tag a:hover {
     text-decoration: underline;
 }
 
-.latest-post-title {
+.featured-post-title {
     margin: 1rem auto 0.5rem;
     font-size: 5rem;
     line-height: 1;
@@ -495,16 +495,16 @@ blockquote p {
     max-width: 600px;
 }
 
-.latest-post-title a {
+.featured-post-title a {
     color: var(--color-base);
     text-decoration: none;
 }
 
-.latest-post-title a:hover {
+.featured-post-title a:hover {
     color: var(--color-primary);
 }
 
-.latest-post-excerpt {
+.featured-post-excerpt {
     font-size: 1.5rem;
     line-height: 1.5;
     color: var(--color-text);
@@ -513,12 +513,12 @@ blockquote p {
     text-wrap: pretty;
 }
 
-.latest-post-author {
+.featured-post-author {
     color: var(--color-text-lighter);
     margin: 0;
 }
 
-.latest-post-content .article-tags {
+.featured-post-content .article-tags {
     margin: 1rem auto;
     justify-content: center;
 }
@@ -1588,11 +1588,11 @@ nav.pagination a:hover {
     }
     
     /* Index page responsive styles */
-    .latest-post-title {
+    .featured-post-title {
         font-size: 3rem;
     }
     
-    .latest-post-excerpt {
+    .featured-post-excerpt {
         font-size: 1.3rem;
     }
     

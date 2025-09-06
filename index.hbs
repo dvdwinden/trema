@@ -3,27 +3,27 @@
 <main class="site-main">
     <div class="container">
         
-        {{! Latest post }}
-        {{#get "posts" limit="1" include="tags"}}
+        {{! Featured post }}
+        {{#get "posts" filter="featured:true" limit="1" include="tags"}}
             {{#foreach posts}}
-                <section class="latest-post-featured">
+                <section class="featured-post">
                     {{#if feature_image}}
-                        <div class="latest-post-image">
+                        <div class="featured-post-image">
                             <img src="{{img_url feature_image size="l"}}" alt="{{title}}" />
                         </div>
                     {{/if}}
                     
-                    <div class="latest-post-content">
-                        <h1 class="latest-post-title">
+                    <div class="featured-post-content">
+                        <h1 class="featured-post-title">
                             {{title}}
                         </h1>
                         {{#if primary_tag}}
-                            <h2 class="latest-post-author">by {{primary_tag.name}}</h4>
+                            <h2 class="featured-post-author">by {{primary_tag.name}}</h4>
                         {{/if}}
                         {{#if custom_excerpt}}
-                            <p class="latest-post-excerpt">{{custom_excerpt}}</p>
+                            <p class="featured-post-excerpt">{{custom_excerpt}}</p>
                         {{else if excerpt}}
-                            <p class="latest-post-excerpt">{{excerpt}}</p>
+                            <p class="featured-post-excerpt">{{excerpt}}</p>
                         {{/if}}
                         <a href="{{url}}" title="Read my recommendation for {{title}}" class="button">Continue reading &nbsp;&rarr;</a>
                     </div>
@@ -38,7 +38,7 @@
                 <a href="/tag/fiction/" class="section-see-all" title="View all fiction books">See All</a>
             </div>
             
-            {{#get "posts" filter="tag:fiction" limit="4" include="tags"}}
+            {{#get "posts" filter="tag:fiction+featured:false" limit="4" include="tags"}}
                 <div class="posts-grid">
                     {{#foreach posts}}
                         <article class="post-item">
@@ -109,7 +109,7 @@
                 <a href="/tag/non-fiction/" class="section-see-all" title="View all non-fiction books">See All</a>
             </div>
             
-            {{#get "posts" filter="tag:non-fiction" limit="4" include="tags"}}
+            {{#get "posts" filter="tag:non-fiction+featured:false" limit="4" include="tags"}}
                 <div class="posts-grid">
                     {{#foreach posts}}
                         <article class="post-item">
