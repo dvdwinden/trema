@@ -40,3 +40,6 @@ temp/
 # Package lock files (choose one)
 package-lock.json
 # yarn.lock
+
+# Distribution files
+*.zip
