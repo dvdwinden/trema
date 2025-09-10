@@ -611,6 +611,19 @@ blockquote p {
     image-rendering: crisp-edges;
 }
 
+/* Scale images for larger screens */
+@media (min-width: 1400px) {
+    .post-image img {
+        height: 240px;
+    }
+}
+
+@media (min-width: 1600px) {
+    .post-image img {
+        height: 280px;
+    }
+}
+
 .post-image-hover {
     position: absolute;
     top: 0;
