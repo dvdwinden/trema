@@ -7,24 +7,28 @@
         {{#get "posts" filter="featured:true" limit="1" include="tags"}}
             {{#foreach posts}}
                 <section class="featured-post">
-                    {{#if feature_image}}
-                        <div class="featured-post-image">
-                            <img src="{{img_url feature_image size="l"}}" alt="{{title}}" />
+                    <a href="{{url}}" class="featured-post-link" title="Read my recommendation for {{title}}">
+                        {{#if feature_image}}
+                            <div class="featured-post-image">
+                                <img src="{{img_url feature_image size="l"}}" alt="{{title}}" />
+                            </div>
+                        {{/if}}
+
+                        <div class="featured-post-content">
+                            <h1 class="featured-post-title">
+                                {{title}}
+                            </h1>
+                            {{#if primary_tag}}
+                                <h2 class="featured-post-author">by {{primary_tag.name}}</h2>
+                            {{/if}}
+                            {{#if custom_excerpt}}
+                                <p class="featured-post-excerpt">{{custom_excerpt}}</p>
+                            {{else if excerpt}}
+                                <p class="featured-post-excerpt">{{excerpt}}</p>
+                            {{/if}}
                         </div>
-                    {{/if}}
-                    
-                    <div class="featured-post-content">
-                        <h1 class="featured-post-title">
-                            {{title}}
-                        </h1>
-                        {{#if primary_tag}}
-                            <h2 class="featured-post-author">by {{primary_tag.name}}</h4>
-                        {{/if}}
-                        {{#if custom_excerpt}}
-                            <p class="featured-post-excerpt">{{custom_excerpt}}</p>
-                        {{else if excerpt}}
-                            <p class="featured-post-excerpt">{{excerpt}}</p>
-                        {{/if}}
+                    </a>
+                    <div class="featured-post-actions">
                         <a href="{{url}}" title="Read my recommendation for {{title}}" class="button">Continue reading &nbsp;&rarr;</a>
                     </div>
                 </section>

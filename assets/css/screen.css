@@ -469,6 +469,12 @@ blockquote p {
     margin: 0 0 12rem 0;
 }
 
+.featured-post-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
 .featured-post-image {
     margin-bottom: -3rem;
 }
@@ -478,6 +484,7 @@ blockquote p {
     max-width: 28rem;
     height: auto;
     border-radius: 8px;
+    transition: opacity 0.2s ease-in-out, filter 0.2s ease-in-out;
 }
 
 .featured-post-tag a {
@@ -509,6 +516,33 @@ blockquote p {
 
 .featured-post-title a:hover {
     color: var(--color-primary);
+}
+
+.featured-post-link:hover {
+    text-decoration: none;
+    opacity: 1;
+}
+
+.featured-post-link:hover .featured-post-title {
+    text-decoration: underline;
+    text-underline-offset: 6px;
+    text-decoration-thickness: 1px;
+    text-decoration-color: var(--color-text-lightest);
+    color: var(--color-text);
+    opacity: 1;
+}
+
+.featured-post-link:hover .featured-post-excerpt {
+    text-decoration: none;
+}
+
+.featured-post-link:hover .featured-post-image img {
+    opacity: 0.95;
+    filter: grayscale(95%);
+}
+
+.featured-post-actions {
+    margin-top: 1rem;
 }
 
 .featured-post-excerpt {
