@@ -123,7 +123,7 @@ body {
     text-rendering: optimizeLegibility;
     /* background: linear-gradient(to bottom, #EEFFEE 0%, var(--color-bg) 25vh); */
     background: var(--color-bg);
-    min-height: 50vh;
+    min-height: 100vh;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     -moz-font-feature-settings: "liga" on;
@@ -280,10 +280,17 @@ blockquote p {
 
 /* Layout
 /* ---------------------------------------------------------- */
+.viewport {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
 .container {
     max-width: 1920px;
     margin: 0 auto;
     padding: 0 4vw;
+    width: 100%;
 }
 
 .inner {
@@ -1152,6 +1159,7 @@ h2.read-more-title {
     padding: 2rem 0 2rem;
     background: black;
     border-radius: 16px;
+    margin-top: auto;
 }
 
 .post-template .site-footer {
