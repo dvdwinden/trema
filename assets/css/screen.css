@@ -536,7 +536,7 @@ blockquote p {
     text-decoration: none;
 }
 
-.featured-post-link:hover .featured-post-image img {
+.featured-post-image:hover img {
     opacity: 0.95;
     filter: grayscale(95%);
 }
