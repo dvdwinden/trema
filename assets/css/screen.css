@@ -950,7 +950,8 @@ blockquote p {
 .article-image figcaption {
     margin-top: 1rem;
     color: var(--color-text-light);
-    font-size: 1.3rem;
+    font-size: 1rem;
+    font-family: var(--font-sans);
     text-align: center;
 }
 
@@ -1317,7 +1318,8 @@ nav.pagination a:hover {
 .kg-image-card figcaption {
     margin-top: 1rem;
     color: var(--color-text-light);
-    font-size: 1.3rem;
+    font-size: 1rem;
+    font-family: var(--font-sans);
     text-align: center;
     line-height: 1.4;
 }
