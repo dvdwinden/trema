@@ -1651,6 +1651,10 @@ nav.pagination a:hover {
     }
     
     /* Index page responsive styles */
+    .featured-post-image img {
+        max-width: 16rem;
+    }
+    
     .featured-post-title {
         font-size: 3rem;
     }
