@@ -477,11 +477,12 @@ blockquote p {
 
 .featured-post-image {
     margin-bottom: -3rem;
+    display: inline-block;
 }
 
 .featured-post-image img {
     width: 100%;
-    max-width: 28rem;
+    max-width: 22rem;
     height: auto;
     border-radius: 8px;
     transition: opacity 0.2s ease-in-out, filter 0.2s ease-in-out;
@@ -536,7 +537,7 @@ blockquote p {
     text-decoration: none;
 }
 
-.featured-post-image:hover img {
+.featured-post-image img:hover {
     opacity: 0.95;
     filter: grayscale(95%);
 }
