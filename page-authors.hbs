@@ -33,10 +33,28 @@
                             const authorItems = document.querySelectorAll('.author-item');
                             const authorsMap = new Map();
                             
+                            // Helper function to get last name for sorting
+                            function getLastName(fullName) {
+                                // Take the first author if there are multiple (split by 'and')
+                                const firstAuthor = fullName.split(/\s+and\s+/i)[0].trim();
+                                const nameParts = firstAuthor.trim().split(/\s+/);
+                                
+                                // Remove common suffixes (Jr., Sr., III, etc.)
+                                const suffixes = ['jr.', 'jr', 'sr.', 'sr', 'ii', 'iii', 'iv', 'v'];
+                                let lastNameIndex = nameParts.length - 1;
+                                
+                                if (lastNameIndex > 0 && suffixes.includes(nameParts[lastNameIndex].toLowerCase().replace(/\.$/, ''))) {
+                                    lastNameIndex--;
+                                }
+                                
+                                return nameParts[lastNameIndex] || fullName;
+                            }
+                            
                             // Collect unique authors
                             authorItems.forEach(item => {
                                 const authorName = item.dataset.author;
-                                const firstLetter = authorName.charAt(0).toUpperCase();
+                                const lastName = getLastName(authorName);
+                                const firstLetter = lastName.charAt(0).toUpperCase();
                                 
                                 if (!authorsMap.has(firstLetter)) {
                                     authorsMap.set(firstLetter, new Set());
@@ -49,7 +67,12 @@
                             const sortedLetters = Array.from(authorsMap.keys()).sort();
                             
                             sortedLetters.forEach(letter => {
-                                const authors = Array.from(authorsMap.get(letter)).sort();
+                                // Sort authors by last name
+                                const authors = Array.from(authorsMap.get(letter)).sort((a, b) => {
+                                    const aLastName = getLastName(a);
+                                    const bLastName = getLastName(b);
+                                    return aLastName.localeCompare(bLastName);
+                                });
                                 html += `<div class="author-group">`;
                                 html += `<h2 class="author-letter">${letter}</h2>`;
                                 html += `<div class="author-names">`;
