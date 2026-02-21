@@ -87,8 +87,8 @@
         const style = document.createElement('style');
         style.textContent = `
             .table-of-contents {
-                background: #f8f9fa;
-                border: 1px solid #e9ecef;
+                background: var(--color-surface);
+                border: 1px solid var(--color-surface-border);
                 border-radius: 5px;
                 padding: 20px;
                 margin: 30px 0;
