@@ -12,8 +12,17 @@
         
         if (menuToggle && menu) {
             menuToggle.addEventListener('click', function() {
-                menu.classList.toggle('is-open');
+                const isOpen = menu.classList.toggle('is-open');
                 menuToggle.classList.toggle('is-open');
+                
+                // Change button text based on menu state
+                if (isOpen) {
+                    menuToggle.textContent = menuToggle.dataset.closeText;
+                    menuToggle.setAttribute('aria-label', 'Close Menu');
+                } else {
+                    menuToggle.textContent = menuToggle.dataset.menuText;
+                    menuToggle.setAttribute('aria-label', 'Toggle Menu');
+                }
             });
         }
     }
@@ -42,57 +51,6 @@
                 }
             });
         });
-    }
-
-    // Add reading progress indicator
-    function initReadingProgress() {
-        const article = document.querySelector('.gh-content');
-        
-        if (!article) return;
-        
-        const progressBar = document.createElement('div');
-        progressBar.className = 'reading-progress';
-        progressBar.innerHTML = '<div class="reading-progress-fill"></div>';
-        
-        const progressFill = progressBar.querySelector('.reading-progress-fill');
-        
-        // Add CSS for progress bar
-        const style = document.createElement('style');
-        style.textContent = `
-            .reading-progress {
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 3px;
-                background: rgba(0,0,0,0.1);
-                z-index: 1000;
-            }
-            .reading-progress-fill {
-                height: 100%;
-                background: var(--color-primary, #3eb0ef);
-                width: 0%;
-                transition: width 0.1s ease;
-            }
-        `;
-        document.head.appendChild(style);
-        document.body.appendChild(progressBar);
-        
-        function updateProgress() {
-            const articleTop = article.offsetTop;
-            const articleHeight = article.offsetHeight;
-            const windowHeight = window.innerHeight;
-            const scrollTop = window.pageYOffset;
-            
-            const start = articleTop - windowHeight;
-            const end = articleTop + articleHeight;
-            const progress = Math.max(0, Math.min(1, (scrollTop - start) / (end - start)));
-            
-            progressFill.style.width = (progress * 100) + '%';
-        }
-        
-        window.addEventListener('scroll', updateProgress);
-        updateProgress();
     }
 
     // Table of Contents generator
@@ -129,8 +87,8 @@
         const style = document.createElement('style');
         style.textContent = `
             .table-of-contents {
-                background: #f8f9fa;
-                border: 1px solid #e9ecef;
+                background: var(--color-surface);
+                border: 1px solid var(--color-surface-border);
                 border-radius: 5px;
                 padding: 20px;
                 margin: 30px 0;
@@ -186,8 +144,8 @@
                 img.parentNode.insertBefore(figure, img);
                 figure.appendChild(img);
                 
-                // Add caption if alt text exists
-                if (img.alt) {
+                // Add caption if alt text exists, but exclude author images
+                if (img.alt && !img.classList.contains('author-image')) {
                     const caption = document.createElement('figcaption');
                     caption.textContent = img.alt;
                     figure.appendChild(caption);
@@ -196,14 +154,55 @@
         });
     }
 
+    // Prevent portal and special links from getting current styling
+    function initExternalLinkFix() {
+        const fixLinks = () => {
+            const navLinks = document.querySelectorAll('.nav a');
+            const footerLinks = document.querySelectorAll('.site-footer-nav a');
+            const allNavLinks = [...navLinks, ...footerLinks];
+            
+            allNavLinks.forEach(link => {
+                const href = link.getAttribute('href');
+                
+                // Remove current styling from Ghost portal links and external links
+                const isPortalLink = href && href.includes('#/portal');
+                const isExternalLink = href && href.includes('://') && !href.includes(window.location.hostname);
+                
+                if (isPortalLink || isExternalLink) {
+                    const parent = link.parentElement;
+                    parent.classList.remove('nav-current');
+                    
+                    // Prevent it from being re-added
+                    const observer = new MutationObserver((mutations) => {
+                        mutations.forEach((mutation) => {
+                            if (mutation.type === 'attributes' && 
+                                mutation.attributeName === 'class' &&
+                                parent.classList.contains('nav-current')) {
+                                parent.classList.remove('nav-current');
+                            }
+                        });
+                    });
+                    
+                    observer.observe(parent, { attributes: true });
+                }
+            });
+        };
+        
+        // Run immediately
+        fixLinks();
+        
+        // Also run after a short delay to catch any post-load changes
+        setTimeout(fixLinks, 500);
+    }
+
     // Initialize all functionality when DOM is ready
     function init() {
         initMobileMenu();
         initSmoothScrolling();
+        initExternalLinkFix();
         
-        // Only run these on article pages
-        if (document.querySelector('.gh-content')) {
-            initReadingProgress();
+        // Only run these on article pages, but not on authors page
+        if (document.querySelector('.gh-content') && !document.querySelector('.authors-list')) {
             initTableOfContents();
             initImageEnhancements();
         }
