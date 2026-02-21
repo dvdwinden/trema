@@ -671,7 +671,7 @@ blockquote p {
 .post-title {
     margin: .5rem 0 .25rem 0;
     font-size: 1.8rem;
-    line-height: 1.2;
+    line-height: 1;
     font-weight: 500;
     text-wrap: balance;
 }
@@ -705,10 +705,11 @@ blockquote p {
 }
 
 .newsletter-content h3 {
-    font-size: 3.5rem;
-    font-weight: 500;
+    font-size: 4rem;
+    font-weight: 460;
     color: var(--color-base);
     text-wrap: balance;
+    margin-bottom: 3rem;
 }
 
 .newsletter-content h4 {
@@ -1496,10 +1497,6 @@ nav.pagination a:hover {
 @media (max-width: 1024px) and (min-width: 801px) {
     .newsletter-content h3 {
         font-size: 2.8rem;
-    }
-    
-    .newsletter-content h4 {
-        font-size: 1.6rem;
         margin-bottom: 3rem;
     }
     
@@ -1727,7 +1724,7 @@ nav.pagination a:hover {
     .post-title {
         margin: 0 0 .25rem 0;
         font-size: 1.8rem;
-        line-height: 1.2;
+        line-height: 1;
         font-weight: 500;
         text-wrap: balance;
         color: var(--color-base);
@@ -1777,12 +1774,7 @@ nav.pagination a:hover {
     .newsletter-content h3 {
         font-size: 2.5rem;
         max-width: 100%;
-    }
-    
-    .newsletter-content h4 {
-        font-size: 1.4rem;
         margin-bottom: 2.5rem;
-        line-height: 1.3;
         text-wrap: balance;
     }
     
