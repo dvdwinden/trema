@@ -705,11 +705,12 @@ blockquote p {
 }
 
 .newsletter-content h3 {
-    font-size: 4rem;
+    font-size: clamp(3rem, 2.5rem + 1.5vw, 4rem);
     font-weight: 460;
     color: var(--color-base);
     text-wrap: balance;
-    margin-bottom: 3rem;
+    max-width: 600px;
+    margin: 0 auto clamp(3rem, 2vw + 2rem, 4rem) auto;
 }
 
 .newsletter-content h4 {
@@ -1495,11 +1496,6 @@ nav.pagination a:hover {
 
 /* Medium screens - tablets and large phones */
 @media (max-width: 1024px) and (min-width: 801px) {
-    .newsletter-content h3 {
-        font-size: 2.8rem;
-        margin-bottom: 3rem;
-    }
-    
     .form-group {
         gap: 2.5rem;
     }
@@ -1769,13 +1765,6 @@ nav.pagination a:hover {
         padding: 2rem 0;
         margin: 6rem 0;
         width: 100%;
-    }
-    
-    .newsletter-content h3 {
-        font-size: 2.5rem;
-        max-width: 100%;
-        margin-bottom: 2.5rem;
-        text-wrap: balance;
     }
     
     .form-group {
