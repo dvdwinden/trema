@@ -41,41 +41,22 @@
     font-display: swap;
 }
 
-/* Font declarations for Degular */
+/* Font declarations for Degular (variable) */
 @font-face {
     font-family: 'Degular';
-    src: url('../fonts/Degular-Regular.woff2') format('woff2'),
-        url('../fonts/Degular-Regular.woff') format('woff');
-    font-weight: 400;
+    src: url('../fonts/DegularVariable.woff2') format('woff2');
+    font-weight: 100 900;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
     font-family: 'Degular';
-    src: url('../fonts/Degular-Italic.woff2') format('woff2'),
-        url('../fonts/Degular-Italic.woff') format('woff');
-    font-weight: 400;
+    src: url('../fonts/DegularVariable.woff2') format('woff2');
+    font-weight: 100 900;
     font-style: italic;
     font-display: swap;
-}
-
-@font-face {
-    font-family: 'Degular';
-    src: url('../fonts/Degular-Medium.woff2') format('woff2'),
-        url('../fonts/Degular-Medium.woff') format('woff');
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Degular';
-    src: url('../fonts/Degular-MediumItalic.woff2') format('woff2'),
-        url('../fonts/Degular-MediumItalic.woff') format('woff');
-    font-weight: 500;
-    font-style: italic;
-    font-display: swap;
+    font-variation-settings: 'ital' 1;
 }
 
 /* Variables
