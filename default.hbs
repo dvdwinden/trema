@@ -54,7 +54,8 @@
     
     {{! Ghost outputs structured data with JSON-LD }}
     {{ghost_head}}
-    
+
+
 </head>
 <body class="{{body_class}}">
 <div class="viewport">
@@ -124,6 +125,39 @@
 
 {{! Ghost outputs important scripts and data with this tag }}
 {{ghost_foot}}
+
+{{! Override Ghost card_assets bookmark styles for dark mode }}
+<style>
+@media (prefers-color-scheme: dark) {
+    figure.kg-bookmark-card {
+        background: transparent !important;
+    }
+    a.kg-bookmark-container {
+        background: #121110 !important;
+        border-color: #2e2d2b !important;
+    }
+    a.kg-bookmark-container:hover {
+        background: #1c1b1a !important;
+        border-color: #484745 !important;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3) !important;
+    }
+    .kg-bookmark-content {
+        background: #121110 !important;
+    }
+    .kg-bookmark-thumbnail {
+        background: #1c1b1a !important;
+    }
+    .kg-bookmark-title {
+        color: #c9c7c3 !important;
+    }
+    .kg-bookmark-description {
+        color: #9a9895 !important;
+    }
+    .kg-bookmark-metadata {
+        color: #9a9895 !important;
+    }
+}
+</style>
 
 <script src="{{asset "js/main.js"}}"></script>
 

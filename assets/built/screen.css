@@ -546,7 +546,7 @@ blockquote p {
     color: var(--color-text);
     max-width: 600px;
     margin: 2rem auto;
-    text-wrap: pretty;
+    text-wrap: balance;
 }
 
 .featured-post-author {
@@ -684,7 +684,7 @@ blockquote p {
 .post-title {
     margin: .5rem 0 .25rem 0;
     font-size: 1.8rem;
-    line-height: 1;
+    line-height: 1.1;
     font-weight: 500;
     text-wrap: balance;
 }
@@ -729,6 +729,7 @@ blockquote p {
 .newsletter-content h4 {
     font-size: 1.75rem;
     font-weight: 400;
+    line-height: 1.3;
     margin-bottom: 4rem;
 }
 
@@ -1001,15 +1002,20 @@ blockquote p {
 .gh-content h1 {
     font-size: 4rem;
     letter-spacing: -1px;
+    line-height: 1.1;
 }
 
 .gh-content h2 {
     font-size: 3.2rem;
     letter-spacing: -0.5px;
+    line-height: 1.1;
 }
 
 .gh-content h3 {
     font-size: 2.8rem;
+    font-weight: 440;
+    letter-spacing: -0.3px;
+    text-wrap: balance;
 }
 
 .gh-content h4 {
@@ -1347,7 +1353,8 @@ nav.pagination a:hover {
 .kg-gallery-card figcaption {
     margin-top: 1rem;
     color: var(--color-text-light);
-    font-size: 1.3rem;
+    font-size: 1rem;
+    font-family: var(--font-sans);
     text-align: center;
     line-height: 1.4;
 }
@@ -1387,6 +1394,12 @@ nav.pagination a:hover {
     border-radius: 12px;
 }
 
+/* Hide Ghost auto-generated table of contents */
+.gh-content .kg-toc-card,
+.gh-content .table-of-contents {
+    display: none !important;
+}
+
 /* Bookmark cards */
 .kg-bookmark-card {
     margin: 1rem 0;
@@ -1402,10 +1415,14 @@ nav.pagination a:hover {
     overflow: hidden;
     color: inherit;
     min-height: 120px;
+    background: var(--color-bg);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .kg-bookmark-container:hover {
     text-decoration: none;
+    border-color: var(--color-text-lighter);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
 }
 
 .kg-bookmark-content {
@@ -1815,8 +1832,8 @@ nav.pagination a:hover {
     }
     
     .article-excerpt {
-        font-size: 2rem;
-        line-height: 1.5;
+        font-size: 1.6rem;
+        line-height: 1.4;
         font-family: var(--font-sans);
         margin-bottom: 2rem;
     }
@@ -1916,7 +1933,7 @@ nav.pagination a:hover {
     }
     
     .gh-content p {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
         line-height: 1.6;
         margin-bottom: 1.5rem;
         text-wrap: pretty;
@@ -1955,9 +1972,17 @@ nav.pagination a:hover {
     .gh-content blockquote {
         margin: 2rem 0;
         padding: 0 1rem;
-        font-size: 1.3rem;
+        font-size: 1.2rem;
     }
-    
+
+    .gh-content blockquote p {
+        font-size: inherit;
+    }
+
+    .gh-content .kg-blockquote-alt {
+        line-height: 1.4;
+    }
+
     .gh-content ul,
     .gh-content ol {
         padding-left: 1rem;
@@ -1968,6 +1993,10 @@ nav.pagination a:hover {
         font-size: 1.125rem;
         line-height: 1.65;
         margin: 0.75rem 0;
+    }
+
+    .kg-code-card pre {
+        font-size: 1rem;
     }
     
     /* Responsive card styles */
@@ -2717,6 +2746,7 @@ nav.pagination a:hover {
     
     .author-post-title {
         font-size: 2rem;
+        line-height: 1.1;
         margin: 0 0 0.25rem 0;
         order: 1;
     }
@@ -2875,6 +2905,22 @@ nav.pagination a:hover {
 
     .kg-bookmark-title {
         font-weight: 540;
+    }
+
+    .kg-bookmark-container {
+        background: var(--color-bg) !important;
+    }
+
+    .kg-bookmark-title {
+        color: var(--color-text);
+    }
+
+    .kg-bookmark-description {
+        color: var(--color-text-light);
+    }
+
+    .kg-bookmark-metadata {
+        color: var(--color-text-light);
     }
 
     /* Slight image brightness reduction */

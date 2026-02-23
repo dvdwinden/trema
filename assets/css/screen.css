@@ -1013,6 +1013,9 @@ blockquote p {
 
 .gh-content h3 {
     font-size: 2.8rem;
+    font-weight: 440;
+    letter-spacing: -0.3px;
+    text-wrap: balance;
 }
 
 .gh-content h4 {
@@ -1391,6 +1394,12 @@ nav.pagination a:hover {
     border-radius: 12px;
 }
 
+/* Hide Ghost auto-generated table of contents */
+.gh-content .kg-toc-card,
+.gh-content .table-of-contents {
+    display: none !important;
+}
+
 /* Bookmark cards */
 .kg-bookmark-card {
     margin: 1rem 0;
@@ -1406,10 +1415,14 @@ nav.pagination a:hover {
     overflow: hidden;
     color: inherit;
     min-height: 120px;
+    background: var(--color-bg);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .kg-bookmark-container:hover {
     text-decoration: none;
+    border-color: var(--color-text-lighter);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
 }
 
 .kg-bookmark-content {
@@ -2892,6 +2905,22 @@ nav.pagination a:hover {
 
     .kg-bookmark-title {
         font-weight: 540;
+    }
+
+    .kg-bookmark-container {
+        background: var(--color-bg) !important;
+    }
+
+    .kg-bookmark-title {
+        color: var(--color-text);
+    }
+
+    .kg-bookmark-description {
+        color: var(--color-text-light);
+    }
+
+    .kg-bookmark-metadata {
+        color: var(--color-text-light);
     }
 
     /* Slight image brightness reduction */
