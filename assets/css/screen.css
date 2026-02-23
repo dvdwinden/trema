@@ -546,7 +546,7 @@ blockquote p {
     color: var(--color-text);
     max-width: 600px;
     margin: 2rem auto;
-    text-wrap: pretty;
+    text-wrap: balance;
 }
 
 .featured-post-author {
