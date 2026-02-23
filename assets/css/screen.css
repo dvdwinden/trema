@@ -1916,7 +1916,7 @@ nav.pagination a:hover {
     }
     
     .gh-content p {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
         line-height: 1.6;
         margin-bottom: 1.5rem;
         text-wrap: pretty;
@@ -1958,6 +1958,10 @@ nav.pagination a:hover {
         font-size: 1.3rem;
     }
     
+    .gh-content .kg-blockquote-alt {
+        line-height: 1.4;
+    }
+
     .gh-content ul,
     .gh-content ol {
         padding-left: 1rem;
