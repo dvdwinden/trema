@@ -2721,6 +2721,7 @@ nav.pagination a:hover {
     
     .author-post-title {
         font-size: 2rem;
+        line-height: 1.1;
         margin: 0 0 0.25rem 0;
         order: 1;
     }
