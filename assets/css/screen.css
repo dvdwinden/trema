@@ -41,6 +41,24 @@
     font-display: swap;
 }
 
+@font-face {
+    font-family: 'Blanco';
+    src: url('../fonts/Blanco-Medium.woff2') format('woff2'),
+        url('../fonts/Blanco-Medium.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Blanco';
+    src: url('../fonts/Blanco-MediumItalic.woff2') format('woff2'),
+        url('../fonts/Blanco-MediumItalic.woff') format('woff');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+
 /* Font declarations for Degular (variable) */
 @font-face {
     font-family: 'Degular';
