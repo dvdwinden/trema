@@ -1279,8 +1279,15 @@ nav.pagination a:hover {
 /* Ghost Content Cards
 /* ---------------------------------------------------------- */
 
-/* Card width classes */
-.kg-width-wide {
+/* Card styles */
+.kg-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* Card width classes — must come after .kg-card to override width */
+.kg-card.kg-width-wide {
     position: relative;
     width: 85vw;
     min-width: 100%;
@@ -1288,20 +1295,25 @@ nav.pagination a:hover {
     transform: translateX(calc(50vw - 50%));
 }
 
-.kg-width-full {
-    position: relative;
-    width: 100vw;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
+.kg-card.kg-width-full {
+    width: calc(100vw - 8vw);
+    margin-left: calc(-46vw + 50% + 20px);
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    padding: 0;
 }
 
-/* Card styles */
-.kg-card {
-    display: flex;
-    flex-direction: column;
+.kg-width-full img {
+    display: block;
     width: 100%;
+    height: auto;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+}
+
+.kg-image-card.kg-width-full figcaption {
+    margin-top: 0.5rem;
 }
 
 .kg-card + .kg-card {
