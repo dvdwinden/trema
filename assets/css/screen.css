@@ -135,6 +135,7 @@ html {
 }
 
 body {
+    margin: 0;
     overflow-x: hidden;
     color: var(--color-text);
     font-family: var(--font-serif);
@@ -1222,8 +1223,10 @@ blockquote p {
 /* ---------------------------------------------------------- */
 .read-more-wrap {
     background: var(--color-footer-bg);
-    padding: 2rem 0;
-    border-radius: 16px 16px 0 0;
+    padding: 2rem 4vw;
+    border-radius: 0;
+    margin-left: -4vw;
+    margin-right: -4vw;
 }
 
 .read-more {
@@ -1332,14 +1335,15 @@ h2.read-more-title {
 /* ---------------------------------------------------------- */
 .site-footer {
     color: var(--color-text-ligher);
-    padding: 2rem 0 2rem;
+    padding: 2rem 4vw;
     background: var(--color-footer-bg);
-    border-radius: 16px;
+    border-radius: 0;
     margin-top: auto;
+    box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.06);
 }
 
 .post-template .site-footer {
-    border-radius: 0 0 16px 16px;
+    border-radius: 0;
     padding: 4rem 0 2rem;
 }
 
@@ -1350,7 +1354,9 @@ h2.read-more-title {
     align-items: center;
     flex-wrap: wrap;
     gap: 1rem;
-    padding: 0 32px;
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 0;
     font-family: var(--font-sans);
     font-weight: 500;
     text-transform: uppercase;
