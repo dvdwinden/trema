@@ -397,6 +397,7 @@ blockquote p {
     font-size: 1.125rem;
     font-family: var(--font-sans);
     text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .nav a:hover {
@@ -886,7 +887,7 @@ blockquote p {
     flex: 1;
     min-width: 280px;
     padding: 10px 14px;
-    font-size: 1.15rem;
+    font-size: 1.1rem;
     font-family: var(--font-sans);
     border: 1px solid var(--color-border);
     border-radius: 3px;
@@ -909,8 +910,6 @@ blockquote p {
     font-weight: 500;
     cursor: pointer;
     font-family: var(--font-sans);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
 }
 
 .form-group button:hover {
@@ -1029,12 +1028,12 @@ blockquote p {
     font-weight: 500;
 }
 
-.author-name a {
+.byline-meta-content .author-name a {
     color: var(--color-base);
     text-decoration: none;
 }
 
-.author-name a:hover {
+.byline-meta-content .author-name a:hover {
     color: var(--color-primary);
     text-decoration: underline;
     text-underline-offset: 4px;
