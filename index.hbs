@@ -23,7 +23,7 @@
             {{/@member}}
         </section>
 
-        {{#get "posts" limit="12" include="tags"}}
+        {{#get "posts" limit="9" include="tags"}}
             <div class="posts-grid posts-grid-3col">
                 {{#foreach posts}}
                     <article class="post-item">
@@ -52,6 +52,15 @@
                 {{/foreach}}
             </div>
         {{/get}}
+
+        <section class="browse-collections">
+            <p class="browse-text">
+                This publication holds
+                {{#get "posts" limit="1"}}{{meta.pagination.total}}{{/get}} books.
+                {{#get "posts" filter="tag:fiction" limit="1"}}{{meta.pagination.total}} are <a href="/tag/fiction/">fiction</a>{{/get}},
+                {{#get "posts" filter="tag:non-fiction" limit="1"}}{{meta.pagination.total}} are <a href="/tag/non-fiction/">non-fiction</a>{{/get}}.
+            </p>
+        </section>
 
     </div>
 </main>

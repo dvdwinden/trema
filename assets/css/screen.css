@@ -812,6 +812,38 @@ blockquote p {
     letter-spacing: 0.5px;
 }
 
+/* Browse Collections
+/* ---------------------------------------------------------- */
+.browse-collections {
+    text-align: center;
+    margin: 0;
+    padding: 8rem 0;
+    border-top: 1px solid var(--color-border);
+}
+
+.browse-text {
+    font-family: var(--font-serif);
+    font-size: 1.35rem;
+    line-height: 1.5;
+    color: var(--color-text-light);
+    white-space: nowrap;
+    margin: 0 auto;
+}
+
+.browse-text a {
+    color: var(--color-text);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+    text-decoration-color: var(--color-text-lightest);
+    transition: text-decoration-color 0.2s ease;
+}
+
+.browse-text a:hover {
+    text-decoration-color: var(--color-text);
+    opacity: 1;
+}
+
 /* Newsletter Signup
 /* ---------------------------------------------------------- */
 .newsletter-signup {
