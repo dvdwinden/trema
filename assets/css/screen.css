@@ -467,7 +467,7 @@ blockquote p {
     cursor: pointer;
     z-index: 10;
     font-family: var(--font-sans);
-    font-size: 1.125rem;
+    font-size: 1rem;
     color: var(--color-text-light);
     text-decoration: none;
     text-transform: uppercase;
@@ -481,7 +481,8 @@ blockquote p {
 }
 
 .menu-toggle.is-open {
-    background: var(--color-bg-secondary);
+    color: white;
+    background: transparent;
 }
 
 /* Main Content
@@ -906,7 +907,7 @@ blockquote p {
 }
 
 .form-group button {
-    padding: 6px 12px;
+    padding: 10px 14px;
     background: var(--color-primary);
     color: var(--color-bg);
     border: none;
@@ -1722,17 +1723,35 @@ nav.pagination a:hover {
         padding-top: 32px;
     }
     
+    body.menu-open {
+        overflow: hidden;
+    }
+
+    nav.gh-head.is-open {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 9999;
+        padding: 32px 4vw;
+    }
+
+    nav.gh-head.is-open .gh-head-brand .gh-head-logo {
+        color: white;
+    }
+
     .menu-toggle {
         display: flex;
     }
-    
+
     .gh-head-menu {
         position: fixed;
         top: 0;
         left: 0;
         right: 0;
         bottom: 0;
-        background: rgba(0, 0, 0, 0.9);
+        background: #000;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -1740,68 +1759,72 @@ nav.pagination a:hover {
         opacity: 0;
         visibility: hidden;
         pointer-events: none;
-        z-index: 9999;
-        transition: opacity 0.2s ease, visibility 0.2s ease;
+        z-index: -1;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
     }
-    
+
     .gh-head-menu.is-open {
         opacity: 1;
         visibility: visible;
         pointer-events: auto;
+        z-index: 1;
     }
-    
+
     .gh-head-menu .nav {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 1rem;
+        gap: 1.5rem;
     }
-    
+
     .gh-head-menu .nav a {
-        font-size: 1.5rem;
-        color: white;
+        font-size: 1.25rem;
+        color: rgba(255, 255, 255, 0.7);
         text-align: center;
+        transition: color 0.2s ease;
     }
-    
-    .gh-head-menu .nav a:hover,
+
+    .gh-head-menu .nav a:hover {
+        color: white;
+        text-decoration: none;
+    }
+
     .gh-head-menu .nav li.nav-current a,
     .gh-head-menu .nav li.nav-current-parent a {
+        color: white;
         text-decoration: underline;
-        text-underline-offset: 0.2em;
+        text-underline-offset: 6px;
         text-decoration-thickness: 1px;
-        text-decoration-color: var(--color-text-lighter);
-        color: var(--color-bg);
+        text-decoration-color: rgba(255, 255, 255, 0.4);
     }
-    
+
     .mobile-menu-actions {
         display: none;
     }
-    
+
     .gh-head-menu .mobile-menu-actions {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 1rem;
-        margin-top: 2rem;
-        padding-top: 2rem;
-        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        gap: 1.5rem;
+        margin-top: 3rem;
+        padding-top: 3rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
     }
-    
+
     .gh-head-menu .mobile-menu-actions a {
-        font-size: 1.5rem;
-        color: white;
+        font-size: 1.25rem;
+        color: rgba(255, 255, 255, 0.5);
         text-align: center;
         text-transform: uppercase;
         font-weight: 500;
         letter-spacing: 0.5px;
+        transition: color 0.2s ease;
     }
-    
+
     .gh-head-menu .mobile-menu-actions a:hover {
-        text-decoration: underline;
-        text-underline-offset: 0.2em;
-        text-decoration-thickness: 1px;
-        text-decoration-color: var(--color-text-lighter);
-        color: var(--color-text-lighter);
+        color: white;
+        text-decoration: none;
     }
     
     .gh-head-actions {

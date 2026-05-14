@@ -9,13 +9,15 @@
     function initMobileMenu() {
         const menuToggle = document.querySelector('.menu-toggle');
         const menu = document.querySelector('.gh-head-menu');
-        
+        const nav = document.querySelector('nav.gh-head');
+
         if (menuToggle && menu) {
             menuToggle.addEventListener('click', function() {
                 const isOpen = menu.classList.toggle('is-open');
                 menuToggle.classList.toggle('is-open');
-                
-                // Change button text based on menu state
+                document.body.classList.toggle('menu-open', isOpen);
+                if (nav) nav.classList.toggle('is-open', isOpen);
+
                 if (isOpen) {
                     menuToggle.textContent = menuToggle.dataset.closeText;
                     menuToggle.setAttribute('aria-label', 'Close Menu');
