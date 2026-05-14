@@ -853,6 +853,7 @@ blockquote p {
     opacity: 0.3;
     font-weight: 400;
     font-size: var(--text-display);
+    margin-top: -0.15em;
     text-wrap: balance; 
 }
 
