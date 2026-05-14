@@ -487,6 +487,10 @@ blockquote p {
 /* Main Content
 /* ---------------------------------------------------------- */
 .site-main {
+    padding: 4rem 0;
+}
+
+.home-template .site-main {
     padding: 0;
 }
 
