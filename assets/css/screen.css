@@ -680,7 +680,7 @@ blockquote p {
 .post-item-nonfiction {
     border-radius: 8px;
     overflow: hidden;
-    border: 1px solid transparent;
+    border: 1px solid var(--color-border);
     transition: transform 0.2s ease, border-color 0.2s ease;
 }
 
@@ -695,7 +695,7 @@ blockquote p {
 .post-item-fiction:hover,
 .post-item-nonfiction:hover {
     transform: translateY(-3px);
-    border-color: var(--color-border);
+    border-color: var(--color-text-lightest);
 }
 
 .post-item-fiction .post-content,
@@ -718,10 +718,6 @@ blockquote p {
 
 .post-item a:hover .post-title {
     color: var(--color-primary);
-    text-decoration: underline;
-    text-underline-offset: 4px;
-    text-decoration-thickness: 1px;
-    text-decoration-color: var(--color-text-lightest);
     opacity: 1;
 }
 
