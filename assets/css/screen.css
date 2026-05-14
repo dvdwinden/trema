@@ -1031,11 +1031,11 @@ blockquote p {
 
 .author-name a {
     color: var(--color-base);
-    text-decoration: none!important;
+    text-decoration: none;
 }
 
 .author-name a:hover {
-    color: var(--color-base);
+    color: var(--color-primary);
     text-decoration: underline;
     text-underline-offset: 4px;
     text-decoration-thickness: 1px;
@@ -1345,12 +1345,12 @@ h2.read-more-title {
     background: var(--color-footer-bg);
     border-radius: 0;
     margin-top: auto;
-    box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.06);
+    box-shadow: inset 0 4px 16px rgba(0, 0, 0, 0.06);
 }
 
 .post-template .site-footer {
     border-radius: 0;
-    padding: 4rem 0 2rem;
+    padding: 4rem 4vw 2rem;
 }
 
 
@@ -3045,14 +3045,14 @@ nav.pagination a:hover {
         --color-base: #e8e6e3;             /* Warm off-white headings */
         --color-border: #2e2d2b;
         --color-highlight: #4a4520;
-        --color-bg: #1c1b1a;              /* Warm dark gray */
+        --color-bg: #141312;              /* Near black, warm */
         --color-text: #c9c7c3;
         --color-text-light: #9a9895;
         --color-text-lighter: #6e6d6a;
         --color-text-lightest: #484745;
-        --color-bg-secondary: #242322;
+        --color-bg-secondary: #1c1b1a;
         --color-btn-hover-bg: #3b3a38;
-        --color-surface: #242322;
+        --color-surface: #1c1b1a;
         --color-surface-border: #353432;
         --color-bookmark-thumb-bg: #2b2a28;
         --color-blockquote-fade: rgba(201, 199, 195, 0.1);
@@ -3134,11 +3134,11 @@ nav.pagination a:hover {
     }
 
     .post-image-card-fiction {
-        background: #1e1e2a;
+        background: #1a1a24;
     }
 
     .post-image-card-nonfiction {
-        background: #2a1e1e;
+        background: #241a1a;
     }
 
     /* Slight image brightness reduction */
