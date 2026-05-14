@@ -2102,36 +2102,41 @@ nav.pagination a:hover {
     
     /* Footer responsive styles */
     .site-footer {
-        padding: 2rem 0 1.5rem;
+        padding: 2.5rem 0 2rem;
     }
-    
+
     .site-footer .footer-content {
         flex-direction: column;
         align-items: center;
         text-align: center;
-        gap: 1.5rem;
-        padding: 0 1.5rem;
+        gap: 2.5rem;
+        padding: 0 4vw;
     }
-    
+
     .site-footer-nav {
-        flex-direction: column;
-        gap: 0.5rem;
-        align-items: center;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.25rem 0;
         width: 100%;
     }
-    
+
     .site-footer-nav li {
         margin-left: 0;
         padding: 0;
-        width: 100%;
-        display: block;
+        display: inline;
     }
-    
+
+    .site-footer-nav li:not(:last-child)::after {
+        content: "  ·  ";
+        white-space: pre;
+        color: rgba(255, 255, 255, 0.25);
+    }
+
     .site-footer-nav a {
-        padding: 0.25rem 0;
-        display: block;
-        text-align: center;
-        width: 100%;
+        padding: 0;
+        display: inline;
     }
     
     .copyright {
@@ -2577,12 +2582,13 @@ nav.pagination a:hover {
 .tag-post-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
-    justify-items: center;
+    gap: 0.25rem 0.5rem;
+    align-items: center;
     font-family: var(--font-sans);
     font-size: 1.125rem;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    line-height: 1.2;
     margin-top: 2em;
     color: var(--color-text-lighter);
 }
