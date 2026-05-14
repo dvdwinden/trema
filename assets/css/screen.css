@@ -678,7 +678,7 @@ blockquote p {
 }
 
 .post-image-card {
-    border-radius: 8px;
+    border-radius: 2px;
     overflow: hidden;
     border: 1px solid var(--color-border);
     margin-bottom: 1rem;
@@ -786,14 +786,14 @@ blockquote p {
 
 .post-title {
     margin: .5rem 0 .4rem 0;
-    font-size: 1.65rem;
+    font-size: 1.7rem;
     line-height: 1.15;
     font-weight: 500;
     text-wrap: balance;
 }
 
 .post-excerpt {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     line-height: 1.45;
     margin: 0;
     text-wrap: pretty;
