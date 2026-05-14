@@ -169,12 +169,14 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
     font-size: var(--text-display);
+    font-weight: 420;
     letter-spacing: -0.02em;
     line-height: 1.05;
 }
 
 h2 {
     font-size: var(--text-4xl);
+    font-weight: 460;
     letter-spacing: -0.02em;
     line-height: 1.05;
 }
@@ -528,6 +530,7 @@ blockquote p {
 .featured-post-title {
     margin: 1rem auto 0.5rem;
     font-size: var(--text-display);
+    font-weight: 420;
     line-height: 1.05;
     text-wrap: balance;
     max-width: 600px;
@@ -1210,7 +1213,7 @@ h2.read-more-title {
 
 .read-more-item-excerpt {
     font-size: 1.35rem;
-    font-family: var(--font-sans);
+    font-family: var(--font-sans) !important;
     font-weight: 400;
     color: white;
     opacity: 0.9;
@@ -1691,9 +1694,13 @@ nav.pagination a:hover {
     .featured-post-image img {
         max-width: 16rem;
     }
-    
+
+    .featured-post-author {
+        font-size: var(--text-xl);
+    }
+
     .featured-post-excerpt {
-        font-size: var(--text-lg);
+        font-size: var(--text-base);
     }
     
     .posts-grid {
@@ -2026,6 +2033,13 @@ nav.pagination a:hover {
         width: 100vw;
         margin: auto calc(50% - 50vw);
         transform: translateX(calc(50vw - 50%));
+    }
+
+    .kg-card.kg-width-full {
+        width: calc(100% + 8vw);
+        margin-left: -4vw;
+        margin-top: 3rem;
+        margin-bottom: 3rem;
     }
     
     .kg-bookmark-container {
@@ -2885,8 +2899,15 @@ nav.pagination a:hover {
     }
 
     /* Reduce Degular font weights for light-on-dark readability */
-    h1, h2, h3, h4, h5, h6,
-    .featured-post-title,
+    h1, .featured-post-title {
+        font-weight: 400;
+    }
+
+    h2 {
+        font-weight: 440;
+    }
+
+    h3, h4, h5, h6,
     .nav a,
     a.button,
     .form-group button,
