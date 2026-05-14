@@ -27,7 +27,7 @@
             <div class="posts-grid posts-grid-3col">
                 {{#foreach posts}}
                     <article class="post-item">
-                        <a href="{{url}}" class="post-item-link">
+                        <a href="{{url}}" class="post-item-link" title="{{title}}{{#if primary_tag}} by {{primary_tag.name}}{{/if}}">
                             <div class="post-image-card {{#has tag="fiction"}}post-image-card-fiction{{else}}post-image-card-nonfiction{{/has}}">
                                 {{#if feature_image}}
                                     <div class="post-image">
