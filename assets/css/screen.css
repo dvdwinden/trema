@@ -1276,11 +1276,7 @@ blockquote p {
 }
 
 .read-more-item:hover .post-card-title {
-    text-decoration: underline;
-    text-decoration-color: var(--color-text-lightest);
-    text-decoration-thickness: 1px;
-    text-underline-offset: 4px;
-    opacity: 1;
+    text-decoration-color: rgba(255, 255, 255, 0.4);
 }
 
 .read-more-item:last-child {
@@ -1314,6 +1310,11 @@ h2.read-more-title {
     color: white;
     margin-bottom: 0.35rem;
     line-height: 1.1;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+    transition: text-decoration-color 0.3s ease;
 }
 
 .read-more h3.article-author {
@@ -1819,6 +1820,7 @@ nav.pagination a:hover {
 
     .homepage-subscribe {
         max-width: 100%;
+        width: 100%;
     }
 
     .featured-post-image img {
