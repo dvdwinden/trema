@@ -1817,6 +1817,10 @@ nav.pagination a:hover {
         height: 45vh;
     }
 
+    .homepage-subscribe {
+        max-width: 100%;
+    }
+
     .featured-post-image img {
         max-width: 16rem;
     }
@@ -1845,6 +1849,10 @@ nav.pagination a:hover {
         border-bottom: 1px solid var(--color-border);
         padding: 2rem 0;
         align-items: baseline;
+    }
+
+    .posts-grid-3col .post-item:nth-child(9) {
+        display: none;
     }
 
     .posts-grid-3col .post-item {
@@ -1990,18 +1998,18 @@ nav.pagination a:hover {
     .form-group {
         flex-direction: column;
         align-items: stretch;
-        gap: 1rem;
+        gap: 0.75rem;
+        max-width: 100%;
     }
-    
+
     .form-group input[type="email"] {
         min-width: auto;
-        margin-bottom: 0;
+        width: 100%;
     }
-    
+
     .form-group button {
-        padding: 8px 16px;
+        width: 100%;
         font-size: 1rem;
-        min-width: 120px;
     }
     
     .article-header {
@@ -2216,12 +2224,14 @@ nav.pagination a:hover {
     /* Mobile read-more section improvements */
     .read-more-wrap {
         margin-top: 3rem;
-        padding: 1.5rem 0;
+        margin-left: 0;
+        margin-right: 0;
+        padding: 1.5rem 4vw;
     }
-    
+
     .read-more {
         margin: 2rem 0;
-        padding: 0 1rem;
+        padding: 0;
     }
     
     .read-more-item {
