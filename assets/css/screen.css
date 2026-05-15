@@ -349,8 +349,8 @@ blockquote p {
 
 .gh-head-logo {
     display: block;
-    font-weight: 700;
-    font-size: 1.125rem;
+    font-weight: 600;
+    font-size: 1rem;
     color: var(--color-base);
     font-family: var(--font-sans);
     text-transform: uppercase;
@@ -394,7 +394,7 @@ blockquote p {
     display: block;
     color: var(--color-text-light);
     font-weight: 500;
-    font-size: 1.125rem;
+    font-size: 1rem;
     font-family: var(--font-sans);
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -433,7 +433,7 @@ blockquote p {
 }
 
 .gh-head-link {
-    font-size: 1.125rem;
+    font-size: 1rem;
     font-weight: 500;
     color: var(--color-text);
     text-transform: uppercase;
@@ -1369,13 +1369,13 @@ h2.read-more-title {
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    font-size: 1rem;
+    font-size: 0.9rem;
     color: var(--color-text-lighter);
 }
 
 .site-footer .footer-content a {
     color: var(--color-text-lighter);
-    font-size: 1rem;
+    font-size: 0.9rem;
 }
 
 .site-footer .footer-content a:hover {
