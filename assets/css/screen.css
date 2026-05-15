@@ -467,7 +467,7 @@ blockquote p {
     cursor: pointer;
     z-index: 10;
     font-family: var(--font-sans);
-    font-size: 1.125rem;
+    font-size: 1rem;
     color: var(--color-text-light);
     text-decoration: none;
     text-transform: uppercase;
@@ -481,7 +481,8 @@ blockquote p {
 }
 
 .menu-toggle.is-open {
-    background: var(--color-bg-secondary);
+    color: white;
+    background: transparent;
 }
 
 /* Main Content
@@ -490,13 +491,17 @@ blockquote p {
     padding: 4rem 0;
 }
 
+.home-template .site-main {
+    padding: 0;
+}
+
 /* Featured Post Section
 /* ---------------------------------------------------------- */
 /* Homepage Hero
 /* ---------------------------------------------------------- */
 .homepage-hero {
     text-align: center;
-    height: 58vh;
+    height: 64vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -832,6 +837,7 @@ blockquote p {
 
 .browse-text {
     font-family: var(--font-serif);
+    font-style: italic;
     font-size: 1.35rem;
     line-height: 1.5;
     color: var(--color-text-light);
@@ -906,7 +912,7 @@ blockquote p {
 }
 
 .form-group button {
-    padding: 6px 12px;
+    padding: 10px 14px;
     background: var(--color-primary);
     color: var(--color-bg);
     border: none;
@@ -1718,18 +1724,36 @@ nav.pagination a:hover {
     .gh-head nav {
         padding-top: 32px;
     }
-    
+
+    body.menu-open {
+        overflow: hidden;
+    }
+
+    nav.gh-head.is-open {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 9999;
+        padding: 32px 4vw;
+    }
+
+    nav.gh-head.is-open .gh-head-brand .gh-head-logo {
+        color: white;
+    }
+
     .menu-toggle {
         display: flex;
     }
-    
+
     .gh-head-menu {
         position: fixed;
         top: 0;
         left: 0;
         right: 0;
         bottom: 0;
-        background: rgba(0, 0, 0, 0.9);
+        background: #000;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -1737,68 +1761,72 @@ nav.pagination a:hover {
         opacity: 0;
         visibility: hidden;
         pointer-events: none;
-        z-index: 9999;
-        transition: opacity 0.2s ease, visibility 0.2s ease;
+        z-index: -1;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
     }
-    
+
     .gh-head-menu.is-open {
         opacity: 1;
         visibility: visible;
         pointer-events: auto;
+        z-index: 1;
     }
-    
+
     .gh-head-menu .nav {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 1rem;
+        gap: 1.5rem;
     }
-    
+
     .gh-head-menu .nav a {
-        font-size: 1.5rem;
-        color: white;
+        font-size: 1.25rem;
+        color: rgba(255, 255, 255, 0.7);
         text-align: center;
+        transition: color 0.2s ease;
     }
-    
-    .gh-head-menu .nav a:hover,
+
+    .gh-head-menu .nav a:hover {
+        color: white;
+        text-decoration: none;
+    }
+
     .gh-head-menu .nav li.nav-current a,
     .gh-head-menu .nav li.nav-current-parent a {
+        color: white;
         text-decoration: underline;
-        text-underline-offset: 0.2em;
+        text-underline-offset: 6px;
         text-decoration-thickness: 1px;
-        text-decoration-color: var(--color-text-lighter);
-        color: var(--color-bg);
+        text-decoration-color: rgba(255, 255, 255, 0.4);
     }
-    
+
     .mobile-menu-actions {
         display: none;
     }
-    
+
     .gh-head-menu .mobile-menu-actions {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 1rem;
-        margin-top: 2rem;
-        padding-top: 2rem;
-        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        gap: 1.5rem;
+        margin-top: 3rem;
+        padding-top: 3rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
     }
-    
+
     .gh-head-menu .mobile-menu-actions a {
-        font-size: 1.5rem;
-        color: white;
+        font-size: 1.25rem;
+        color: rgba(255, 255, 255, 0.5);
         text-align: center;
         text-transform: uppercase;
         font-weight: 500;
         letter-spacing: 0.5px;
+        transition: color 0.2s ease;
     }
-    
+
     .gh-head-menu .mobile-menu-actions a:hover {
-        text-decoration: underline;
-        text-underline-offset: 0.2em;
-        text-decoration-thickness: 1px;
-        text-decoration-color: var(--color-text-lighter);
-        color: var(--color-text-lighter);
+        color: white;
+        text-decoration: none;
     }
     
     .gh-head-actions {
@@ -2076,36 +2104,44 @@ nav.pagination a:hover {
     
     /* Footer responsive styles */
     .site-footer {
-        padding: 2rem 0 1.5rem;
+        padding: 0 0 2rem;
     }
-    
+
     .site-footer .footer-content {
         flex-direction: column;
         align-items: center;
         text-align: center;
-        gap: 1.5rem;
-        padding: 0 1.5rem;
+        gap: 2rem;
+        padding: 0;
     }
-    
+
     .site-footer-nav {
-        flex-direction: column;
-        gap: 0.5rem;
-        align-items: center;
         width: 100%;
     }
-    
+
+    .site-footer-nav .nav {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0;
+        width: 100%;
+    }
+
     .site-footer-nav li {
         margin-left: 0;
         padding: 0;
-        width: 100%;
-        display: block;
-    }
-    
-    .site-footer-nav a {
-        padding: 0.25rem 0;
         display: block;
         text-align: center;
-        width: 100%;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .site-footer-nav li:nth-child(odd) {
+        border-right: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .site-footer-nav a {
+        padding: 0.75rem 0.5rem;
+        display: block;
+        font-size: 0.85rem;
     }
     
     .copyright {
@@ -2322,12 +2358,8 @@ nav.pagination a:hover {
         font-size: 1rem;
     }
     
-    .site-footer-nav {
-        gap: 1.5rem;
-    }
-    
     .site-footer-nav a {
-            font-size: 1rem;
+        font-size: 0.8rem;
     }
     
     .gh-powered-by {
@@ -2551,12 +2583,13 @@ nav.pagination a:hover {
 .tag-post-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
-    justify-items: center;
+    gap: 0.25rem 0.5rem;
+    align-items: center;
     font-family: var(--font-sans);
     font-size: 1.125rem;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    line-height: 1.2;
     margin-top: 2em;
     color: var(--color-text-lighter);
 }
