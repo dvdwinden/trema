@@ -1121,9 +1121,6 @@ blockquote p {
     display: none !important;
 }
 
-.article-image img {
-    transition: opacity 0.2s ease;
-}
 
 .gh-content > * + * {
     margin-top: 2vw;
