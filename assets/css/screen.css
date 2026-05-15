@@ -717,6 +717,11 @@ blockquote p {
     height: auto;
     max-height: 100%;
     object-fit: contain;
+    transition: transform 0.3s ease-in-out;
+}
+
+.post-item a:hover .post-image-card .post-image img {
+    transform: translateY(-4px);
 }
 
 .post-item a {
