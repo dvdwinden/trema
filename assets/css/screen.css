@@ -722,7 +722,12 @@ blockquote p {
     height: auto;
     max-height: 100%;
     object-fit: contain;
-    transition: transform 0.3s ease-in-out;
+    filter:
+        drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.08))
+        drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.06))
+        drop-shadow(7px 8px 10px rgba(0, 0, 0, 0.04))
+        drop-shadow(16px 20px 30px rgba(0, 0, 0, 0.03));
+    transition: transform 0.3s ease-in-out, filter 0.3s ease;
 }
 
 .post-item a:hover .post-image-card .post-image img {
@@ -1095,6 +1100,10 @@ blockquote p {
     width: 100%;
     image-rendering: -webkit-optimize-contrast;
     image-rendering: crisp-edges;
+    filter:
+        drop-shadow(3px 4px 3px rgba(0, 0, 0, 0.15))
+        drop-shadow(8px 12px 12px rgba(0, 0, 0, 0.08))
+        drop-shadow(1px 2px 1px rgba(0, 0, 0, 0.1));
 }
 
 .article-image figcaption {
@@ -2624,7 +2633,7 @@ nav.pagination a:hover {
     overflow: hidden;
     border-radius: 2px;
     border: 1px solid var(--color-border);
-    transition: border-color 0.2s ease, box-shadow 0.4s ease;
+    transition: border-color 0.2s ease;
 }
 
 .tag-post-link:hover .tag-post-image {
@@ -2693,7 +2702,7 @@ nav.pagination a:hover {
         margin-bottom: 1.5rem;
         aspect-ratio: 16/9;
     }
-    
+
     .tag-post-image img {
         width: 100%;
         height: 100%;
@@ -3009,7 +3018,7 @@ nav.pagination a:hover {
         margin-bottom: 1.5rem;
         aspect-ratio: 16/9;
     }
-    
+
     .author-post-image img {
         width: 100%;
         height: 100%;
