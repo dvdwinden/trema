@@ -2643,11 +2643,11 @@ nav.pagination a:hover {
     transform: translateY(-4px);
 }
 
-.tag-fiction .tag-post-image {
+.tag-post-image-fiction {
     background: #F6F6FF;
 }
 
-.tag-non-fiction .tag-post-image {
+.tag-post-image-nonfiction {
     background: #FDF7F7;
 }
 
@@ -2918,19 +2918,33 @@ nav.pagination a:hover {
     width: 280px;
     height: 200px;
     overflow: hidden;
-    border-radius: 3px;
+    border-radius: 2px;
+    border: 1px solid var(--color-border);
+    transition: border-color 0.2s ease;
+}
+
+.author-post-link:hover .author-post-image {
+    border-color: var(--color-text-lightest);
 }
 
 .author-post-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 3px;
-    transition: none;
+    border-radius: 0;
+    transition: transform 0.3s ease-in-out;
 }
 
-.author-post-link:hover .post-image-hover {
-    opacity: 1;
+.author-post-link:hover .author-post-image img {
+    transform: translateY(-4px);
+}
+
+.author-post-image-fiction {
+    background: #F6F6FF;
+}
+
+.author-post-image-nonfiction {
+    background: #FDF7F7;
 }
 
 .author-post-author {
@@ -3000,8 +3014,7 @@ nav.pagination a:hover {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        border-radius: 3px;
-        transition: none;
+        border-radius: 0;
     }
     
     .author-post-title {
@@ -3199,11 +3212,19 @@ nav.pagination a:hover {
         background: #241a1a;
     }
 
-    .tag-fiction .tag-post-image {
+    .tag-post-image-fiction {
         background: #1a1a24;
     }
 
-    .tag-non-fiction .tag-post-image {
+    .tag-post-image-nonfiction {
+        background: #241a1a;
+    }
+
+    .author-post-image-fiction {
+        background: #1a1a24;
+    }
+
+    .author-post-image-nonfiction {
         background: #241a1a;
     }
 

@@ -52,15 +52,15 @@
                     </div>
                     
                     {{#if twitter_image}}
-                        <div class="tag-post-image">
+                        <div class="tag-post-image {{#has tag="fiction"}}tag-post-image-fiction{{else}}tag-post-image-nonfiction{{/has}}">
                             <img src="{{img_url twitter_image size="l"}}" alt="{{title}}" />
                         </div>
                     {{else if og_image}}
-                        <div class="tag-post-image">
+                        <div class="tag-post-image {{#has tag="fiction"}}tag-post-image-fiction{{else}}tag-post-image-nonfiction{{/has}}">
                             <img src="{{img_url og_image size="l"}}" alt="{{title}}" />
                         </div>
                     {{else if feature_image}}
-                        <div class="tag-post-image">
+                        <div class="tag-post-image {{#has tag="fiction"}}tag-post-image-fiction{{else}}tag-post-image-nonfiction{{/has}}">
                             <img src="{{img_url feature_image size="l"}}" alt="{{title}}" />
                         </div>
                     {{/if}}
