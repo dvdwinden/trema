@@ -975,8 +975,9 @@ blockquote p {
     opacity: 0.3;
     font-weight: 400;
     font-size: var(--text-display);
-    margin-top: -0.15em;
-    text-wrap: balance; 
+    margin-top: -4px;
+    margin-bottom: 0;
+    text-wrap: balance;
 }
 
 .article-tag {
@@ -993,7 +994,7 @@ blockquote p {
 }
 
 .article-title {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0;
 }
 
 .article-title, .article-author {
@@ -3113,6 +3114,68 @@ nav.pagination a:hover {
 
 @media (max-width: 768px) {
     .author-names {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+}
+
+/* Bookstores page styles
+/* ---------------------------------------------------------- */
+.bookstores-list {
+    margin-top: 2rem;
+}
+
+.bookstore-country {
+    margin-bottom: 4rem;
+}
+
+.country-name {
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 0.5rem;
+    font-size: 1rem!important;
+    color: var(--color-text-light)!important;
+}
+
+.bookstore-city {
+    margin-bottom: 1.5rem;
+}
+
+.city-name {
+    font-size: 0.85rem!important;
+    font-weight: 600!important;
+    color: var(--color-text-lighter)!important;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+}
+
+.bookstore-entries {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.bookstore-entry {
+    padding: 0;
+}
+
+.bookstore-link {
+    text-decoration: none;
+    color: var(--color-text);
+    font-weight: 400;
+}
+
+.bookstore-link:hover {
+    color: var(--color-text-light);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 1px;
+    text-decoration-color: var(--color-text-lighter);
+}
+
+@media (max-width: 768px) {
+    .bookstore-entries {
         grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     }
 }
