@@ -13,7 +13,18 @@
         <div class="article-header-flex">
             {{#if feature_image}}
                 <figure class="article-image">
-                    <img src="{{img_url feature_image size="xl"}}" alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}" />
+                    <img
+                        srcset="{{img_url feature_image size="s"}} 300w,
+                                {{img_url feature_image size="m"}} 600w,
+                                {{img_url feature_image size="l"}} 1000w,
+                                {{img_url feature_image size="xl"}} 2000w"
+                        sizes="(max-width: 400px) 300px, (max-width: 700px) 600px, (max-width: 1100px) 1000px, 2000px"
+                        src="{{img_url feature_image size="xl"}}"
+                        alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
+                        loading="eager"
+                        decoding="async"
+                        fetchpriority="high"
+                    />
                     {{#if feature_image_caption}}
                         <figcaption>{{feature_image_caption}}</figcaption>
                     {{/if}}
@@ -69,7 +80,16 @@
                     {{#foreach all_posts}}
                         <article class="read-more-item random-post-item" data-post-index="{{@index}}">
                             <a href="{{url}}" class="read-more-item-link">
-                                <img src="{{img_url feature_image size="l"}}" alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}" />
+                                <img
+                                    srcset="{{img_url feature_image size="s"}} 300w,
+                                            {{img_url feature_image size="m"}} 600w,
+                                            {{img_url feature_image size="l"}} 1000w"
+                                    sizes="(max-width: 400px) 300px, (max-width: 700px) 600px, 1000px"
+                                    src="{{img_url feature_image size="l"}}"
+                                    alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
+                                    loading="lazy"
+                                    decoding="async"
+                                />
                                 <div class="read-more-item-content">
                                     <h2 class="post-card-title">{{title}}</h2>
                                     {{#if primary_tag}}
