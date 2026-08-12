@@ -195,11 +195,26 @@
         setTimeout(fixLinks, 500);
     }
 
+    // Subscribe form messages are kept out of the page source so search engines
+    // can't pull them into a result snippet. Fill them in on submit instead.
+    function initSubscribeMessages() {
+        const forms = document.querySelectorAll('form[data-members-form] [data-message]');
+
+        forms.forEach(message => {
+            const form = message.closest('form');
+
+            form.addEventListener('submit', function() {
+                message.textContent = message.dataset.message;
+            });
+        });
+    }
+
     // Initialize all functionality when DOM is ready
     function init() {
         initMobileMenu();
         initSmoothScrolling();
         initExternalLinkFix();
+        initSubscribeMessages();
         
         // Only run these on article pages, but not on authors page
         if (document.querySelector('.gh-content') && !document.querySelector('.authors-list')) {

@@ -936,9 +936,20 @@ blockquote p {
 .message-success,
 .message-error {
     display: none;
+    margin-top: 1rem;
     padding: 1rem;
     border-radius: 3px;
     font-size: 1rem;
+}
+
+/* No-JS fallback: main.js normally writes the text in, which empties this rule out */
+.message-success:empty::before {
+    content: attr(data-message);
+}
+
+form.success .message-success,
+form.error .message-error {
+    display: block;
 }
 
 .message-success {

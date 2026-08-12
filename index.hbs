@@ -9,15 +9,13 @@
             <div class="homepage-subscribe">
                 <form data-members-form="subscribe">
                     <div class="form-group">
-                        <input type="email" name="email" placeholder="Your email address" required />
+                        <input type="email" name="email" data-members-email placeholder="Your email address" required />
                         <button type="submit">Subscribe</button>
                     </div>
-                    <div class="message-success">
-                        <strong>Great!</strong> Check your inbox and confirm your subscription.
-                    </div>
-                    <div class="message-error">
-                        Please enter a valid email address.
-                    </div>
+                    {{! Both stay empty in the source so the copy can't end up in a search snippet.
+                        Portal fills the error on submit; main.js fills the success message. }}
+                    <div class="message-success" role="status" data-message="Great! Check your inbox and confirm your subscription."></div>
+                    <div class="message-error" role="alert" data-members-error></div>
                 </form>
             </div>
             {{/@member}}
