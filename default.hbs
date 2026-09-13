@@ -29,6 +29,14 @@
     
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {{! iOS Safari zooms the page when Ghost's search input is focused. Ghost's own search
+        iframe declares maximum-scale=1 for this, but iOS only honours the parent page's
+        viewport, so mirror it here. iOS-only: it would disable pinch zoom on Android. }}
+    <script>
+        if (/iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)) {
+            document.querySelector('meta[name="viewport"]').setAttribute('content', 'width=device-width, initial-scale=1, maximum-scale=1');
+        }
+    </script>
     
     {{! Brand icon }}
     <link rel="shortcut icon" href="{{@site.icon}}" type="image/png" />
