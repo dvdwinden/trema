@@ -502,7 +502,7 @@ blockquote p {
 /* ---------------------------------------------------------- */
 .homepage-hero {
     text-align: center;
-    height: 64vh;
+    height: 60vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1938,7 +1938,7 @@ nav.pagination a:hover {
     
     /* Index page responsive styles */
     .homepage-hero {
-        height: 45vh;
+        height: 42vh;
     }
 
     .homepage-subscribe {
