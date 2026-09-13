@@ -12,7 +12,7 @@
 
         <div class="article-header-flex">
             {{#if feature_image}}
-                <figure class="article-image">
+                <figure class="article-image{{#has tag="#thin, hash-thin"}} is-thin{{/has}}">
                     <img
                         srcset="{{img_url feature_image size="s" format="webp"}} 300w,
                                 {{img_url feature_image size="m" format="webp"}} 600w,
@@ -79,7 +79,7 @@
                 <div class="random-posts-container">
                     {{#foreach all_posts}}
                         <article class="read-more-item random-post-item" data-post-index="{{@index}}">
-                            <a href="{{url}}" class="read-more-item-link">
+                            <a href="{{url}}" class="read-more-item-link{{#has tag="#thin, hash-thin"}} is-thin{{/has}}">
                                 <img
                                     srcset="{{img_url feature_image size="s" format="webp"}} 300w,
                                             {{img_url feature_image size="m" format="webp"}} 600w,

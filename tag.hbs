@@ -61,40 +61,14 @@
                         {{/if}}
                     </div>
                     
-                    {{#if twitter_image}}
-                        <div class="tag-post-image {{#has tag="fiction"}}tag-post-image-fiction{{else}}tag-post-image-nonfiction{{/has}}">
-                            <img
-                                srcset="{{img_url twitter_image size="s" format="webp"}} 300w,
-                                        {{img_url twitter_image size="m" format="webp"}} 600w,
-                                        {{img_url twitter_image size="l" format="webp"}} 1000w"
-                                sizes="(max-width: 700px) 300px, 600px"
-                                src="{{img_url twitter_image size="l" format="webp"}}"
-                                alt="{{title}}"
-                                loading="lazy"
-                                decoding="async"
-                            />
-                        </div>
-                    {{else if og_image}}
-                        <div class="tag-post-image {{#has tag="fiction"}}tag-post-image-fiction{{else}}tag-post-image-nonfiction{{/has}}">
-                            <img
-                                srcset="{{img_url og_image size="s" format="webp"}} 300w,
-                                        {{img_url og_image size="m" format="webp"}} 600w,
-                                        {{img_url og_image size="l" format="webp"}} 1000w"
-                                sizes="(max-width: 700px) 300px, 600px"
-                                src="{{img_url og_image size="l" format="webp"}}"
-                                alt="{{title}}"
-                                loading="lazy"
-                                decoding="async"
-                            />
-                        </div>
-                    {{else if feature_image}}
-                        <div class="tag-post-image {{#has tag="fiction"}}tag-post-image-fiction{{else}}tag-post-image-nonfiction{{/has}}">
+                    {{#if feature_image}}
+                        <div class="tag-post-image {{#has tag="fiction"}}tag-post-image-fiction{{else}}tag-post-image-nonfiction{{/has}}{{#has tag="#thin, hash-thin"}} is-thin{{/has}}">
                             <img
                                 srcset="{{img_url feature_image size="s" format="webp"}} 300w,
                                         {{img_url feature_image size="m" format="webp"}} 600w,
                                         {{img_url feature_image size="l" format="webp"}} 1000w"
-                                sizes="(max-width: 700px) 300px, 600px"
-                                src="{{img_url feature_image size="l" format="webp"}}"
+                                sizes="(max-width: 700px) 60vw, 280px"
+                                src="{{img_url feature_image size="m" format="webp"}}"
                                 alt="{{title}}"
                                 loading="lazy"
                                 decoding="async"

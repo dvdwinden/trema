@@ -26,7 +26,8 @@
                 {{#foreach posts}}
                     <article class="post-item">
                         <a href="{{url}}" class="post-item-link">
-                            <div class="post-image-card {{#has tag="fiction"}}post-image-card-fiction{{else}}post-image-card-nonfiction{{/has}}">
+                            <div class="post-image-card {{#has tag="fiction"}}post-image-card-fiction{{else}}post-image-card-nonfiction{{/has}}{{#has tag="#thin, hash-thin"}} is-thin{{/has}}">
+                                <span class="post-card-label">{{#has tag="fiction"}}Fiction{{else}}Non-fiction{{/has}}</span>
                                 {{#if feature_image}}
                                     <div class="post-image">
                                         <img
