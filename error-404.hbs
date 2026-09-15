@@ -1,0 +1,63 @@
+{{!< default}}
+
+<main id="site-main" class="site-main error-main">
+    <div class="container">
+
+        <section class="error-hero">
+            <p class="error-label">404 · Page not found</p>
+            <h1 class="error-headline">This page isn’t on the shelf.</h1>
+            <p class="error-lead">
+                The link may be out of date, or the address mistyped.
+                Try <a href="#" data-ghost-search title="Search Trema">searching</a>,
+                browse the <a href="/tag/fiction/" title="Browse all fiction">fiction</a>
+                or <a href="/tag/non-fiction/" title="Browse all non-fiction">non-fiction</a> shelves,
+                or head back to the <a href="{{@site.url}}" title="Trema home">front page</a>.
+            </p>
+        </section>
+
+        {{#get "posts" limit="3" include="tags"}}
+            {{#if posts}}
+            <section class="error-suggestions">
+                <p class="error-suggestions-heading">Meanwhile, three recent books</p>
+                <div class="posts-grid posts-grid-3col">
+                    {{#foreach posts}}
+                        <article class="post-item">
+                            <a href="{{url}}" class="post-item-link">
+                                <div class="post-image-card {{#has tag="fiction"}}post-image-card-fiction{{else}}post-image-card-nonfiction{{/has}}{{#has tag="#thin, hash-thin"}} is-thin{{/has}}">
+                                    <span class="post-card-label">{{#has tag="fiction"}}Fiction{{else}}Non-fiction{{/has}}</span>
+                                    {{#if feature_image}}
+                                        <div class="post-image">
+                                            <img
+                                                srcset="{{img_url feature_image size="s" format="webp"}} 300w,
+                                                        {{img_url feature_image size="m" format="webp"}} 600w,
+                                                        {{img_url feature_image size="l" format="webp"}} 1000w"
+                                                sizes="(max-width: 600px) 60vw, (max-width: 1100px) 30vw, 220px"
+                                                src="{{img_url feature_image size="m" format="webp"}}"
+                                                alt="{{title}}"
+                                                class="post-image-default"
+                                                loading="lazy"
+                                                decoding="async"
+                                            />
+                                        </div>
+                                    {{/if}}
+                                </div>
+
+                                <div class="post-content">
+                                    <h3 class="post-title">{{title}}</h3>
+                                    {{#if primary_tag}}
+                                        <h4 class="article-author">{{primary_tag.name}}</h4>
+                                    {{/if}}
+                                    {{#if excerpt}}
+                                        <p class="post-excerpt">{{excerpt}}</p>
+                                    {{/if}}
+                                </div>
+                            </a>
+                        </article>
+                    {{/foreach}}
+                </div>
+            </section>
+            {{/if}}
+        {{/get}}
+
+    </div>
+</main>
