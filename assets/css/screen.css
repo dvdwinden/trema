@@ -1042,7 +1042,7 @@ blockquote p {
     border: 1px solid var(--color-border);
     border-radius: 3px;
     background: rgba(0, 0, 0, 0.02);
-    transition: border-color 0.2s ease;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .form-group input[type="email"]:focus {
@@ -3220,6 +3220,111 @@ nav.pagination a:hover {
 .tag-post-link:hover .tag-post-image-nonfiction,
 .author-post-link:hover .author-post-image-nonfiction {
     border-color: #CCD6E3;
+}
+
+/* Page tints (light mode only): post pages take the colour of their homepage card */
+@media (prefers-color-scheme: light) {
+    body.post-template.tag-fiction {
+        --color-bg: #F1F3E7;
+        --color-bg-secondary: #E9EBDB;
+        --color-border: #E1E4D0;
+        --color-surface: #E9EBDB;
+        --color-surface-border: #DADDC7;
+        --color-bookmark-thumb-bg: #E9EBDB;
+    }
+
+    body.post-template.tag-non-fiction {
+        --color-bg: #EEF2F8;
+        --color-bg-secondary: #E3EAF3;
+        --color-border: #DBE3EE;
+        --color-surface: #E3EAF3;
+        --color-surface-border: #D3DCE9;
+        --color-bookmark-thumb-bg: #E3EAF3;
+    }
+
+    /* Listing pages: a light, neutral grey so the tinted cards read as objects on a table */
+    body.home-template,
+    body.tag-template,
+    body.author-template {
+        --color-bg: #FAFAF9;
+        --color-bg-secondary: #F2F2F0;
+        --color-border: #EBEBE8;
+        --color-surface: #F2F2F0;
+        --color-surface-border: #E5E5E2;
+    }
+
+    /* Text greys as transparent black, so they take on the page tint */
+    body.home-template,
+    body.tag-template,
+    body.author-template,
+    body.post-template.tag-fiction,
+    body.post-template.tag-non-fiction {
+        --color-text: rgba(0, 0, 0, 0.8);
+        --color-text-light: rgba(0, 0, 0, 0.6);
+        --color-text-lighter: rgba(0, 0, 0, 0.4);
+        --color-text-lightest: rgba(0, 0, 0, 0.2);
+    }
+
+    /* On the grey, the email field is white so the form stands out */
+    body.home-template .form-group input[type="email"],
+    body.tag-template .form-group input[type="email"],
+    body.author-template .form-group input[type="email"] {
+        background: #fff;
+        border-color: #DCDCD8;
+    }
+
+    body.home-template .form-group input[type="email"]:focus,
+    body.tag-template .form-group input[type="email"]:focus,
+    body.author-template .form-group input[type="email"]:focus {
+        border-color: rgba(0, 0, 0, 0.45);
+        box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.06);
+    }
+
+    /* The post cover sits on the tinted page, so it gets the card light, glow included */
+    body.post-template.tag-fiction .article-image img {
+        --glow: rgba(255, 255, 255, 0.5);
+        --core: rgba(45, 48, 30, 0.22);
+        --tail: rgba(45, 48, 30, 0.44);
+        --cx: 0.0936;
+        --cy: 0.0811;
+        --cb: 0.0396;
+        --tx: 0.1479;
+        --ty: 0.1163;
+        --tb: 0.14;
+    }
+    body.post-template.tag-fiction .article-image.is-thin img {
+        --glow: rgba(255, 255, 255, 0.5);
+        --core: rgba(45, 48, 30, 0.22);
+        --tail: rgba(45, 48, 30, 0.44);
+        --cx: 0.0585;
+        --cy: 0.0507;
+        --cb: 0.0304;
+        --tx: 0.1096;
+        --ty: 0.0862;
+        --tb: 0.1218;
+    }
+    body.post-template.tag-non-fiction .article-image img {
+        --glow: rgba(255, 255, 255, 0.5);
+        --core: rgba(35, 47, 61, 0.22);
+        --tail: rgba(35, 47, 61, 0.44);
+        --cx: 0.0936;
+        --cy: 0.0811;
+        --cb: 0.0396;
+        --tx: 0.1479;
+        --ty: 0.1163;
+        --tb: 0.14;
+    }
+    body.post-template.tag-non-fiction .article-image.is-thin img {
+        --glow: rgba(255, 255, 255, 0.5);
+        --core: rgba(35, 47, 61, 0.22);
+        --tail: rgba(35, 47, 61, 0.44);
+        --cx: 0.0585;
+        --cy: 0.0507;
+        --cb: 0.0304;
+        --tx: 0.1096;
+        --ty: 0.0862;
+        --tb: 0.1218;
+    }
 }
 
 /* Book shadows tinted to the card colour */
