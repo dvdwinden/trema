@@ -1149,6 +1149,8 @@ form.error .message-error {
     max-width: 720px;
     margin: auto;
     padding: 0;
+    /* Degular's short caps make 1.05 look airy at display size */
+    line-height: 0.95;
 }
 
 .article-author a:hover {
