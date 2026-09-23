@@ -696,11 +696,11 @@ blockquote p {
 }
 
 .post-image-card-fiction {
-    background: var(--card-noise), radial-gradient(ellipse 90% 75% at 50% 42%, #F3F5EB 0%, #E9EBDB 100%);
+    background: var(--card-noise), linear-gradient(135deg, rgba(45, 48, 30, 0) 0%, rgba(45, 48, 30, 0.09) 100%), radial-gradient(ellipse 90% 75% at 50% 42%, #F3F5EB 0%, #E9EBDB 100%);
 }
 
 .post-image-card-nonfiction {
-    background: var(--card-noise), radial-gradient(ellipse 90% 75% at 50% 42%, #F0F4F9 0%, #E3EAF3 100%);
+    background: var(--card-noise), linear-gradient(135deg, rgba(35, 47, 61, 0) 0%, rgba(35, 47, 61, 0.09) 100%), radial-gradient(ellipse 90% 75% at 50% 42%, #F0F4F9 0%, #E3EAF3 100%);
 }
 
 .post-item a:hover .post-image-card {
@@ -1246,9 +1246,15 @@ form.error .message-error {
     width: 100%;
     image-rendering: -webkit-optimize-contrast;
     image-rendering: crisp-edges;
-    filter:
-        drop-shadow(1px 1px 1px rgba(40, 40, 40, 0.14))
-        drop-shadow(16px 18px 14px rgba(40, 40, 40, 0.34));
+    --glow: rgba(255, 255, 255, 0);
+    --core: rgba(40, 40, 40, 0.18);
+    --tail: rgba(40, 40, 40, 0.28);
+    --cx: 0.0936;
+    --cy: 0.0811;
+    --cb: 0.0396;
+    --tx: 0.1479;
+    --ty: 0.1163;
+    --tb: 0.14;
 }
 
 .article-image figcaption {
@@ -1265,38 +1271,68 @@ form.error .message-error {
 }
 
 .read-more-item-link img {
-    filter:
-        drop-shadow(1px 1px 1px rgba(40, 40, 40, 0.14))
-        drop-shadow(8px 9px 6px rgba(40, 40, 40, 0.34));
+    --glow: rgba(255, 255, 255, 0);
+    --core: rgba(40, 40, 40, 0.18);
+    --tail: rgba(40, 40, 40, 0.28);
+    --cx: 0.0936;
+    --cy: 0.0811;
+    --cb: 0.0396;
+    --tx: 0.1479;
+    --ty: 0.1163;
+    --tb: 0.14;
 }
 
-/* Thin books (internal tag #thin): lighter shadow */
+/* Thin books (internal tag #thin): shorter shadow */
 .post-image-card-fiction.is-thin .post-image img,
 .tag-post-image-fiction.is-thin img,
 .author-post-image-fiction.is-thin img {
-    filter:
-        drop-shadow(1px 1px 1px rgba(45, 48, 30, 0.14))
-        drop-shadow(6px 7px 6px rgba(45, 48, 30, 0.32));
+    --glow: rgba(255, 255, 255, 0.5);
+    --core: rgba(45, 48, 30, 0.22);
+    --tail: rgba(45, 48, 30, 0.44);
+    --cx: 0.0585;
+    --cy: 0.0507;
+    --cb: 0.0304;
+    --tx: 0.1096;
+    --ty: 0.0862;
+    --tb: 0.1218;
 }
 
 .post-image-card-nonfiction.is-thin .post-image img,
 .tag-post-image-nonfiction.is-thin img,
 .author-post-image-nonfiction.is-thin img {
-    filter:
-        drop-shadow(1px 1px 1px rgba(35, 47, 61, 0.14))
-        drop-shadow(6px 7px 6px rgba(35, 47, 61, 0.32));
+    --glow: rgba(255, 255, 255, 0.5);
+    --core: rgba(35, 47, 61, 0.22);
+    --tail: rgba(35, 47, 61, 0.44);
+    --cx: 0.0585;
+    --cy: 0.0507;
+    --cb: 0.0304;
+    --tx: 0.1096;
+    --ty: 0.0862;
+    --tb: 0.1218;
 }
 
 .article-image.is-thin img {
-    filter:
-        drop-shadow(1px 1px 1px rgba(40, 40, 40, 0.14))
-        drop-shadow(10px 11px 10px rgba(40, 40, 40, 0.32));
+    --glow: rgba(255, 255, 255, 0);
+    --core: rgba(40, 40, 40, 0.18);
+    --tail: rgba(40, 40, 40, 0.28);
+    --cx: 0.0585;
+    --cy: 0.0507;
+    --cb: 0.0304;
+    --tx: 0.1096;
+    --ty: 0.0862;
+    --tb: 0.1218;
 }
 
 .read-more-item-link.is-thin img {
-    filter:
-        drop-shadow(1px 1px 1px rgba(40, 40, 40, 0.14))
-        drop-shadow(4px 5px 5px rgba(40, 40, 40, 0.32));
+    --glow: rgba(255, 255, 255, 0);
+    --core: rgba(40, 40, 40, 0.18);
+    --tail: rgba(40, 40, 40, 0.28);
+    --cx: 0.0585;
+    --cy: 0.0507;
+    --cb: 0.0304;
+    --tx: 0.1096;
+    --ty: 0.0862;
+    --tb: 0.1218;
 }
 
 /* Random posts styling */
@@ -2811,6 +2847,10 @@ nav.pagination a:hover {
     width: 280px;
     height: 200px;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.625rem;
     border-radius: 2px;
     border: 1px solid var(--color-border);
     transition: border-color 0.2s ease;
@@ -2822,10 +2862,10 @@ nav.pagination a:hover {
 
 .tag-post-image img {
     display: block;
-    width: 100%;
-    height: 100%;
-    padding: 0.625rem;
-    object-fit: contain;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
     border-radius: 0;
     filter:
         drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.08))
@@ -2840,11 +2880,11 @@ nav.pagination a:hover {
 }
 
 .tag-post-image-fiction {
-    background: var(--card-noise), radial-gradient(ellipse 90% 75% at 50% 42%, #F3F5EB 0%, #E9EBDB 100%);
+    background: var(--card-noise), linear-gradient(135deg, rgba(45, 48, 30, 0) 0%, rgba(45, 48, 30, 0.09) 100%), radial-gradient(ellipse 90% 75% at 50% 42%, #F3F5EB 0%, #E9EBDB 100%);
 }
 
 .tag-post-image-nonfiction {
-    background: var(--card-noise), radial-gradient(ellipse 90% 75% at 50% 42%, #F0F4F9 0%, #E3EAF3 100%);
+    background: var(--card-noise), linear-gradient(135deg, rgba(35, 47, 61, 0) 0%, rgba(35, 47, 61, 0.09) 100%), radial-gradient(ellipse 90% 75% at 50% 42%, #F0F4F9 0%, #E3EAF3 100%);
 }
 
 /* Responsive adjustments for tag page */
@@ -2890,12 +2930,14 @@ nav.pagination a:hover {
         aspect-ratio: 16/9;
     }
 
-    .tag-post-image img {
-        width: 100%;
-        height: 100%;
+    .tag-post-image {
         padding: 1.5rem;
-        object-fit: contain;
-        border-radius: 0;
+        container-type: inline-size;
+    }
+
+    /* 16:9 box minus padding; a % max-height doesn't resolve against aspect-ratio */
+    .tag-post-image img {
+        max-height: calc((100cqw + 3rem) * 0.5625 - 3rem);
     }
     
     .tag-post-title {
@@ -3115,6 +3157,10 @@ nav.pagination a:hover {
     width: 280px;
     height: 200px;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.625rem;
     border-radius: 2px;
     border: 1px solid var(--color-border);
     transition: border-color 0.2s ease;
@@ -3126,10 +3172,10 @@ nav.pagination a:hover {
 
 .author-post-image img {
     display: block;
-    width: 100%;
-    height: 100%;
-    padding: 0.625rem;
-    object-fit: contain;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
     border-radius: 0;
     filter:
         drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.08))
@@ -3144,11 +3190,11 @@ nav.pagination a:hover {
 }
 
 .author-post-image-fiction {
-    background: var(--card-noise), radial-gradient(ellipse 90% 75% at 50% 42%, #F3F5EB 0%, #E9EBDB 100%);
+    background: var(--card-noise), linear-gradient(135deg, rgba(45, 48, 30, 0) 0%, rgba(45, 48, 30, 0.09) 100%), radial-gradient(ellipse 90% 75% at 50% 42%, #F3F5EB 0%, #E9EBDB 100%);
 }
 
 .author-post-image-nonfiction {
-    background: var(--card-noise), radial-gradient(ellipse 90% 75% at 50% 42%, #F0F4F9 0%, #E3EAF3 100%);
+    background: var(--card-noise), linear-gradient(135deg, rgba(35, 47, 61, 0) 0%, rgba(35, 47, 61, 0.09) 100%), radial-gradient(ellipse 90% 75% at 50% 42%, #F0F4F9 0%, #E3EAF3 100%);
 }
 
 /* Card borders take the card's own tint */
@@ -3180,17 +3226,29 @@ nav.pagination a:hover {
 .post-image-card-fiction .post-image img,
 .tag-post-image-fiction img,
 .author-post-image-fiction img {
-    filter:
-        drop-shadow(1px 1px 1px rgba(45, 48, 30, 0.14))
-        drop-shadow(10px 11px 8px rgba(45, 48, 30, 0.34));
+    --glow: rgba(255, 255, 255, 0.5);
+    --core: rgba(45, 48, 30, 0.22);
+    --tail: rgba(45, 48, 30, 0.44);
+    --cx: 0.0936;
+    --cy: 0.0811;
+    --cb: 0.0396;
+    --tx: 0.1479;
+    --ty: 0.1163;
+    --tb: 0.14;
 }
 
 .post-image-card-nonfiction .post-image img,
 .tag-post-image-nonfiction img,
 .author-post-image-nonfiction img {
-    filter:
-        drop-shadow(1px 1px 1px rgba(35, 47, 61, 0.14))
-        drop-shadow(10px 11px 8px rgba(35, 47, 61, 0.34));
+    --glow: rgba(255, 255, 255, 0.5);
+    --core: rgba(35, 47, 61, 0.22);
+    --tail: rgba(35, 47, 61, 0.44);
+    --cx: 0.0936;
+    --cy: 0.0811;
+    --cb: 0.0396;
+    --tx: 0.1479;
+    --ty: 0.1163;
+    --tb: 0.14;
 }
 
 .author-post-author {
@@ -3256,12 +3314,14 @@ nav.pagination a:hover {
         aspect-ratio: 16/9;
     }
 
-    .author-post-image img {
-        width: 100%;
-        height: 100%;
+    .author-post-image {
         padding: 1.5rem;
-        object-fit: contain;
-        border-radius: 0;
+        container-type: inline-size;
+    }
+
+    /* 16:9 box minus padding; a % max-height doesn't resolve against aspect-ratio */
+    .author-post-image img {
+        max-height: calc((100cqw + 3rem) * 0.5625 - 3rem);
     }
     
     .author-post-title {
@@ -3417,6 +3477,47 @@ nav.pagination a:hover {
     }
 }
 
+/* Book light: soft window light from the top left, matched to the "Book light" styles
+   in the Instagram Figma file. A white glow up and left, then a tight contact shadow and a
+   soft tail down and right. The rules above only set colours and offsets. The glow comes
+   first so the shadows that copy it land mostly under the book. Everything scales with
+   --w, the width of the cover image (a 600x991 canvas with the book ~78% of its width).
+   Plain drop-shadows, not SVG filters: Safari mis-renders SVG filters on images. */
+.post-image-card .post-image {
+    container-type: inline-size;
+}
+
+.tag-post-image,
+.author-post-image {
+    container-type: size;
+}
+
+.post-image-card .post-image img { --w: 64cqw; }
+.tag-post-image img,
+.author-post-image img { --w: calc(100cqh / 1.652); }
+.article-image img { --w: 22rem; }
+.read-more-item-link img { --w: 164px; }
+
+@media (max-width: 800px) {
+    .article-header-flex .article-image img { --w: min(100vw - 4rem, 22rem); }
+}
+
+@media (max-width: 600px) {
+    .article-image img { --w: 200px; }
+    .read-more-item-link img { --w: 100px; }
+}
+
+.post-image-card .post-image img,
+.tag-post-image img,
+.author-post-image img,
+.article-image img,
+.read-more-item-link img {
+    filter:
+        drop-shadow(calc(var(--w) * -0.0696) calc(var(--w) * -0.0853) calc(var(--w) * 0.1066) var(--glow, transparent))
+        drop-shadow(calc(var(--w) * var(--cx)) calc(var(--w) * var(--cy)) calc(var(--w) * var(--cb)) var(--core))
+        drop-shadow(calc(var(--w) * var(--tx)) calc(var(--w) * var(--ty)) calc(var(--w) * var(--tb)) var(--tail));
+}
+
 /* Dark Mode
 /* ---------------------------------------------------------- */
 @media (prefers-color-scheme: dark) {
@@ -3514,27 +3615,27 @@ nav.pagination a:hover {
     }
 
     .post-image-card-fiction {
-        background: radial-gradient(ellipse 80% 70% at 50% 42%, #2C2F26 0%, #1E201A 100%);
+        background: linear-gradient(135deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.14) 100%), radial-gradient(ellipse 80% 70% at 50% 42%, #2C2F26 0%, #1E201A 100%);
     }
 
     .post-image-card-nonfiction {
-        background: radial-gradient(ellipse 80% 70% at 50% 42%, #282E39 0%, #1E232C 100%);
+        background: linear-gradient(135deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.14) 100%), radial-gradient(ellipse 80% 70% at 50% 42%, #282E39 0%, #1E232C 100%);
     }
 
     .tag-post-image-fiction {
-        background: radial-gradient(ellipse 80% 70% at 50% 42%, #2C2F26 0%, #1E201A 100%);
+        background: linear-gradient(135deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.14) 100%), radial-gradient(ellipse 80% 70% at 50% 42%, #2C2F26 0%, #1E201A 100%);
     }
 
     .tag-post-image-nonfiction {
-        background: radial-gradient(ellipse 80% 70% at 50% 42%, #282E39 0%, #1E232C 100%);
+        background: linear-gradient(135deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.14) 100%), radial-gradient(ellipse 80% 70% at 50% 42%, #282E39 0%, #1E232C 100%);
     }
 
     .author-post-image-fiction {
-        background: radial-gradient(ellipse 80% 70% at 50% 42%, #2C2F26 0%, #1E201A 100%);
+        background: linear-gradient(135deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.14) 100%), radial-gradient(ellipse 80% 70% at 50% 42%, #2C2F26 0%, #1E201A 100%);
     }
 
     .author-post-image-nonfiction {
-        background: radial-gradient(ellipse 80% 70% at 50% 42%, #282E39 0%, #1E232C 100%);
+        background: linear-gradient(135deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.14) 100%), radial-gradient(ellipse 80% 70% at 50% 42%, #282E39 0%, #1E232C 100%);
     }
 
     /* Card borders and labels in dark mode */
@@ -3574,41 +3675,77 @@ nav.pagination a:hover {
     .post-image-card .post-image img,
     .tag-post-image img,
     .author-post-image img {
-        filter:
-            drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.5))
-            drop-shadow(10px 11px 8px rgba(0, 0, 0, 0.55));
+        --glow: rgba(255, 255, 255, 0.06);
+        --core: rgba(0, 0, 0, 0.4);
+        --tail: rgba(0, 0, 0, 0.55);
+        --cx: 0.0936;
+        --cy: 0.0811;
+        --cb: 0.0396;
+        --tx: 0.1479;
+        --ty: 0.1163;
+        --tb: 0.14;
     }
 
     .article-image img {
-        filter:
-            drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.5))
-            drop-shadow(16px 18px 14px rgba(0, 0, 0, 0.55));
+        --glow: rgba(255, 255, 255, 0);
+        --core: rgba(0, 0, 0, 0.4);
+        --tail: rgba(0, 0, 0, 0.55);
+        --cx: 0.0936;
+        --cy: 0.0811;
+        --cb: 0.0396;
+        --tx: 0.1479;
+        --ty: 0.1163;
+        --tb: 0.14;
     }
 
     .read-more-item-link img {
-        filter:
-            drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.5))
-            drop-shadow(8px 9px 6px rgba(0, 0, 0, 0.5));
+        --glow: rgba(255, 255, 255, 0);
+        --core: rgba(0, 0, 0, 0.4);
+        --tail: rgba(0, 0, 0, 0.55);
+        --cx: 0.0936;
+        --cy: 0.0811;
+        --cb: 0.0396;
+        --tx: 0.1479;
+        --ty: 0.1163;
+        --tb: 0.14;
     }
 
     .post-image-card.is-thin .post-image img,
     .tag-post-image.is-thin img,
     .author-post-image.is-thin img {
-        filter:
-            drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.5))
-            drop-shadow(6px 7px 6px rgba(0, 0, 0, 0.5));
+        --glow: rgba(255, 255, 255, 0.06);
+        --core: rgba(0, 0, 0, 0.4);
+        --tail: rgba(0, 0, 0, 0.55);
+        --cx: 0.0585;
+        --cy: 0.0507;
+        --cb: 0.0304;
+        --tx: 0.1096;
+        --ty: 0.0862;
+        --tb: 0.1218;
     }
 
     .article-image.is-thin img {
-        filter:
-            drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.5))
-            drop-shadow(10px 11px 10px rgba(0, 0, 0, 0.5));
+        --glow: rgba(255, 255, 255, 0);
+        --core: rgba(0, 0, 0, 0.4);
+        --tail: rgba(0, 0, 0, 0.55);
+        --cx: 0.0585;
+        --cy: 0.0507;
+        --cb: 0.0304;
+        --tx: 0.1096;
+        --ty: 0.0862;
+        --tb: 0.1218;
     }
 
     .read-more-item-link.is-thin img {
-        filter:
-            drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.5))
-            drop-shadow(4px 5px 5px rgba(0, 0, 0, 0.45));
+        --glow: rgba(255, 255, 255, 0);
+        --core: rgba(0, 0, 0, 0.4);
+        --tail: rgba(0, 0, 0, 0.55);
+        --cx: 0.0585;
+        --cy: 0.0507;
+        --cb: 0.0304;
+        --tx: 0.1096;
+        --ty: 0.0862;
+        --tb: 0.1218;
     }
 
     /* Slight image brightness reduction */
