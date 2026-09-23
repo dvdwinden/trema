@@ -766,11 +766,14 @@ blockquote p {
         drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.06))
         drop-shadow(7px 8px 10px rgba(0, 0, 0, 0.04))
         drop-shadow(16px 20px 30px rgba(0, 0, 0, 0.03));
-    transition: transform 0.3s ease-in-out, filter 0.3s ease;
+    position: relative;
+    top: 0;
+    /* Lift with top, not transform: Safari clips drop-shadows on transformed layers */
+    transition: top 0.3s ease-in-out;
 }
 
 .post-item a:hover .post-image-card .post-image img {
-    transform: translateY(-4px);
+    top: -4px;
 }
 
 .post-item a {
@@ -1270,10 +1273,11 @@ form.error .message-error {
     align-items: flex-start;
 }
 
+/* Continue reading sits on black in both modes, so its covers get black shadows */
 .read-more-item-link img {
     --glow: rgba(255, 255, 255, 0);
-    --core: rgba(40, 40, 40, 0.18);
-    --tail: rgba(40, 40, 40, 0.28);
+    --core: rgba(0, 0, 0, 0.4);
+    --tail: rgba(0, 0, 0, 0.55);
     --cx: 0.0936;
     --cy: 0.0811;
     --cb: 0.0396;
@@ -1325,8 +1329,8 @@ form.error .message-error {
 
 .read-more-item-link.is-thin img {
     --glow: rgba(255, 255, 255, 0);
-    --core: rgba(40, 40, 40, 0.18);
-    --tail: rgba(40, 40, 40, 0.28);
+    --core: rgba(0, 0, 0, 0.4);
+    --tail: rgba(0, 0, 0, 0.55);
     --cx: 0.0585;
     --cy: 0.0507;
     --cb: 0.0304;
@@ -2872,11 +2876,14 @@ nav.pagination a:hover {
         drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.06))
         drop-shadow(7px 8px 10px rgba(0, 0, 0, 0.04))
         drop-shadow(16px 20px 30px rgba(0, 0, 0, 0.03));
-    transition: transform 0.3s ease-in-out, filter 0.3s ease;
+    position: relative;
+    top: 0;
+    /* Lift with top, not transform: Safari clips drop-shadows on transformed layers */
+    transition: top 0.3s ease-in-out;
 }
 
 .tag-post-link:hover .tag-post-image img {
-    transform: translateY(-4px);
+    top: -4px;
 }
 
 .tag-post-image-fiction {
@@ -3182,11 +3189,14 @@ nav.pagination a:hover {
         drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.06))
         drop-shadow(7px 8px 10px rgba(0, 0, 0, 0.04))
         drop-shadow(16px 20px 30px rgba(0, 0, 0, 0.03));
-    transition: transform 0.3s ease-in-out, filter 0.3s ease;
+    position: relative;
+    top: 0;
+    /* Lift with top, not transform: Safari clips drop-shadows on transformed layers */
+    transition: top 0.3s ease-in-out;
 }
 
 .author-post-link:hover .author-post-image img {
-    transform: translateY(-4px);
+    top: -4px;
 }
 
 .author-post-image-fiction {
