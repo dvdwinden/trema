@@ -3628,10 +3628,13 @@ nav.pagination a:hover {
 .author-post-image img,
 .article-image img,
 .read-more-item-link img {
+    /* 1em = 1% of the cover width. Font sizes always resolve to pixels, so Safari gets
+       plain lengths for the shadows instead of container units it mis-measures. */
+    font-size: calc(var(--w) / 100);
     filter:
-        drop-shadow(calc(var(--w) * -0.0696) calc(var(--w) * -0.0853) calc(var(--w) * 0.1066) var(--glow, transparent))
-        drop-shadow(calc(var(--w) * var(--cx)) calc(var(--w) * var(--cy)) calc(var(--w) * var(--cb)) var(--core))
-        drop-shadow(calc(var(--w) * var(--tx)) calc(var(--w) * var(--ty)) calc(var(--w) * var(--tb)) var(--tail));
+        drop-shadow(calc(-6.96em) calc(-8.53em) calc(10.66em) var(--glow, transparent))
+        drop-shadow(calc(var(--cx) * 100em) calc(var(--cy) * 100em) calc(var(--cb) * 100em) var(--core))
+        drop-shadow(calc(var(--tx) * 100em) calc(var(--ty) * 100em) calc(var(--tb) * 100em) var(--tail));
 }
 
 /* Dark Mode
