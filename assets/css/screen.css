@@ -3232,38 +3232,32 @@ nav.pagination a:hover {
     border-color: #CCD6E3;
 }
 
-/* Page tints (light mode only): post pages take the colour of their homepage card */
+/* Page tints (light mode only): post pages open in the colour of their homepage card */
 @media (prefers-color-scheme: light) {
-    body.post-template.tag-fiction {
-        --color-bg: #F1F3E7;
-        --color-bg-secondary: #E9EBDB;
-        --color-border: #E1E4D0;
-        --color-surface: #E9EBDB;
-        --color-surface-border: #DADDC7;
-        --color-bookmark-thumb-bg: #E9EBDB;
+    /* The tint sits behind the article header, then fades slowly into the listing grey,
+       all the way down to the footer */
+    body.post-template .newsletter-signup {
+        background: transparent;
     }
 
+    body.post-template.tag-fiction { --page-tint: #F1F3E7; }
+    body.post-template.tag-non-fiction { --page-tint: #EEF2F8; }
+
+    body.post-template.tag-fiction,
     body.post-template.tag-non-fiction {
-        --color-bg: #EEF2F8;
-        --color-bg-secondary: #E3EAF3;
-        --color-border: #DBE3EE;
-        --color-surface: #E3EAF3;
-        --color-surface-border: #D3DCE9;
-        --color-bookmark-thumb-bg: #E3EAF3;
+        --color-bg: #FAFAF9;
+        background: linear-gradient(var(--page-tint) 0, var(--page-tint) 60vh, var(--color-bg) 100%), var(--color-bg);
     }
+
 
     /* Listing pages: a light, neutral grey so the tinted cards read as objects on a table */
     body.home-template,
     body.tag-template,
     body.author-template {
         --color-bg: #FAFAF9;
-        --color-bg-secondary: #F2F2F0;
-        --color-border: #EBEBE8;
-        --color-surface: #F2F2F0;
-        --color-surface-border: #E5E5E2;
     }
 
-    /* Text greys as transparent black, so they take on the page tint */
+    /* Greys as transparent black, so text, lines and surfaces take on the page tint */
     body.home-template,
     body.tag-template,
     body.author-template,
@@ -3273,6 +3267,11 @@ nav.pagination a:hover {
         --color-text-light: rgba(0, 0, 0, 0.6);
         --color-text-lighter: rgba(0, 0, 0, 0.4);
         --color-text-lightest: rgba(0, 0, 0, 0.2);
+        --color-border: rgba(0, 0, 0, 0.07);
+        --color-bg-secondary: rgba(0, 0, 0, 0.035);
+        --color-surface: rgba(0, 0, 0, 0.035);
+        --color-surface-border: rgba(0, 0, 0, 0.09);
+        --color-bookmark-thumb-bg: rgba(0, 0, 0, 0.04);
     }
 
     /* On the grey, the email field is white so the form stands out */
@@ -3280,7 +3279,7 @@ nav.pagination a:hover {
     body.tag-template .form-group input[type="email"],
     body.author-template .form-group input[type="email"] {
         background: #fff;
-        border-color: #DCDCD8;
+        border-color: rgba(0, 0, 0, 0.14);
     }
 
     body.home-template .form-group input[type="email"]:focus,
