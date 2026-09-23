@@ -210,25 +210,56 @@
     }
 
     // Initialize all functionality when DOM is ready
-    // Safari keeps a stale, blurry render of a cover's drop-shadow filter after the image
-    // loads (until something repaints it, like a hover). Drop and restore the filter once
-    // each cover has loaded so it redraws.
+    // When a cover's image finishes decoding, scrolls into view or ends its hover lift,
+    // Safari redraws only the image's own rectangle and leaves stale patches of shadow. Changing
+    // the filter by an invisible amount for two frames makes it redraw the whole shadow.
     function initCoverRepaint() {
         const covers = document.querySelectorAll(
             '.post-image-card .post-image img, .tag-post-image img, .author-post-image img, .article-image img, .read-more-item-link img'
         );
 
-        covers.forEach(function(img) {
-            const repaint = function() {
-                img.style.filter = 'none';
-                void img.offsetWidth;
-                img.style.filter = '';
-            };
+        const repaint = function(img) {
+            img.classList.add('is-repainting');
+            requestAnimationFrame(function() {
+                requestAnimationFrame(function() {
+                    img.classList.remove('is-repainting');
+                });
+            });
+        };
 
+        const repaintWhenDecoded = function(img) {
+            const decoded = img.decode ? img.decode().catch(function() {}) : Promise.resolve();
+            decoded.then(function() {
+                repaint(img);
+            });
+        };
+
+        // Safari also draws a stale shadow when a cover scrolls into view
+        const observer = 'IntersectionObserver' in window
+            ? new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        repaint(entry.target);
+                    }
+                });
+            })
+            : null;
+
+        covers.forEach(function(img) {
+            if (observer) {
+                observer.observe(img);
+            }
             // Also fires again when the browser swaps in a larger srcset candidate
-            img.addEventListener('load', repaint);
+            img.addEventListener('load', function() {
+                repaintWhenDecoded(img);
+            });
+            img.addEventListener('transitionend', function(event) {
+                if (event.propertyName === 'top') {
+                    repaint(img);
+                }
+            });
             if (img.complete) {
-                requestAnimationFrame(repaint);
+                repaintWhenDecoded(img);
             }
         });
     }
