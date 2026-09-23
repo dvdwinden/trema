@@ -262,6 +262,16 @@
                 repaintWhenDecoded(img);
             }
         });
+
+        // Web fonts and late images shift the layout, which moves covers after they were drawn
+        const repaintAll = function() {
+            covers.forEach(repaint);
+        };
+        if (document.fonts && document.fonts.ready) {
+            document.fonts.ready.then(repaintAll);
+        }
+        window.addEventListener('load', repaintAll);
+        window.addEventListener('resize', repaintAll);
     }
 
     function init() {

@@ -3631,10 +3631,26 @@ nav.pagination a:hover {
     /* 1em = 1% of the cover width. Font sizes always resolve to pixels, so Safari gets
        plain lengths for the shadows instead of container units it mis-measures. */
     font-size: calc(var(--w) / 100);
+    /* Safari clips a drop-shadow to the image's own box, and the shadow reaches past the
+       cover's transparent margin. Transparent padding makes the box big enough; the
+       negative margin cancels it out so the layout doesn't move. */
+    box-sizing: content-box;
+    padding: 30em;
+    margin: -30em;
+    /* A background (even a fully transparent one) stops WebKit drawing the image as a
+       bare image layer, which crops the shadow to the picture itself. */
+    background-image: linear-gradient(transparent, transparent);
     filter:
         drop-shadow(calc(-6.96em) calc(-8.53em) calc(10.66em) var(--glow, transparent))
         drop-shadow(calc(var(--cx) * 100em) calc(var(--cy) * 100em) calc(var(--cb) * 100em + var(--nudge, 0px)) var(--core))
         drop-shadow(calc(var(--tx) * 100em) calc(var(--ty) * 100em) calc(var(--tb) * 100em) var(--tail));
+}
+
+/* Keep the Continue reading covers' own upward nudge on top of the padding offset */
+.read-more-item img { margin-top: calc(-30em - 20px); }
+
+@media (max-width: 600px) {
+    .read-more-item img { margin-top: -30em; }
 }
 
 /* An invisible change to the filter that forces Safari to redraw the whole shadow
