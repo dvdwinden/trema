@@ -210,11 +210,35 @@
     }
 
     // Initialize all functionality when DOM is ready
+    // Safari keeps a stale, blurry render of a cover's drop-shadow filter after the image
+    // loads (until something repaints it, like a hover). Drop and restore the filter once
+    // each cover has loaded so it redraws.
+    function initCoverRepaint() {
+        const covers = document.querySelectorAll(
+            '.post-image-card .post-image img, .tag-post-image img, .author-post-image img, .article-image img, .read-more-item-link img'
+        );
+
+        covers.forEach(function(img) {
+            const repaint = function() {
+                img.style.filter = 'none';
+                void img.offsetWidth;
+                img.style.filter = '';
+            };
+
+            // Also fires again when the browser swaps in a larger srcset candidate
+            img.addEventListener('load', repaint);
+            if (img.complete) {
+                requestAnimationFrame(repaint);
+            }
+        });
+    }
+
     function init() {
         initMobileMenu();
         initSmoothScrolling();
         initExternalLinkFix();
         initSubscribeMessages();
+        initCoverRepaint();
         
         // Only run these on article pages, but not on authors page
         if (document.querySelector('.gh-content') && !document.querySelector('.authors-list')) {
