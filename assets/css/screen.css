@@ -3642,8 +3642,9 @@ nav.pagination a:hover {
     background-image: linear-gradient(transparent, transparent);
     filter:
         drop-shadow(calc(-6.96em) calc(-8.53em) calc(10.66em) var(--glow, transparent))
-        drop-shadow(calc(var(--cx) * 100em) calc(var(--cy) * 100em) calc(var(--cb) * 100em + var(--nudge, 0px)) var(--core))
-        drop-shadow(calc(var(--tx) * 100em) calc(var(--ty) * 100em) calc(var(--tb) * 100em) var(--tail));
+        drop-shadow(calc(var(--cx) * 100em) calc(var(--cy) * 100em) calc(var(--cb) * 100em) var(--core))
+        drop-shadow(calc(var(--tx) * 100em) calc(var(--ty) * 100em) calc(var(--tb) * 100em) var(--tail))
+        var(--repaint,);
 }
 
 /* Keep the Continue reading covers' own upward nudge on top of the padding offset */
@@ -3656,7 +3657,8 @@ nav.pagination a:hover {
 /* An invisible change to the filter that forces Safari to redraw the whole shadow
    (see initCoverRepaint in main.js) */
 .is-repainting {
-    --nudge: 0.01px;
+    /* A blank extra shadow. iOS Safari ignores sub-pixel changes to the shadows themselves. */
+    --repaint: drop-shadow(0 0 0 transparent);
 }
 
 /* Dark Mode
