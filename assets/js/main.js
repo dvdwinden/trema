@@ -209,13 +209,66 @@
         });
     }
 
+    // Bookmark cards that link to another Trema post keep whatever Ghost saved when the card
+    // was made: an opaque share image and the site icon of that day. Show the linked post's
+    // transparent cover in its homepage card colours instead, and the current site icon.
+    function initInternalBookmarks() {
+        const siteHost = location.hostname.replace(/^www\./, '');
+        const siteIcon = document.querySelector('link[rel="icon"], link[rel="shortcut icon"]');
+
+        document.querySelectorAll('.kg-bookmark-card').forEach(function(card) {
+            const link = card.querySelector('a.kg-bookmark-container');
+            const thumb = card.querySelector('.kg-bookmark-thumbnail img');
+            if (!link || link.hostname.replace(/^www\./, '') !== siteHost) {
+                return;
+            }
+
+            const icon = card.querySelector('.kg-bookmark-icon');
+            if (icon && siteIcon) {
+                icon.src = siteIcon.href;
+            }
+
+            if (!thumb) {
+                return;
+            }
+            // Hides the share image until the cover is in (see screen.css)
+            card.classList.add('kg-bookmark-book');
+
+            fetch(link.href)
+                .then(function(response) {
+                    if (!response.ok) {
+                        throw new Error(response.status);
+                    }
+                    return response.text();
+                })
+                .then(function(html) {
+                    const page = new DOMParser().parseFromString(html, 'text/html');
+                    const cover = page.querySelector('.article-image img');
+                    if (!cover) {
+                        throw new Error('No cover');
+                    }
+                    const tags = page.body.classList;
+                    card.classList.add(tags.contains('tag-fiction') ? 'kg-bookmark-fiction' : 'kg-bookmark-nonfiction');
+                    card.classList.toggle('is-thin', tags.contains('tag-hash-thin'));
+                    thumb.sizes = '120px';
+                    thumb.srcset = cover.getAttribute('srcset') || '';
+                    thumb.src = cover.getAttribute('src');
+                    card.classList.add('is-loaded');
+                })
+                .catch(function() {
+                    // Fall back to Ghost's own card
+                    card.classList.remove('kg-bookmark-book');
+                });
+        });
+    }
+
     // Initialize all functionality when DOM is ready
     // When a cover's image finishes decoding, scrolls into view or ends its hover lift,
     // Safari redraws only the image's own rectangle and leaves stale patches of shadow. Changing
     // the filter by an invisible amount for two frames makes it redraw the whole shadow.
     function initCoverRepaint() {
         const covers = document.querySelectorAll(
-            '.post-image-card .post-image img, .tag-post-image img, .author-post-image img, .article-image img, .read-more-item-link img'
+            '.post-image-card .post-image img, .tag-post-image img, .author-post-image img, .article-image img, .read-more-item-link img, .kg-bookmark-book .kg-bookmark-thumbnail img'
         );
 
         const repaint = function(img) {
@@ -279,6 +332,7 @@
         initSmoothScrolling();
         initExternalLinkFix();
         initSubscribeMessages();
+        initInternalBookmarks();
         initCoverRepaint();
         
         // Only run these on article pages, but not on authors page

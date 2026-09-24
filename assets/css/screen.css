@@ -1847,6 +1847,8 @@ nav.pagination a:hover {
     line-height: 1.4;
     margin-bottom: 1rem;
     flex: 1;
+    /* Ghost caps it at 44px, less than two of our lines; its line clamp still applies */
+    max-height: none;
 }
 
 .kg-bookmark-metadata {
@@ -3627,7 +3629,8 @@ nav.pagination a:hover {
 .tag-post-image img,
 .author-post-image img,
 .article-image img,
-.read-more-item-link img {
+.read-more-item-link img,
+.kg-bookmark-book .kg-bookmark-thumbnail img {
     /* 1em = 1% of the cover width. Font sizes always resolve to pixels, so Safari gets
        plain lengths for the shadows instead of container units it mis-measures. */
     font-size: calc(var(--w) / 100);
@@ -3659,6 +3662,81 @@ nav.pagination a:hover {
 .is-repainting {
     /* A blank extra shadow. iOS Safari ignores sub-pixel changes to the shadows themselves. */
     --repaint: drop-shadow(0 0 0 transparent);
+}
+
+/* Bookmark cards that link to another Trema post show its cover like a homepage card
+   (see initInternalBookmarks in main.js) */
+.kg-bookmark-book .kg-bookmark-thumbnail {
+    container-type: size;
+    justify-content: center;
+    /* Ghost's card CSS lets the thumbnail grow; hold it at a third of the card */
+    flex: 0 0 33%;
+}
+
+@media (max-width: 800px) {
+    /* Stacked under the text, it keeps the full-width, fixed-height strip */
+    .kg-bookmark-book .kg-bookmark-thumbnail {
+        flex: none;
+        height: 240px;
+    }
+}
+
+.kg-bookmark-fiction .kg-bookmark-thumbnail {
+    background: var(--card-noise), linear-gradient(135deg, rgba(45, 48, 30, 0) 0%, rgba(45, 48, 30, 0.09) 100%), radial-gradient(ellipse 90% 75% at 50% 42%, #F3F5EB 0%, #E9EBDB 100%);
+}
+
+.kg-bookmark-nonfiction .kg-bookmark-thumbnail {
+    background: var(--card-noise), linear-gradient(135deg, rgba(35, 47, 61, 0) 0%, rgba(35, 47, 61, 0.09) 100%), radial-gradient(ellipse 90% 75% at 50% 42%, #F0F4F9 0%, #E3EAF3 100%);
+}
+
+.kg-bookmark-card.kg-bookmark-book .kg-bookmark-thumbnail img {
+    --w: calc(86cqh / 1.652);
+    position: relative;
+    top: 0;
+    left: auto;
+    width: auto;
+    /* The canvas has a transparent margin, so this leaves room around the book */
+    height: 86cqh;
+    min-height: 0;
+    flex-shrink: 0;
+    object-fit: contain;
+    border-radius: 0;
+    /* Lift with top, not transform: Safari clips drop-shadows on transformed layers */
+    transition: top 0.3s ease-in-out;
+    --glow: rgba(255, 255, 255, 0.5);
+    --cx: 0.0936;
+    --cy: 0.0811;
+    --cb: 0.0396;
+    --tx: 0.1479;
+    --ty: 0.1163;
+    --tb: 0.14;
+}
+
+.kg-bookmark-book:not(.is-loaded) .kg-bookmark-thumbnail img {
+    visibility: hidden;
+}
+
+.kg-bookmark-book .kg-bookmark-container:hover .kg-bookmark-thumbnail img {
+    top: -4px;
+}
+
+.kg-bookmark-card.kg-bookmark-fiction .kg-bookmark-thumbnail img {
+    --core: rgba(45, 48, 30, 0.22);
+    --tail: rgba(45, 48, 30, 0.44);
+}
+
+.kg-bookmark-card.kg-bookmark-nonfiction .kg-bookmark-thumbnail img {
+    --core: rgba(35, 47, 61, 0.22);
+    --tail: rgba(35, 47, 61, 0.44);
+}
+
+.kg-bookmark-card.kg-bookmark-book.is-thin .kg-bookmark-thumbnail img {
+    --cx: 0.0585;
+    --cy: 0.0507;
+    --cb: 0.0304;
+    --tx: 0.1096;
+    --ty: 0.0862;
+    --tb: 0.1218;
 }
 
 /* Dark Mode
@@ -3812,6 +3890,20 @@ nav.pagination a:hover {
 
     .post-image-card-nonfiction .post-card-label {
         color: rgba(170, 186, 210, 0.8);
+    }
+
+    .kg-bookmark-fiction .kg-bookmark-thumbnail {
+        background: linear-gradient(135deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.14) 100%), radial-gradient(ellipse 80% 70% at 50% 42%, #2C2F26 0%, #1E201A 100%);
+    }
+
+    .kg-bookmark-nonfiction .kg-bookmark-thumbnail {
+        background: linear-gradient(135deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.14) 100%), radial-gradient(ellipse 80% 70% at 50% 42%, #282E39 0%, #1E232C 100%);
+    }
+
+    .kg-bookmark-card.kg-bookmark-book .kg-bookmark-thumbnail img {
+        --glow: rgba(255, 255, 255, 0.06);
+        --core: rgba(0, 0, 0, 0.4);
+        --tail: rgba(0, 0, 0, 0.55);
     }
 
     /* Book shadows on dark cards */
