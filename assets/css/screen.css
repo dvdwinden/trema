@@ -3278,6 +3278,11 @@ nav.pagination a:hover {
         --color-bookmark-thumb-bg: rgba(0, 0, 0, 0.04);
     }
 
+    /* The footer stays black, so it keeps the solid grey rather than transparent black */
+    .site-footer {
+        --color-text-lighter: #999;
+    }
+
     /* On the grey, the email field is white so the form stands out */
     body.home-template .form-group input[type="email"],
     body.tag-template .form-group input[type="email"],
