@@ -14,6 +14,7 @@
             menuToggle.addEventListener('click', function() {
                 const isOpen = menu.classList.toggle('is-open');
                 menuToggle.classList.toggle('is-open');
+                document.body.classList.toggle('menu-open', isOpen);
                 
                 // Change button text based on menu state
                 if (isOpen) {
