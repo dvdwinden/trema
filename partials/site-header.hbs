@@ -1,0 +1,44 @@
+<header id="gh-head" class="gh-head">
+    <nav class="gh-head">
+        <div class="gh-head-brand">
+            <a class="gh-head-logo no-image" href="{{@site.url}}">
+                {{#if @site.logo}}
+                    <img src="{{@site.logo}}" alt="{{@site.title}}" />
+                {{else}}
+                    {{@site.title}}
+                {{/if}}
+            </a>
+        </div>
+        <div class="gh-head-menu">
+            {{!-- Tags are fetched here so the navigation partial can show post counts without its own async lookup --}}
+            {{#get "tags" limit="all" include="count.posts"}}{{navigation}}{{/get}}
+            <div class="mobile-menu-actions">
+                <a class="gh-head-link" href="#" aria-label="Search this site" data-ghost-search>Search</a>
+                {{#if @site.members_enabled}}
+                    {{#unless @member}}
+                        <a class="gh-head-link" href="#/portal/signin" title="Sign in">Sign in</a>
+                        <a class="gh-head-link" href="#/portal/signup" title="Subscribe">Subscribe</a>
+                    {{else}}
+                        <a class="gh-head-link" href="#/portal/account" title="Account">Account</a>
+                    {{/unless}}
+                {{/if}}
+            </div>
+        </div>
+        <div class="gh-head-actions">
+            <button class="menu-toggle" aria-label="Toggle Menu" data-menu-text="Menu" data-close-text="Close">
+                Menu
+            </button>
+            <div class="gh-head-actions-list">
+                <a class="gh-head-link" href="#" aria-label="Search this site" data-ghost-search>Search</a>
+                {{#if @site.members_enabled}}
+                    {{#unless @member}}
+                        <a class="gh-head-link" href="#/portal/signin" title="Sign in">Sign in</a>
+                        <a class="gh-head-link" href="#/portal/signup" title="Subscribe">Subscribe</a>
+                    {{else}}
+                        <a class="gh-head-link" href="#/portal/account" title="Account">Account</a>
+                    {{/unless}}
+                {{/if}}
+            </div>
+        </div>
+    </nav>
+</header>
