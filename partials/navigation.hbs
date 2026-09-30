@@ -1,5 +1,5 @@
 <ul class="nav">
     {{#foreach navigation}}
-    <li class="{{link_class for=(url) class=(concat "nav-" slug)}}"><a href="{{url absolute="true"}}">{{#if @navigationIcons}}{{#if icon}}<img class="nav-icon" src="{{icon}}" alt="{{iconAlt}}">{{/if}}{{#if label}}<span class="nav-label">{{label}}</span>{{/if}}{{else}}{{label}}{{/if}}{{#unless ../isSecondary}}{{#get "tags" filter="slug:{{slug}}" include="count.posts" limit="1"}}{{#foreach tags}}<span class="nav-count">({{count.posts}})</span>{{/foreach}}{{/get}}{{/unless}}</a></li>
+    <li class="{{link_class for=(url) class=(concat "nav-" slug)}}"><a href="{{url absolute="true"}}">{{#if @navigationIcons}}{{#if icon}}<img class="nav-icon" src="{{icon}}" alt="{{iconAlt}}">{{/if}}{{#if label}}<span class="nav-label">{{label}}</span>{{/if}}{{else}}{{label}}{{/if}}{{#foreach ../tags}}{{#match slug ../slug}}<span class="nav-count">({{count.posts}})</span>{{/match}}{{/foreach}}</a></li>
     {{/foreach}}
 </ul>

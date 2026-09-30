@@ -80,7 +80,8 @@
                 </a>
             </div>
             <div class="gh-head-menu">
-                {{navigation}}
+                {{!-- Tags are fetched here so the navigation partial can show post counts without its own async lookup --}}
+                {{#get "tags" limit="all" include="count.posts"}}{{navigation}}{{/get}}
                 <div class="mobile-menu-actions">
                     <a class="gh-head-link" href="#" aria-label="Search this site" data-ghost-search>Search</a>
                     {{#if @site.members_enabled}}
