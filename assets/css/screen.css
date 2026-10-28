@@ -4033,6 +4033,74 @@ nav.pagination a:hover {
         --tb: 0.1218;
     }
 
+    /* Article pages take the shelf tint, as in light mode: a dark blue or olive behind the
+       header that fades into the near-black over the first screen. Both sit between the
+       page black and the card colours, so the cover gets the card's light without the
+       article reading as one big card next to the listings. */
+    body.post-template .newsletter-signup {
+        background: transparent;
+    }
+
+    body.post-template.tag-fiction { --page-tint: #191C15; }
+    body.post-template.tag-non-fiction { --page-tint: #161B24; }
+
+    body.post-template.tag-fiction,
+    body.post-template.tag-non-fiction {
+        /* The base colour is the tint so iOS Safari's status-bar strip matches the header.
+           The tint holds for four screens, then eases out over the next three: a straight
+           fade to the page bottom bands between two such close darks, and a short one
+           turns black too abruptly. */
+        background: linear-gradient(
+            var(--page-tint) 0,
+            var(--page-tint) 400vh,
+            color-mix(in srgb, var(--page-tint) 85%, var(--color-bg)) 460vh,
+            color-mix(in srgb, var(--page-tint) 60%, var(--color-bg)) 540vh,
+            color-mix(in srgb, var(--page-tint) 30%, var(--color-bg)) 620vh,
+            var(--color-bg) 700vh
+        ), var(--page-tint);
+    }
+
+    /* The read-more block and footer sit on the fade rather than on their own near-black,
+       which here was only a faint seam */
+    body.post-template.tag-fiction .read-more-wrap,
+    body.post-template.tag-non-fiction .read-more-wrap,
+    body.post-template.tag-fiction .site-footer,
+    body.post-template.tag-non-fiction .site-footer {
+        background: transparent;
+        box-shadow: none;
+    }
+
+    /* Its rules were drawn for the black block; on the page they take the page's own line colour */
+    body.post-template.tag-fiction .read-more-item,
+    body.post-template.tag-non-fiction .read-more-item,
+    body.post-template.tag-fiction h2.read-more-title,
+    body.post-template.tag-non-fiction h2.read-more-title {
+        border-image: none;
+        border-bottom-color: var(--color-border);
+    }
+
+    /* Greys as transparent white, so text, lines and surfaces take on the page tint */
+    body.post-template.tag-fiction,
+    body.post-template.tag-non-fiction {
+        --color-text: rgba(255, 255, 255, 0.77);
+        --color-text-light: rgba(255, 255, 255, 0.57);
+        --color-text-lighter: rgba(255, 255, 255, 0.38);
+        --color-text-lightest: rgba(255, 255, 255, 0.22);
+        --color-border: rgba(255, 255, 255, 0.11);
+        --color-bg-secondary: rgba(255, 255, 255, 0.035);
+        --color-surface: rgba(255, 255, 255, 0.035);
+        --color-surface-border: rgba(255, 255, 255, 0.14);
+        --color-bookmark-thumb-bg: rgba(255, 255, 255, 0.1);
+    }
+
+    /* The cover gets the same soft glow the covers have on the listing cards */
+    body.post-template.tag-fiction .article-image img,
+    body.post-template.tag-non-fiction .article-image img,
+    body.post-template.tag-fiction .article-image.is-thin img,
+    body.post-template.tag-non-fiction .article-image.is-thin img {
+        --glow: rgba(255, 255, 255, 0.06);
+    }
+
     /* Slight image brightness reduction */
     .gh-content img,
     .post-card-image,
