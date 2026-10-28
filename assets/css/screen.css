@@ -632,8 +632,8 @@ blockquote p {
 }
 
 .featured-post-content .article-tags {
-    margin: 1rem auto;
-    justify-content: center;
+    margin: 1rem -0.75rem;
+    text-align: center;
 }
 
 /* Section Headings
@@ -1443,16 +1443,36 @@ form.error .message-error {
         border-top: 1px solid var(--color-border);
     }
 
+/* Each tag is unbreakable and carries its separator in the gap before it, outside its own
+   box, so main.js can hide the separators that start a line without reflowing it. The
+   negative margin cancels the outer item margins, keeping the list flush */
 .article-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    justify-items: center;
+    margin-inline: -0.75rem;
+    text-wrap: balance;
     font-family: var(--font-sans);
     font-size: 1.125rem;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     color: var(--color-text-lighter);
+}
+
+.article-tags .tag-item {
+    position: relative;
+    display: inline-block;
+    margin-inline: 0.75rem;
+    white-space: nowrap;
+}
+
+.article-tags .tag-separator {
+    position: absolute;
+    right: 100%;
+    width: 1.5rem;
+    text-align: center;
+}
+
+.article-tags .tag-item:first-child .tag-separator,
+.article-tags .tag-item.is-line-start .tag-separator {
+    display: none;
 }
 
 .tag-link {
@@ -2688,7 +2708,7 @@ nav.pagination a:hover {
     .article-tags {
         font-size: 1rem;
         margin-bottom: 4rem;
-        justify-content: center;
+        text-align: center;
     }
 }
 
@@ -3273,7 +3293,9 @@ nav.pagination a:hover {
     body.post-template.tag-fiction,
     body.post-template.tag-non-fiction {
         --color-bg: #FAFAF9;
-        background: linear-gradient(var(--page-tint) 0, var(--page-tint) 60vh, var(--color-bg) 100%), var(--color-bg);
+        /* The base colour is the tint, not the grey: iOS Safari colours the strip behind
+           the status bar from it, and the gradient covers the whole page anyway */
+        background: linear-gradient(var(--page-tint) 0, var(--page-tint) 60vh, var(--color-bg) 100%), var(--page-tint);
     }
 
 

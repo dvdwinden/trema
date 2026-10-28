@@ -36,14 +36,12 @@
                 {{/if}}
                 {{#if tags.length}}
                     <div class="article-tags">
-                        {{#foreach tags}}
-                            {{#unless @first}}
-                                <a href="{{url}}" class="tag-link">{{name}}</a>
-                                {{#unless @last}}
-                                    <span class="tag-separator"> / </span>
-                                {{/unless}}
-                            {{/unless}}
-                        {{/foreach}}
+                        {{!-- No whitespace between items: their margins are the whole gap --}}
+                        {{~#foreach tags~}}
+                            {{~#unless @first~}}
+                                <span class="tag-item"><span class="tag-separator" aria-hidden="true">/</span><a href="{{url}}" class="tag-link">{{name}}</a></span>
+                            {{~/unless~}}
+                        {{~/foreach~}}
                     </div>
                 {{/if}}
             </div>

@@ -328,6 +328,29 @@
         window.addEventListener('resize', repaintAll);
     }
 
+    // Hide the tag separators that would start a line once the list wraps
+    function initTagLines() {
+        const lists = document.querySelectorAll('.article-tags');
+        if (!lists.length) return;
+
+        function mark() {
+            lists.forEach(function (list) {
+                let lineTop = null;
+                list.querySelectorAll('.tag-item').forEach(function (item) {
+                    const top = item.offsetTop;
+                    item.classList.toggle('is-line-start', lineTop === null || top > lineTop + 1);
+                    if (lineTop === null || top > lineTop + 1) lineTop = top;
+                });
+            });
+        }
+
+        mark();
+        if (document.fonts && document.fonts.ready) {
+            document.fonts.ready.then(mark);
+        }
+        window.addEventListener('resize', mark);
+    }
+
     function init() {
         initMobileMenu();
         initSmoothScrolling();
@@ -335,6 +358,7 @@
         initSubscribeMessages();
         initInternalBookmarks();
         initCoverRepaint();
+        initTagLines();
         
         // Only run these on article pages, but not on authors page
         if (document.querySelector('.gh-content') && !document.querySelector('.authors-list')) {
