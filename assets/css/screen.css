@@ -1832,7 +1832,9 @@ nav.pagination a:hover {
 
 /* Bookmark cards */
 .kg-bookmark-card {
-    margin: 1rem 0;
+    /* Clear of the paragraph rhythm above and below, so the card reads as an object set
+       into the text rather than another paragraph */
+    margin: 2.5rem 0;
     width: 100%;
     border-radius: 3px;
 }
@@ -3328,6 +3330,21 @@ nav.pagination a:hover {
         --color-text-lighter: #999;
     }
 
+    /* Bookmark cards sit on the tint as a translucent white, so they take on the olive or
+       blue instead of punching a pure white hole in the page. The selectors carry extra
+       weight because the site's code injection forces the card white with !important. */
+    body.post-template.tag-fiction a.kg-bookmark-container,
+    body.post-template.tag-non-fiction a.kg-bookmark-container {
+        background: rgba(255, 255, 255, 0.55) !important;
+        border-color: var(--color-surface-border);
+    }
+
+    body.post-template.tag-fiction a.kg-bookmark-container:hover,
+    body.post-template.tag-non-fiction a.kg-bookmark-container:hover {
+        background: rgba(255, 255, 255, 0.85) !important;
+        border-color: var(--color-text-lighter);
+    }
+
     /* On the grey, the email field is white so the form stands out */
     body.home-template .form-group input[type="email"],
     body.tag-template .form-group input[type="email"],
@@ -3807,6 +3824,11 @@ nav.pagination a:hover {
         --color-surface: #1c1b1a;
         --color-surface-border: #353432;
         --color-bookmark-thumb-bg: #2b2a28;
+        /* Read by the bookmark override block in default.hbs */
+        --color-bookmark-bg: #121110;
+        --color-bookmark-border: #2e2d2b;
+        --color-bookmark-hover-bg: #1c1b1a;
+        --color-bookmark-hover-border: #484745;
         --color-blockquote-fade: rgba(201, 199, 195, 0.1);
         --color-footer-bg: #121110;
         --color-success-bg: #1a2e1e;
@@ -4091,6 +4113,12 @@ nav.pagination a:hover {
         --color-surface: rgba(255, 255, 255, 0.035);
         --color-surface-border: rgba(255, 255, 255, 0.14);
         --color-bookmark-thumb-bg: rgba(255, 255, 255, 0.1);
+        /* Bookmark cards sit on the tint as a slightly lighter surface, olive on fiction
+           pages and blue on non-fiction, rather than as a near-black box cut into the page */
+        --color-bookmark-bg: var(--color-surface);
+        --color-bookmark-border: var(--color-surface-border);
+        --color-bookmark-hover-bg: rgba(255, 255, 255, 0.06);
+        --color-bookmark-hover-border: var(--color-text-lighter);
     }
 
     /* The cover gets the same soft glow the covers have on the listing cards */

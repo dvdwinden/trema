@@ -97,35 +97,37 @@
 {{! Ghost outputs important scripts and data with this tag }}
 {{ghost_foot}}
 
-{{! Override Ghost card_assets bookmark styles for dark mode }}
+{{! Override Ghost card_assets bookmark styles for dark mode. Ghost's card CSS loads after
+    screen.css, so these need the extra weight; the colours come from screen.css variables so
+    shelf-tinted article pages can swap them. }}
 <style>
 @media (prefers-color-scheme: dark) {
     figure.kg-bookmark-card {
         background: transparent !important;
     }
     a.kg-bookmark-container {
-        background: #121110 !important;
-        border-color: #2e2d2b !important;
+        background: var(--color-bookmark-bg) !important;
+        border-color: var(--color-bookmark-border) !important;
     }
     a.kg-bookmark-container:hover {
-        background: #1c1b1a !important;
-        border-color: #484745 !important;
+        background: var(--color-bookmark-hover-bg) !important;
+        border-color: var(--color-bookmark-hover-border) !important;
         box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3) !important;
     }
     .kg-bookmark-content {
-        background: #121110 !important;
+        background: transparent !important;
     }
     .kg-bookmark-card:not(.kg-bookmark-fiction):not(.kg-bookmark-nonfiction) .kg-bookmark-thumbnail {
-        background: #1c1b1a !important;
+        background: var(--color-bookmark-thumb-bg) !important;
     }
     .kg-bookmark-title {
-        color: #c9c7c3 !important;
+        color: var(--color-text) !important;
     }
     .kg-bookmark-description {
-        color: #9a9895 !important;
+        color: var(--color-text-light) !important;
     }
     .kg-bookmark-metadata {
-        color: #9a9895 !important;
+        color: var(--color-text-light) !important;
     }
 }
 </style>
