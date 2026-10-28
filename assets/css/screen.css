@@ -3330,19 +3330,34 @@ nav.pagination a:hover {
         --color-text-lighter: #999;
     }
 
-    /* Bookmark cards sit on the tint as a translucent white, so they take on the olive or
-       blue instead of punching a pure white hole in the page. The selectors carry extra
-       weight because the site's code injection forces the card white with !important. */
-    body.post-template.tag-fiction a.kg-bookmark-container,
-    body.post-template.tag-non-fiction a.kg-bookmark-container {
-        background: rgba(255, 255, 255, 0.55) !important;
-        border-color: var(--color-surface-border);
+    /* Bookmark cards on tinted article pages are drawn like the shelf's listing cards: the
+       same olive or blue gradient and border, so they read as a card from the shelf rather
+       than a white hole in the page. The selectors carry extra weight because the site's
+       code injection forces the card white with !important. */
+    body.post-template.tag-fiction a.kg-bookmark-container {
+        background: var(--card-noise), linear-gradient(135deg, rgba(45, 48, 30, 0) 0%, rgba(45, 48, 30, 0.09) 100%), radial-gradient(ellipse 90% 75% at 50% 42%, #F3F5EB 0%, #E9EBDB 100%) !important;
+        border-color: #DDE0CB;
     }
 
-    body.post-template.tag-fiction a.kg-bookmark-container:hover,
+    body.post-template.tag-non-fiction a.kg-bookmark-container {
+        background: var(--card-noise), linear-gradient(135deg, rgba(35, 47, 61, 0) 0%, rgba(35, 47, 61, 0.09) 100%), radial-gradient(ellipse 90% 75% at 50% 42%, #F0F4F9 0%, #E3EAF3 100%) !important;
+        border-color: #D5DDE8;
+    }
+
+    body.post-template.tag-fiction a.kg-bookmark-container:hover {
+        border-color: #C8CDB1;
+        box-shadow: 0 2px 12px rgba(45, 48, 30, 0.1);
+    }
+
     body.post-template.tag-non-fiction a.kg-bookmark-container:hover {
-        background: rgba(255, 255, 255, 0.85) !important;
-        border-color: var(--color-text-lighter);
+        border-color: #B9C5D5;
+        box-shadow: 0 2px 12px rgba(35, 47, 61, 0.1);
+    }
+
+    /* The thumbnail's own grey would show as a seam against the gradient */
+    body.post-template.tag-fiction .kg-bookmark-card:not(.kg-bookmark-book) .kg-bookmark-thumbnail,
+    body.post-template.tag-non-fiction .kg-bookmark-card:not(.kg-bookmark-book) .kg-bookmark-thumbnail {
+        background: transparent;
     }
 
     /* On the grey, the email field is white so the form stands out */
