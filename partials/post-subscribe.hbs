@@ -1,0 +1,21 @@
+{{!-- Subscribe form below each post. Hidden for signed-in members and when members are off. --}}
+{{#if @site.members_enabled}}
+{{^@member}}
+<section class="post-subscribe">
+  <div class="post-subscribe-card">
+    <h2 class="post-subscribe-title">The next book, in your inbox</h2>
+    <p class="post-subscribe-text">Receive one book worth reading every month.</p>
+    <form data-members-form="subscribe">
+        <div class="form-group">
+            <input type="email" name="email" data-members-email placeholder="Your email address" required />
+            <button type="submit">Subscribe</button>
+        </div>
+        {{! Both stay empty in the source so the copy can't end up in a search snippet.
+            Portal fills the error on submit; main.js fills the success message. }}
+        <div class="message-success" role="status" data-message="Great! Check your inbox and confirm your subscription."></div>
+        <div class="message-error" role="alert" data-members-error></div>
+    </form>
+  </div>
+</section>
+{{/@member}}
+{{/if}}

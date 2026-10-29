@@ -1035,6 +1035,44 @@ blockquote p {
     margin-bottom: 4rem;
 }
 
+/* Post Subscribe (below every post)
+/* ---------------------------------------------------------- */
+/* Same box as .gh-content so the card lines up with the text column above it */
+.post-subscribe {
+    max-width: 720px;
+    margin: 0 auto 2rem;
+    padding: 3rem 40px 0 0;
+}
+
+/* Drawn like a bookmark card: same border, radius and surface, and on tinted pages the
+   same olive or blue gradient, so it reads as a card from the shelf */
+.post-subscribe-card {
+    border: 1px solid var(--color-border);
+    border-radius: 3px;
+    background: var(--color-bg);
+    padding: 2.5rem 2rem 2.25rem;
+    text-align: center;
+}
+
+/* Same size and weight as the titles in the read-more list below it */
+.post-subscribe-title {
+    font-family: var(--font-sans);
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 1.2;
+    color: var(--color-base);
+    text-wrap: balance;
+    margin: 0 0 0.4rem;
+}
+
+.post-subscribe-text {
+    font-size: 1.15rem;
+    line-height: 1.5;
+    color: var(--color-text-light);
+    text-wrap: balance;
+    margin: 0 auto 1.5rem;
+}
+
 .form-group {
     display: flex;
     gap: 0.75rem;
@@ -2439,6 +2477,24 @@ nav.pagination a:hover {
         padding: 0 4vw;
         max-width: none;
     }
+
+    .post-subscribe {
+        padding: 2rem 4vw 0;
+        max-width: none;
+        margin-bottom: 0;
+    }
+
+    .post-subscribe-card {
+        padding: 2rem 1.25rem 1.75rem;
+    }
+
+    .post-subscribe-title {
+        font-size: 1.5rem;
+    }
+
+    .post-subscribe-text {
+        font-size: 1.05rem;
+    }
     
     .gh-content > * + * {
         margin-top: 1.5rem;
@@ -3297,7 +3353,9 @@ nav.pagination a:hover {
         --color-bg: #FAFAF9;
         /* The base colour is the tint, not the grey: iOS Safari colours the strip behind
            the status bar from it, and the gradient covers the whole page anyway */
-        background: linear-gradient(var(--page-tint) 0, var(--page-tint) 60vh, var(--color-bg) 100%), var(--page-tint);
+        /* The fade keeps a trace of the tint at the bottom, so the subscribe card down there
+           sits on a faintly coloured page rather than on plain grey */
+        background: linear-gradient(var(--page-tint) 0, var(--page-tint) 60vh, color-mix(in srgb, var(--page-tint) 40%, var(--color-bg)) 100%), var(--page-tint);
     }
 
 
@@ -3354,23 +3412,40 @@ nav.pagination a:hover {
         box-shadow: 0 2px 12px rgba(35, 47, 61, 0.1);
     }
 
+    /* The subscribe card below the post is a flat sheet of the page tint with the cards'
+       noise: it sits where the page has faded almost to grey, and the full card gradient
+       there reads as a heavy block rather than a card */
+    body.post-template.tag-fiction .post-subscribe-card {
+        background: var(--card-noise), var(--page-tint);
+        border-color: #E3E6D3;
+    }
+
+    body.post-template.tag-non-fiction .post-subscribe-card {
+        background: var(--card-noise), var(--page-tint);
+        border-color: #DCE3EE;
+    }
+
     /* The thumbnail's own grey would show as a seam against the gradient */
     body.post-template.tag-fiction .kg-bookmark-card:not(.kg-bookmark-book) .kg-bookmark-thumbnail,
     body.post-template.tag-non-fiction .kg-bookmark-card:not(.kg-bookmark-book) .kg-bookmark-thumbnail {
         background: transparent;
     }
 
-    /* On the grey, the email field is white so the form stands out */
+    /* On the grey and on the tinted post pages, the email field is white so the form stands out */
     body.home-template .form-group input[type="email"],
     body.tag-template .form-group input[type="email"],
-    body.author-template .form-group input[type="email"] {
+    body.author-template .form-group input[type="email"],
+    body.post-template.tag-fiction .form-group input[type="email"],
+    body.post-template.tag-non-fiction .form-group input[type="email"] {
         background: #fff;
         border-color: rgba(0, 0, 0, 0.14);
     }
 
     body.home-template .form-group input[type="email"]:focus,
     body.tag-template .form-group input[type="email"]:focus,
-    body.author-template .form-group input[type="email"]:focus {
+    body.author-template .form-group input[type="email"]:focus,
+    body.post-template.tag-fiction .form-group input[type="email"]:focus,
+    body.post-template.tag-non-fiction .form-group input[type="email"]:focus {
         border-color: rgba(0, 0, 0, 0.45);
         box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.06);
     }
@@ -4163,6 +4238,23 @@ nav.pagination a:hover {
         z-index: 1000;
         pointer-events: none;
         background: var(--page-grain);
+    }
+
+    /* The subscribe card sits on the page as the bookmark cards do: a slightly lighter
+       surface that takes on the page tint */
+    .post-subscribe-card {
+        background: var(--color-bookmark-bg);
+        border-color: var(--color-bookmark-border);
+    }
+
+    /* On the card surface the page's 4% field all but vanishes, so it gets a lighter one */
+    .post-subscribe-card .form-group input[type="email"] {
+        background: rgba(255, 255, 255, 0.09);
+        border-color: rgba(255, 255, 255, 0.18);
+    }
+
+    .post-subscribe-card .form-group input[type="email"]:focus {
+        border-color: rgba(255, 255, 255, 0.4);
     }
 
     /* Form input styling */
